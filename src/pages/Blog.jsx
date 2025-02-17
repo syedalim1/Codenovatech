@@ -48,7 +48,7 @@ const posts = [
     id: 4,
     title: 'Web Performance Optimization Techniques',
     description:
-      'Learn essential strategies and best practices for optimizing your website's performance and user experience.',
+      'Learn essential strategies and best practices for optimizing your website\'s performance and user experience.',
     date: 'Feb 5, 2024',
     category: { name: 'Web Development', href: '#' },
     author: {
