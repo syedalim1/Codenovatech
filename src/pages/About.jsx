@@ -19,7 +19,7 @@ const values = [
   {
     name: 'Client-Centric',
     description:
-      'Our clients' success is our success. We work closely with each client to understand their unique needs and deliver tailored solutions.',
+      'Our clients success is our success. We work closely with each client to understand their unique needs and deliver tailored solutions.',
   },
 ]
 
