@@ -61,7 +61,7 @@ const fadeIn = {
 
 export default function About() {
   return (
-    <div className="bg-white pt-24">
+    <div className="bg-gradient-to-r from-primary to-secondary pt-24">
       {/* Hero section */}
       <div className="relative isolate">
         <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
@@ -69,11 +69,11 @@ export default function About() {
             className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-primary to-secondary opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
             style={{
               clipPath:
-                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+                "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
             }}
           />
         </div>
-        
+
         <div className="container-custom py-24 sm:py-32">
           <motion.div
             className="mx-auto max-w-2xl text-center"
@@ -81,14 +81,18 @@ export default function About() {
             animate="animate"
             variants={fadeIn}
           >
-            <h2 className="text-base font-semibold leading-7 text-primary">About Us</h2>
+            <h2 className="text-base font-semibold leading-7 text-primary">
+              About Us
+            </h2>
             <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               Our Story
             </p>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Founded in 2019, CodeNovaTech started with a mission to bridge the gap between innovation
-              and execution. Today, we're a leading technology partner for businesses worldwide,
-              delivering cutting-edge solutions in web development, mobile apps, AI, and API services.
+              Founded in 2019, CodeNovaTech started with a mission to bridge the
+              gap between innovation and execution. Today, we're a leading
+              technology partner for businesses worldwide, delivering
+              cutting-edge solutions in web development, mobile apps, AI, and
+              API services.
             </p>
           </motion.div>
         </div>
@@ -97,9 +101,12 @@ export default function About() {
       {/* Values section */}
       <div className="container-custom py-24">
         <div className="mx-auto max-w-2xl">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center">Our Values</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center">
+            Our Values
+          </h2>
           <p className="mt-6 text-lg leading-8 text-gray-600 text-center">
-            These core values guide everything we do and help us deliver exceptional results for our clients.
+            These core values guide everything we do and help us deliver
+            exceptional results for our clients.
           </p>
         </div>
         <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-16">
@@ -159,7 +166,9 @@ export default function About() {
             <dl className="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
               {stats.map((stat) => (
                 <div key={stat.name} className="flex flex-col bg-white p-8">
-                  <dt className="text-sm font-semibold leading-6 text-gray-600">{stat.name}</dt>
+                  <dt className="text-sm font-semibold leading-6 text-gray-600">
+                    {stat.name}
+                  </dt>
                   <dd className="order-first text-3xl font-semibold tracking-tight text-primary">
                     {stat.value}
                   </dd>
@@ -174,7 +183,9 @@ export default function About() {
       <div className="container-custom py-24 sm:py-32">
         <div className="mx-auto max-w-2xl lg:max-w-none">
           <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our Team</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Our Team
+            </h2>
             <p className="mt-4 text-lg leading-8 text-gray-600">
               Meet the experts behind our success
             </p>
@@ -197,13 +208,17 @@ export default function About() {
                   src={person.imageUrl}
                   alt=""
                 />
-                <h3 className="mt-6 text-lg font-semibold leading-8 text-gray-900">{person.name}</h3>
-                <p className="text-base leading-7 text-gray-600">{person.role}</p>
+                <h3 className="mt-6 text-lg font-semibold leading-8 text-gray-900">
+                  {person.name}
+                </h3>
+                <p className="text-base leading-7 text-gray-600">
+                  {person.role}
+                </p>
               </motion.li>
             ))}
           </motion.ul>
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,4 +1,3 @@
-
 import { FaRocket } from "react-icons/fa";
 
 import { motion } from "framer-motion";
@@ -31,11 +30,11 @@ function ServicesHeroSection() {
             Innovative Solutions for the Digital Age
           </p>
           <motion.button
-            className="btn-primary bg-white text-primary px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300"
+            className="btn-primary bg-black text-primary px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Get Started <FaRocket className="inline ml-2" />
+            Get Startedss <FaRocket className="inline text-white ml-2" />
           </motion.button>
         </motion.div>
       </div>

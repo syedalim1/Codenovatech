@@ -144,31 +144,25 @@ function Servicessection() {
             <div className="mt-6">
               <div className="flex space-x-4 mb-6">
                 <button
-                  className={`px-4 py-2 rounded-full ${
-                    activeTab === "features"
-                      ? "bg-primary text-white"
-                      : "bg-gray-700 text-gray-300"
-                  } hover:bg-primary hover:text-white transition-all duration-300`}
-                  onClick={() => setActiveTab("features")}
+                  className={
+                    "px-4 py-2 rounded-full bg-black  hover:bg-primary hover:text-white transition-all duration-300"
+                  }
+                  onClick={() => setActiveTab("tech")}
                 >
                   Features
                 </button>
                 <button
-                  className={`px-4 py-2 rounded-full ${
-                    activeTab === "case-studies"
-                      ? "bg-primary text-white"
-                      : "bg-gray-700 text-gray-300"
-                  } hover:bg-primary hover:text-white transition-all duration-300`}
-                  onClick={() => setActiveTab("case-studies")}
+                  className={
+                    "px-4 py-2 rounded-full bg-black  hover:bg-primary hover:text-white transition-all duration-300"
+                  }
+                  onClick={() => setActiveTab("tech")}
                 >
                   Case Studies
                 </button>
                 <button
-                  className={`px-4 py-2 rounded-full ${
-                    activeTab === "tech"
-                      ? "bg-primary text-white"
-                      : "bg-gray-700 text-gray-300"
-                  } hover:bg-primary hover:text-white transition-all duration-300`}
+                  className={
+                    "px-4 py-2 rounded-full bg-black  hover:bg-primary hover:text-white transition-all duration-300"
+                  }
                   onClick={() => setActiveTab("tech")}
                 >
                   Technologies
@@ -254,7 +248,7 @@ function Servicessection() {
                     {service.technologies.map((tech, idx) => (
                       <motion.span
                         key={idx}
-                        className="px-4 py-2 bg-gray-700 rounded-full text-sm text-white"
+                        className="px-4 py-2 bg-black rounded-full text-sm text-white"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
                       >
@@ -283,6 +277,8 @@ function Servicessection() {
       ))}
     </div>
   );
+
+  
 }
 
 export default Servicessection;

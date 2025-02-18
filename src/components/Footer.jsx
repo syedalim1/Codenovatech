@@ -42,7 +42,10 @@ const navigation = {
 
 export default function Footer() {
   return (
-    <footer className="" aria-labelledby="footer-heading">
+    <footer
+      className="bg-gradient-to-r from-primary to-secondary"
+      aria-labelledby="footer-heading"
+    >
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
@@ -53,8 +56,8 @@ export default function Footer() {
               CodeNovaTech
             </Link>
             <p className="text-sm leading-6 text-gray-300">
-              Transform your vision into digital reality with our cutting-edge web development,
-              app development, AI solutions, and API services.
+              Transform your vision into digital reality with our cutting-edge
+              web development, app development, AI solutions, and API services.
             </p>
             <div className="flex space-x-6">
               {navigation.social.map((item) => (
@@ -72,7 +75,9 @@ export default function Footer() {
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-white">Navigation</h3>
+                <h3 className="text-sm font-semibold leading-6 text-white">
+                  Navigation
+                </h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.main.map((item) => (
                     <li key={item.name}>
@@ -87,7 +92,9 @@ export default function Footer() {
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-white">Services</h3>
+                <h3 className="text-sm font-semibold leading-6 text-white">
+                  Services
+                </h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.services.map((item) => (
                     <li key={item.name}>
@@ -111,5 +118,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

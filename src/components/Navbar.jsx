@@ -15,14 +15,16 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed w-full backdrop-blur-sm shadow-sm z-50 bg-gradient-to-r from-blue-900 to-blue-700">
+    <header className="fixed w-full backdrop-blur-sm shadow-sm z-50 bg-gradient-to-r from-primary to-secondary">
       <nav className="container-custom flex items-center justify-between py-4">
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5">
-            <span className="text-2xl font-bold text-white hover:text-primary transition-colors duration-300">CodeNovaTech</span>
+            <span className="text-2xl font-bold text-white hover:text-primary transition-colors duration-300">
+              CodeNovaTech
+            </span>
           </Link>
         </div>
-        
+
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -51,18 +53,27 @@ export default function Navbar() {
         </div>
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link to="/contact" className=" text-white border  border-white px-4 py-2 rounded-md hover:bg-opacity-90 transition-colors duration-300">
+          <Link
+            to="/contact"
+            className=" text-white border  border-white px-4 py-2 rounded-md hover:bg-opacity-90 transition-colors duration-300"
+          >
             Get Started
           </Link>
         </div>
       </nav>
 
       {/* Mobile menu */}
-      <div className={`lg:hidden ${mobileMenuOpen ? 'block' : 'hidden'} transition-transform duration-300 ease-in-out`}>
+      <div
+        className={`lg:hidden ${
+          mobileMenuOpen ? "block" : "hidden"
+        } transition-transform duration-300 ease-in-out`}
+      >
         <div className="fixed inset-y-0 right-0 z-50 w-full bg-gradient-to-b from-blue-900 to-blue-700 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <Link to="/" className="-m-1.5 p-1.5">
-              <span className="text-2xl font-bold text-white hover:text-primary transition-colors duration-300">CodeNovaTech</span>
+              <span className="text-2xl font-bold text-white hover:text-primary transition-colors duration-300">
+                CodeNovaTech
+              </span>
             </Link>
             <button
               type="button"

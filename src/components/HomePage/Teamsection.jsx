@@ -3,19 +3,19 @@ import { motion } from "framer-motion";
 
 const teamMembers = [
   {
-    name: "Alex Johnson",
+    name: "Praveen Kumar s",
     role: "Lead Developer",
-    image: "https://via.placeholder.com/150",
+    image: "./profile.jpg",
   },
   {
-    name: "Maria Garcia",
+    name: "Wilson A",
     role: "UI/UX Designer",
-    image: "https://via.placeholder.com/150",
+    image: "./profile.jpg",
   },
   {
-    name: "Chris Lee",
+    name: "Syed Ali M",
     role: "Data Scientist",
-    image: "https://via.placeholder.com/150",
+    image: "./profile.jpg",
   },
 ];
 function Teamsection() {
@@ -52,10 +52,10 @@ const fadeIn = {
                   alt={member.name}
                   className="h-32 w-32 rounded-full"
                 />
-                <h3 className="mt-6 text-lg font-semibold text-gray-900">
+                <h3 className="mt-6 text-lg font-semibold text-white">
                   {member.name}
                 </h3>
-                <p className="mt-2 text-gray-600">{member.role}</p>
+                <p className="mt-2 text-black">{member.role}</p>
               </motion.div>
             ))}
           </div>

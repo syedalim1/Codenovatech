@@ -56,7 +56,7 @@ export default function Contact() {
   }
 
   return (
-    <div className="bg-white pt-24">
+    <div className="bg-gradient-to-r from-primary to-secondary pt-24">
       <div className="container-custom py-24">
         <motion.div
           className="mx-auto max-w-2xl text-center"
@@ -64,12 +64,15 @@ export default function Contact() {
           animate="animate"
           variants={fadeIn}
         >
-          <h2 className="text-base font-semibold leading-7 text-primary">Contact Us</h2>
+          <h2 className="text-base font-semibold leading-7 text-primary">
+            Contact Us
+          </h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Get in Touch
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Have a project in mind? Let's discuss how we can help you achieve your goals.
+            Have a project in mind? Let's discuss how we can help you achieve
+            your goals.
           </p>
         </motion.div>
 
@@ -85,10 +88,17 @@ export default function Contact() {
               className="flex flex-col items-center text-center"
             >
               <div className="rounded-2xl bg-primary/5 p-4">
-                <method.icon className="h-6 w-6 text-primary" aria-hidden="true" />
+                <method.icon
+                  className="h-6 w-6 text-primary"
+                  aria-hidden="true"
+                />
               </div>
-              <h3 className="mt-6 text-base font-semibold leading-7 text-gray-900">{method.name}</h3>
-              <p className="mt-1 text-sm leading-6 text-gray-600">{method.description}</p>
+              <h3 className="mt-6 text-base font-semibold leading-7 text-gray-900">
+                {method.name}
+              </h3>
+              <p className="mt-1 text-sm leading-6 text-gray-600">
+                {method.description}
+              </p>
               {method.link ? (
                 <a
                   href={method.link}
@@ -97,7 +107,9 @@ export default function Contact() {
                   {method.value}
                 </a>
               ) : (
-                <p className="mt-1 text-base font-medium text-gray-900">{method.value}</p>
+                <p className="mt-1 text-base font-medium text-gray-900">
+                  {method.value}
+                </p>
               )}
             </div>
           ))}
@@ -112,7 +124,10 @@ export default function Contact() {
           <form onSubmit={handleSubmit} className="space-y-8">
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
               <div>
-                <label htmlFor="firstName" className="block text-sm font-semibold leading-6 text-gray-900">
+                <label
+                  htmlFor="firstName"
+                  className="block text-sm font-semibold leading-6 text-gray-900"
+                >
                   First name
                 </label>
                 <div className="mt-2.5">
@@ -127,7 +142,10 @@ export default function Contact() {
                 </div>
               </div>
               <div>
-                <label htmlFor="lastName" className="block text-sm font-semibold leading-6 text-gray-900">
+                <label
+                  htmlFor="lastName"
+                  className="block text-sm font-semibold leading-6 text-gray-900"
+                >
                   Last name
                 </label>
                 <div className="mt-2.5">
@@ -142,7 +160,10 @@ export default function Contact() {
                 </div>
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold leading-6 text-gray-900">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-semibold leading-6 text-gray-900"
+                >
                   Email
                 </label>
                 <div className="mt-2.5">
@@ -157,7 +178,10 @@ export default function Contact() {
                 </div>
               </div>
               <div>
-                <label htmlFor="phone" className="block text-sm font-semibold leading-6 text-gray-900">
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-semibold leading-6 text-gray-900"
+                >
                   Phone number
                 </label>
                 <div className="mt-2.5">
@@ -172,7 +196,10 @@ export default function Contact() {
                 </div>
               </div>
               <div className="sm:col-span-2">
-                <label htmlFor="company" className="block text-sm font-semibold leading-6 text-gray-900">
+                <label
+                  htmlFor="company"
+                  className="block text-sm font-semibold leading-6 text-gray-900"
+                >
                   Company
                 </label>
                 <div className="mt-2.5">
@@ -187,7 +214,10 @@ export default function Contact() {
                 </div>
               </div>
               <div className="sm:col-span-2">
-                <label htmlFor="message" className="block text-sm font-semibold leading-6 text-gray-900">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-semibold leading-6 text-gray-900"
+                >
                   Message
                 </label>
                 <div className="mt-2.5">
@@ -203,10 +233,7 @@ export default function Contact() {
               </div>
             </div>
             <div className="mt-8 flex justify-end">
-              <button
-                type="submit"
-                className="btn-primary"
-              >
+              <button type="submit" className="btn-primary">
                 Send Message
               </button>
             </div>
@@ -214,5 +241,5 @@ export default function Contact() {
         </motion.div>
       </div>
     </div>
-  )
+  );
 }

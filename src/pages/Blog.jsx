@@ -68,7 +68,7 @@ const fadeIn = {
 
 export default function Blog() {
   return (
-    <div className="bg-white pt-24">
+    <div className="bg-gradient-to-r from-primary to-secondary pt-24">
       <div className="container-custom py-24">
         <motion.div
           className="mx-auto max-w-2xl text-center"
@@ -76,12 +76,15 @@ export default function Blog() {
           animate="animate"
           variants={fadeIn}
         >
-          <h2 className="text-base font-semibold leading-7 text-primary">Our Blog</h2>
+          <h2 className="text-base font-semibold leading-7 text-primary">
+            Our Blog
+          </h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Latest Insights & News
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Stay up to date with the latest trends, technologies, and best practices in the digital world.
+            Stay up to date with the latest trends, technologies, and best
+            practices in the digital world.
           </p>
         </motion.div>
 
@@ -117,10 +120,16 @@ export default function Blog() {
                       {post.title}
                     </a>
                   </h3>
-                  <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">{post.description}</p>
+                  <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
+                    {post.description}
+                  </p>
                 </div>
                 <div className="relative mt-8 flex items-center gap-x-4">
-                  <img src={post.author.imageUrl} alt="" className="h-10 w-10 rounded-full bg-gray-50" />
+                  <img
+                    src={post.author.imageUrl}
+                    alt=""
+                    className="h-10 w-10 rounded-full bg-gray-50"
+                  />
                   <div className="text-sm leading-6">
                     <p className="font-semibold text-gray-900">
                       <a href="#">
@@ -137,10 +146,7 @@ export default function Blog() {
         </motion.div>
 
         <div className="mt-16 text-center">
-          <Link
-            to="#"
-            className="btn-primary inline-flex items-center gap-x-2"
-          >
+          <Link to="#" className="btn-primary inline-flex items-center gap-x-2">
             View All Posts
             <svg
               className="h-5 w-5"
@@ -158,5 +164,5 @@ export default function Blog() {
         </div>
       </div>
     </div>
-  )
+  );
 }

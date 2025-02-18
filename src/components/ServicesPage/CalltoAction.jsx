@@ -18,7 +18,7 @@ function CalltoAction() {
             Let's discuss how we can help you achieve your goals
           </p>
           <motion.button
-            className="bg-white text-primary px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300"
+            className="bg-black text-primary px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

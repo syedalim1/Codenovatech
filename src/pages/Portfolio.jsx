@@ -67,11 +67,6 @@ const fadeIn = {
   transition: { duration: 0.5 }
 }
 
-const slideIn = {
-  initial: { x: -50, opacity: 0 },
-  animate: { x: 0, opacity: 1 },
-  transition: { duration: 0.5 }
-}
 
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState('all')
@@ -81,7 +76,7 @@ export default function Portfolio() {
   )
 
   return (
-    <div className="bg-white pt-24">
+    <div className="bg-gradient-to-r from-primary to-secondary pt-24">
       {/* Hero Section with Animated Background */}
       <div className="relative overflow-hidden bg-gradient-bg py-24">
         <motion.div
@@ -90,7 +85,7 @@ export default function Portfolio() {
           animate="animate"
           variants={fadeIn}
         >
-          <motion.h1 
+          <motion.h1
             className="text-4xl font-bold mb-6 animated-text"
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -98,8 +93,10 @@ export default function Portfolio() {
           >
             Discover Our Success Stories
           </motion.h1>
-          <p className="text-xl mb-8">Innovative Solutions for the Digital Age</p>
-          <motion.button 
+          <p className="text-xl mb-8">
+            Innovative Solutions for the Digital Age
+          </p>
+          <motion.button
             className="btn-primary"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -116,12 +113,15 @@ export default function Portfolio() {
           animate="animate"
           variants={fadeIn}
         >
-          <h2 className="text-base font-semibold leading-7 text-primary">Our Portfolio</h2>
+          <h2 className="text-base font-semibold leading-7 text-primary">
+            Our Portfolio
+          </h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Featured Projects
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Explore our successful projects and see how we've helped businesses achieve their goals.
+            Explore our successful projects and see how we've helped businesses
+            achieve their goals.
           </p>
         </motion.div>
 
@@ -133,8 +133,8 @@ export default function Portfolio() {
                 onClick={() => setActiveCategory(category.id)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   activeCategory === category.id
-                    ? 'bg-primary text-white'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    ? "bg-primary text-white"
+                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
               >
                 {category.name}
@@ -157,7 +157,10 @@ export default function Portfolio() {
               >
                 <div className="p-8">
                   <div className="flex items-center gap-x-4">
-                    <project.icon className="h-8 w-8 text-primary" aria-hidden="true" />
+                    <project.icon
+                      className="h-8 w-8 text-primary"
+                      aria-hidden="true"
+                    />
                     <h3 className="text-xl font-semibold leading-7 text-gray-900">
                       {project.title}
                     </h3>
@@ -191,5 +194,5 @@ export default function Portfolio() {
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -40,7 +40,7 @@ function ServicesbenefitsSection() {
         {benefits.map((benefit, index) => (
           <motion.div
             key={benefit.title}
-            className="p-6 text-center bg-gradient-to-b from-gray-800 to-gray-700 rounded-2xl shadow-lg glass-effect"
+            className="p-6 text-center bg-black rounded-2xl shadow-lg glass-effect"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
