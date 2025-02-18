@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { FaCode, FaMobile, FaRobot, FaServer } from 'react-icons/fa'
+import { FaCode, FaMobile, FaRobot, FaServer, FaStar, FaUsers, FaChartLine } from 'react-icons/fa'
 
 const projects = [
   {
@@ -13,6 +13,7 @@ const projects = [
       { name: 'User Engagement', value: '+80%' },
     ],
     icon: FaCode,
+    successStory: 'Increased sales by 150% within 6 months',
   },
   {
     title: 'Healthcare App',
@@ -24,6 +25,7 @@ const projects = [
       { name: 'Data Accuracy', value: '99.9%' },
     ],
     icon: FaMobile,
+    successStory: 'Improved patient engagement by 200%',
   },
   {
     title: 'AI Trading System',
@@ -35,6 +37,7 @@ const projects = [
       { name: 'ROI Improvement', value: '+65%' },
     ],
     icon: FaRobot,
+    successStory: 'Achieved 40% more ROI in Q1 2025',
   },
   {
     title: 'Payment Gateway API',
@@ -46,6 +49,7 @@ const projects = [
       { name: 'Success Rate', value: '99.9%' },
     ],
     icon: FaServer,
+    successStory: 'Handled 1M transactions per day with 99.99% uptime',
   },
 ]
 
@@ -63,6 +67,12 @@ const fadeIn = {
   transition: { duration: 0.5 }
 }
 
+const slideIn = {
+  initial: { x: -50, opacity: 0 },
+  animate: { x: 0, opacity: 1 },
+  transition: { duration: 0.5 }
+}
+
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState('all')
 
@@ -72,6 +82,33 @@ export default function Portfolio() {
 
   return (
     <div className="bg-white pt-24">
+      {/* Hero Section with Animated Background */}
+      <div className="relative overflow-hidden bg-gradient-bg py-24">
+        <motion.div
+          className="container-custom text-center text-white"
+          initial="initial"
+          animate="animate"
+          variants={fadeIn}
+        >
+          <motion.h1 
+            className="text-4xl font-bold mb-6 animated-text"
+            initial={{ scale: 0.5, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            Discover Our Success Stories
+          </motion.h1>
+          <p className="text-xl mb-8">Innovative Solutions for the Digital Age</p>
+          <motion.button 
+            className="btn-primary"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Contact Us <FaChartLine className="inline ml-2" />
+          </motion.button>
+        </motion.div>
+      </div>
+
       <div className="container-custom py-24">
         <motion.div
           className="mx-auto max-w-2xl text-center"
@@ -127,6 +164,9 @@ export default function Portfolio() {
                   </div>
                   <p className="mt-4 text-sm leading-6 text-gray-600">
                     {project.description}
+                  </p>
+                  <p className="mt-4 text-sm text-primary font-semibold">
+                    {project.successStory}
                   </p>
                 </div>
                 <div className="mt-auto bg-gray-50 p-8">

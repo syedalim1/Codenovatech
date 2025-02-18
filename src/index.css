@@ -5,6 +5,18 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    @apply text-white;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-white;
+  }
+  p {
+    @apply text-white;
+  }
+  a {
+    @apply text-white hover:text-white/80;
+  }
   html {
     font-family: 'Roboto', sans-serif;
   }
@@ -13,9 +25,30 @@
   }
 }
 
+:root {
+  --primary-color: #ffffff;
+}
+
+/* Custom styles */
+.text-primary {
+  color: var(--primary-color);
+}
+
+.border-primary {
+  border-color: var(--primary-color);
+}
+
+.hover\:text-primary:hover {
+  color: var(--primary-color);
+}
+
+.bg-primary {
+  background-color: var(--primary-color);
+}
+
 @layer components {
   .btn-primary {
-    @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity;
+    @apply  text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity;
   }
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
