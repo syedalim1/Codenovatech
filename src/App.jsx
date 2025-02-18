@@ -14,30 +14,32 @@ const Contact = lazy(() => import('./pages/Contact'))
 
 function App() {
   return (
-    <Router>
-      <Background />
-      <div className="relative min-h-screen">
-        <Navbar />
-        <Suspense fallback={
-          <div className="flex items-center justify-center min-h-screen">
-            <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-primary"></div>
-          </div>
-        }>
-         
-          <Routes>
-          
-            <Route path="/" element={<Home />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </Suspense>
-        <Footer />
-      </div>
-    </Router>
-  )
+    <div className="bg-gradient-to-b from-gray-900 to-gray-800">
+      <Router>
+        <Background />
+        <div className="relative min-h-screen">
+          <Navbar />
+          <Suspense
+            fallback={
+              <div className="flex items-center justify-center min-h-screen">
+                <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-primary"></div>
+              </div>
+            }
+          >
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </Suspense>
+          <Footer />
+        </div>
+      </Router>
+    </div>
+  );
 }
 
 export default App

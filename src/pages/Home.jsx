@@ -9,7 +9,7 @@ import Testimonialssection from "../components/HomePage/Testimonialssection";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="bg-gradient-to-b from-gray-900 to-gray-800">
       {/* Hero Section */}
       <Herosection />
       {/* Services Section */}
