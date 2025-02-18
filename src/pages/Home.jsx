@@ -9,7 +9,7 @@ import Testimonialssection from "../components/HomePage/Testimonialssection";
 
 export default function Home() {
   return (
-    <div className="bg-gradient-to-r from-primary to-secondary">
+    <div className="">
       {/* Hero Section */}
       <Herosection />
       {/* Services Section */}

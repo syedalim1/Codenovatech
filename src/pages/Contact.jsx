@@ -1,29 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
+import Data from './posts'
 
-const contactMethods = [
-  {
-    name: 'Phone',
-    description: 'Mon-Fri 9am to 6pm EST',
-    link: 'tel:+1 (555) 123-4567',
-    value: '+1 (555) 123-4567',
-    icon: FaPhone,
-  },
-  {
-    name: 'Email',
-    description: '24/7 Support',
-    link: 'mailto:hello@codenovatech.com',
-    value: 'hello@codenovatech.com',
-    icon: FaEnvelope,
-  },
-  {
-    name: 'Office',
-    description: 'Visit us at',
-    value: '123 Innovation Street, Silicon Valley, CA 94025',
-    icon: FaMapMarkerAlt,
-  },
-]
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -56,7 +34,7 @@ export default function Contact() {
   }
 
   return (
-    <div className="bg-gradient-to-r from-primary to-secondary pt-24">
+    <div className=" pt-24">
       <div className="container-custom py-24">
         <motion.div
           className="mx-auto max-w-2xl text-center"
@@ -71,7 +49,7 @@ export default function Contact() {
             Get in Touch
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Have a project in mind? Let's discuss how we can help you achieve
+            Have a project in mind? Let is discuss how we can help you achieve
             your goals.
           </p>
         </motion.div>
@@ -82,7 +60,7 @@ export default function Contact() {
           animate="animate"
           variants={fadeIn}
         >
-          {contactMethods.map((method) => (
+          {Data.contactMethods.map((method) => (
             <div
               key={method.name}
               className="flex flex-col items-center text-center"
@@ -93,10 +71,10 @@ export default function Contact() {
                   aria-hidden="true"
                 />
               </div>
-              <h3 className="mt-6 text-base font-semibold leading-7 text-gray-900">
+              <h3 className="mt-6 text-base font-semibold leading-7 text-white">
                 {method.name}
               </h3>
-              <p className="mt-1 text-sm leading-6 text-gray-600">
+              <p className="mt-1 text-sm leading-6 text-black">
                 {method.description}
               </p>
               {method.link ? (
@@ -107,7 +85,7 @@ export default function Contact() {
                   {method.value}
                 </a>
               ) : (
-                <p className="mt-1 text-base font-medium text-gray-900">
+                <p className="mt-1 text-base font-medium text-white">
                   {method.value}
                 </p>
               )}

@@ -15,7 +15,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed w-full backdrop-blur-sm shadow-sm z-50 bg-gradient-to-r from-primary to-secondary">
+    <header className="fixed w-full shadow-sm z-50 ">
       <nav className="container-custom flex items-center justify-between py-4">
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5">

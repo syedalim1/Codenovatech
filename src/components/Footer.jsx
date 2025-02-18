@@ -43,7 +43,7 @@ const navigation = {
 export default function Footer() {
   return (
     <footer
-      className="bg-gradient-to-r from-primary to-secondary"
+      className=""
       aria-labelledby="footer-heading"
     >
       <h2 id="footer-heading" className="sr-only">
