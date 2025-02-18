@@ -1,6 +1,18 @@
 import { FaEnvelope, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 
 const Data = {
+  featured: [
+    {
+      id: 0,
+      title: "Featured Post Title",
+      excerpt: "Featured post excerpt...",
+      imageUrl: "/featured-post.jpg",
+      date: "2023-08-01",
+      readTime: "5 min read",
+      slug: "/blog/featured-post",
+      // ... other fields
+    },
+  ],
   posts: [
     {
       id: 1,
@@ -59,28 +71,28 @@ const Data = {
       },
     },
   ],
-  contactMethods:[
-     {
-        name: 'Phone',
-        description: 'Mon-Fri 9am to 6pm EST',
-        link: 'tel:+1 (555) 123-4567',
-        value: '+1 (555) 123-4567',
-        icon: FaPhone,
-      },
-      {
-        name: 'Email',
-        description: '24/7 Support',
-        link: 'mailto:hello@codenovatech.com',
-        value: 'hello@codenovatech.com',
-        icon: FaEnvelope,
-      },
-      {
-        name: 'Office',
-        description: 'Visit us at',
-        value: '123 Innovation Street, Silicon Valley, CA 94025',
-        icon: FaMapMarkerAlt,
-      },
-  ]
+  contactMethods: [
+    {
+      name: "Phone",
+      description: "Mon-Fri 9am to 6pm EST",
+      link: "tel:+1 (555) 123-4567",
+      value: "+1 (555) 123-4567",
+      icon: FaPhone,
+    },
+    {
+      name: "Email",
+      description: "24/7 Support",
+      link: "mailto:hello@codenovatech.com",
+      value: "hello@codenovatech.com",
+      icon: FaEnvelope,
+    },
+    {
+      name: "Office",
+      description: "Visit us at",
+      value: "123 Innovation Street, Silicon Valley, CA 94025",
+      icon: FaMapMarkerAlt,
+    },
+  ],
 };
 
 export default Data;

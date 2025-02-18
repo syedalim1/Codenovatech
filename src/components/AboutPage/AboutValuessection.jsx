@@ -1,24 +1,41 @@
 import { motion } from "framer-motion";
+import {
+  FaRocket,
+  FaMedal,
+  FaHandshake,
+  FaUsers,
+  FaChartLine,
+} from "react-icons/fa";
+import { SiGooglescholar } from "react-icons/si";
+
 const values = [
   {
     name: "Innovation",
-    description:
-      "We constantly push the boundaries of technology to deliver cutting-edge solutions that keep our clients ahead of the curve.",
+    icon: FaRocket,
+    description: "Pioneering solutions that drive digital transformation",
+    stat: "150+ Innovative Projects Deployed",
+    color: "from-teal-500 to-blue-600",
   },
   {
     name: "Excellence",
-    description:
-      "We maintain the highest standards in our work, ensuring every project we deliver exceeds expectations and delivers real value.",
+    icon: FaMedal,
+    description: "Award-winning quality in every deliverable",
+    stat: "98% Client Satisfaction Rate",
+    color: "from-purple-500 to-pink-600",
   },
   {
     name: "Transparency",
-    description:
-      "We believe in open communication and keeping our clients informed at every stage of the development process.",
+    icon: FaHandshake,
+    description: "Full visibility into development processes",
+    stat: "100% Project Milestones Met",
+    color: "from-orange-500 to-red-600",
   },
   {
     name: "Client-Centric",
-    description:
-      "Our clients success is our success. We work closely with each client to understand their unique needs and deliver tailored solutions.",
+    icon: FaUsers,
+    description: "Tailored solutions for unique business needs",
+    stat: "85% Long-Term Client Retention",
+    color: "from-green-500 to-cyan-600",
   },
 ];
 
@@ -27,56 +44,130 @@ const fadeIn = {
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.5 },
 };
-function AboutValuessection() {
+
+const staggerChildren = {
+  animate: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+function AboutValuesSection() {
   return (
-    <div>
-      <div className="container-custom py-24">
-        <div className="mx-auto max-w-2xl">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center">
-            Our Values
+    <div className="relative bg-gradient-to-b from-gray-50 to-white py-24 overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute -top-40 left-1/3 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl" />
+      </div>
+
+      <div className="container-custom relative z-10">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            Core Principles
           </h2>
-          <p className="mt-6 text-lg leading-8 text-gray-600 text-center">
-            These core values guide everything we do and help us deliver
-            exceptional results for our clients.
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            The foundation of our success in delivering exceptional technical
+            solutions
           </p>
-        </div>
-        <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-16">
-          {values.map((value) => (
+        </motion.div>
+
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          variants={staggerChildren}
+          initial="initial"
+          animate="animate"
+        >
+          {values.map((value, index) => (
             <motion.div
-              key={value.name}
-              className="relative pl-9"
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
+              key={index}
+              className="group p-8 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all"
               variants={fadeIn}
+              whileHover={{ y: -10 }}
             >
-              <dt className="inline font-semibold text-gray-900">
-                <svg
-                  className="absolute left-1 top-1 h-5 w-5 text-primary"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M4.606 12.97a.75.75 0 01-.134 1.051 2.494 2.494 0 00-.93 2.437 2.494 2.494 0 002.437-.93.75.75 0 111.186.918 3.995 3.995 0 01-4.482 1.332.75.75 0 01-.461-.461 3.994 3.994 0 011.332-4.482.75.75 0 011.052.134z"
-                    clipRule="evenodd"
-                  />
-                  <path
-                    fillRule="evenodd"
-                    d="M5.752 12A13.07 13.07 0 008 14.248v4.002c0 .414.336.75.75.75a5 5 0 004.797-6.414 12.984 12.984 0 005.45-10.848.75.75 0 00-.735-.735 12.984 12.984 0 00-10.849 5.45A5 5 0 001 11.25c.001.414.337.75.751.75h4.002zM13 9a2 2 0 100-4 2 2 0 000 4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+              <div
+                className={`mb-6 p-4 rounded-xl bg-gradient-to-r ${value.color} w-fit`}
+              >
+                <value.icon className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 {value.name}
-              </dt>
-              <dd className="inline"> {value.description}</dd>
+              </h3>
+              <p className="text-gray-600 mb-6">{value.description}</p>
+              <div className="flex items-center gap-3 text-sm text-teal-600 font-medium">
+                <FaChartLine className="h-5 w-5" />
+                <span>{value.stat}</span>
+              </div>
             </motion.div>
           ))}
-        </dl>
+        </motion.div>
+
+        {/* Trust Badges */}
+        <motion.div
+          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="p-6 bg-white rounded-xl shadow-md flex items-center gap-4">
+            <SiGooglescholar className="h-8 w-8 text-teal-600" />
+            <div>
+              <div className="text-xl font-bold text-gray-900">ISO 27001</div>
+              <div className="text-sm text-gray-600">Certified Security</div>
+            </div>
+          </div>
+
+          <div className="p-6 bg-white rounded-xl shadow-md flex items-center gap-4">
+            <FaMedal className="h-8 w-8 text-purple-600" />
+            <div>
+              <div className="text-xl font-bold text-gray-900">5★ Rating</div>
+              <div className="text-sm text-gray-600">Client Reviews</div>
+            </div>
+          </div>
+
+          <div className="p-6 bg-white rounded-xl shadow-md flex items-center gap-4">
+            <FaUsers className="h-8 w-8 text-orange-600" />
+            <div>
+              <div className="text-xl font-bold text-gray-900">200+</div>
+              <div className="text-sm text-gray-600">Satisfied Clients</div>
+            </div>
+          </div>
+
+          <div className="p-6 bg-white rounded-xl shadow-md flex items-center gap-4">
+            <FaRocket className="h-8 w-8 text-green-600" />
+            <div>
+              <div className="text-xl font-bold text-gray-900">10+ Years</div>
+              <div className="text-sm text-gray-600">Industry Experience</div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* CTA Section */}
+        <motion.div
+          className="mt-16 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+        >
+          <p className="text-xl text-gray-600 mb-8">
+            Ready to experience our value-driven development approach?
+          </p>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            className="bg-gradient-to-r from-teal-500 to-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all"
+          >
+            Start Your Project Today
+          </motion.button>
+        </motion.div>
       </div>
     </div>
   );
 }
 
-export default AboutValuessection;
+export default AboutValuesSection;
