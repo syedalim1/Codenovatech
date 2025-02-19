@@ -48,7 +48,7 @@ const stats = [
 
 function AboutStatsSection() {
   return (
-    <div className="relative bg-gradient-to-b from-gray-50 to-white py-24 overflow-hidden">
+    <div className="relative  py-24 overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute -top-40 left-1/3 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl" />

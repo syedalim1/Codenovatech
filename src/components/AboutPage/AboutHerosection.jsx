@@ -19,7 +19,7 @@ const staggerChildren = {
 
 function AboutHeroSection() {
   return (
-    <div className="relative isolate overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800">
+    <div className="relative isolate overflow-hidden ">
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute -top-40 -left-40 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-blob" />

@@ -5,9 +5,9 @@ import { SiGooglecloud, SiAwslambda } from "react-icons/si";
 
 const teamMembers = [
   {
-    name: "Praveen Kumar S",
+    name: "Syed Ali M",
     role: "Lead Full-Stack Developer",
-    image: "./praveen.jpg",
+    image: "./profile.jpg",
     bio: "10+ years experience in cloud-native applications and system architecture",
     skills: ["Node.js", "AWS", "React", "Microservices"],
     social: { linkedin: "#", github: "#" },
@@ -23,7 +23,7 @@ const teamMembers = [
     certifications: ["Adobe Certified", "Accessibility Specialist"],
   },
   {
-    name: "Syed Ali M",
+    name: "Praveen Kumar S",
     role: "Lead Data Scientist",
     image: "./syed.jpg",
     bio: "Machine learning specialist with focus on NLP and predictive analytics",
