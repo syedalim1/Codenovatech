@@ -11,6 +11,7 @@ const navigation = [
   { name: "About", href: "/about" },
   { name: "Insights", href: "/blog" },
   { name: "Contact", href: "/contact" },
+  { name: "Projects", href: "/projects" },
 ];
 
 export default function Navbar() {
@@ -29,9 +30,8 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? "backdrop-blur-md bg-gray-900/80 shadow-lg" : "bg-transparent"
-      }`}
+      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "backdrop-blur-md bg-gray-900/80 shadow-lg" : "bg-transparent"
+        }`}
     >
       {isLoading && (
         <motion.div
@@ -41,7 +41,7 @@ export default function Navbar() {
           transition={{ duration: 1.5 }}
         />
       )}
-      
+
       <nav className="container-custom flex items-center justify-between py-4">
         <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}>
           <Link to="/" className="flex items-center gap-2">
@@ -67,12 +67,12 @@ export default function Navbar() {
         </div>
 
         <div className="hidden lg:flex items-center gap-6">
-        <div className="hidden lg:flex items-center gap-6">
-  <div className="flex items-center gap-2 group transform transition-all duration-300 hover:scale-110">
-    <FaGlobe className="h-6 w-6 text-white transition-transform duration-300 group-hover:rotate-180" />
-    
-  </div>
-</div>
+          <div className="hidden lg:flex items-center gap-6">
+            <div className="flex items-center gap-2 group transform transition-all duration-300 hover:scale-110">
+              <FaGlobe className="h-6 w-6 text-white transition-transform duration-300 group-hover:rotate-180" />
+
+            </div>
+          </div>
 
 
           <motion.div whileHover={{ scale: 1.05 }}>
@@ -84,7 +84,7 @@ export default function Navbar() {
             </Link>
           </motion.div>
 
-        
+
         </div>
 
         <button
