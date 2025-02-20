@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { FaRegClock, FaChartLine, FaCertificate } from "react-icons/fa";
+import { FaRegClock, FaChartLine } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -40,13 +40,6 @@ const latestNews = [
 ];
 
 function LatestNewsSection() {
-  const stats = [
-    { value: "250+", label: "Projects Completed" },
-    { value: "98%", label: "Client Satisfaction" },
-    { value: "24/7", label: "Support Coverage" },
-    { value: "ISO", label: "Certified Processes" },
-  ];
-
   return (
     <div className="relative  py-24 overflow-hidden">
       {/* Animated background elements */}
@@ -150,24 +143,6 @@ function LatestNewsSection() {
         </Swiper>
 
         {/* Trust & Performance Section */}
-        <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-        >
-          {stats.map((stat, index) => (
-            <div
-              key={stat.label}
-              className="p-6 bg-gray-800/50 rounded-xl border border-gray-700/30"
-            >
-              <div className="text-3xl font-bold text-teal-500 mb-2">
-                {stat.value}
-              </div>
-              <div className="text-sm text-gray-400">{stat.label}</div>
-            </div>
-          ))}
-        </motion.div>
 
         {/* Enterprise CTA */}
         <motion.div

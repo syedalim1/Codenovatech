@@ -7,7 +7,7 @@ const teamMembers = [
   {
     name: "Syed Ali M",
     role: "Lead Full-Stack Developer",
-    image: "./profile.jpg",
+    image: "./syed.jpg",
     bio: "10+ years experience in cloud-native applications and system architecture",
     skills: ["Node.js", "AWS", "React", "Microservices"],
     social: { linkedin: "#", github: "#" },
@@ -25,7 +25,7 @@ const teamMembers = [
   {
     name: "Praveen Kumar S",
     role: "Lead Data Scientist",
-    image: "./syed.jpg",
+    image: "./praveen.jpg",
     bio: "Machine learning specialist with focus on NLP and predictive analytics",
     skills: ["Python", "TensorFlow", "PyTorch", "Big Data"],
     social: { linkedin: "#", github: "#" },
@@ -161,7 +161,7 @@ function TeamSection() {
           transition={{ duration: 0.8 }}
         >
           <div className="p-6 bg-gray-800/50 rounded-xl border border-gray-700/30">
-            <div className="text-3xl font-bold text-teal-500 mb-2">150+</div>
+            <div className="text-3xl font-bold text-teal-500 mb-2">100+</div>
             <div className="text-sm text-gray-400">Projects Delivered</div>
           </div>
           <div className="p-6 bg-gray-800/50 rounded-xl border border-gray-700/30">

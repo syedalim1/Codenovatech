@@ -1,4 +1,4 @@
-import { FaEnvelope, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
+
 
 const Data = {
   featured: [
@@ -71,28 +71,7 @@ const Data = {
       },
     },
   ],
-  contactMethods: [
-    {
-      name: "Phone",
-      description: "Mon-Fri 9am to 6pm EST",
-      link: "tel:+1 (555) 123-4567",
-      value: "+1 (555) 123-4567",
-      icon: FaPhone,
-    },
-    {
-      name: "Email",
-      description: "24/7 Support",
-      link: "mailto:hello@codenovatech.com",
-      value: "hello@codenovatech.com",
-      icon: FaEnvelope,
-    },
-    {
-      name: "Office",
-      description: "Visit us at",
-      value: "123 Innovation Street, Silicon Valley, CA 94025",
-      icon: FaMapMarkerAlt,
-    },
-  ],
+ 
 };
 
 export default Data;

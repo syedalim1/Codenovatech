@@ -182,7 +182,7 @@ export default function Footer() {
           className="mt-16 flex flex-wrap justify-center gap-6"
           variants={fadeIn}
         >
-          <img src="/ssl-secured.png" alt="SSL Secured" className="h-12" />
+          <img src="/SSLSecured.png" alt="SSL Secured" className="h-12" />
           <img src="/iso-certified.png" alt="ISO Certified" className="h-12" />
           <img
             src="/gdpr-compliant.png"

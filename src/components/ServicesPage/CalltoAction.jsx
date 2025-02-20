@@ -12,7 +12,7 @@ import ContactModal from "./ContactModal";
 import FloatingShapes from "./FloatingShapes";
 
 const stats = [
-  { value: "250+", label: "Projects Delivered" },
+  { value: "100+", label: "Projects Delivered" },
   { value: "98%", label: "Client Satisfaction" },
   { value: "24/7", label: "Support Available" },
   { value: "ISO27001", label: "Certified Security" },
@@ -28,7 +28,7 @@ function CallToAction() {
 
       <div className="relative z-10">
         <motion.div
-          className="bg-gradient-to-br from-gray-900 to-primary/20 py-24 border-t border-b border-gray-800"
+          className=" py-24 border-t border-b border-gray-800"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}

@@ -8,6 +8,8 @@ import {
   FaShieldAlt,
   FaChartLine,
   FaRegClock,
+  FaAward,
+  FaProjectDiagram,
 } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
 
@@ -19,9 +21,8 @@ function ServicesSection() {
         "Build scalable, responsive web applications with modern tech stack",
       icon: FaCode,
       href: "/services#web",
-      stats: "150+ Projects Delivered",
+      stats: "100+ Projects Delivered",
       tech: ["React", "Next.js", "Node.js", "GraphQL"],
-      image: "/web-dev-illustration.svg",
     },
     {
       name: "Mobile App Development",
@@ -31,7 +32,6 @@ function ServicesSection() {
       href: "/services#app",
       stats: "98% Client Satisfaction",
       tech: ["React Native", "Flutter", "Swift", "Kotlin"],
-      image: "/mobile-dev-illustration.svg",
     },
     {
       name: "AI & Machine Learning",
@@ -41,7 +41,6 @@ function ServicesSection() {
       href: "/services#ai",
       stats: "40% Avg. Efficiency Boost",
       tech: ["TensorFlow", "PyTorch", "NLP", "Computer Vision"],
-      image: "/ai-illustration.svg",
     },
     {
       name: "API Development",
@@ -50,14 +49,16 @@ function ServicesSection() {
       href: "/services#api",
       stats: "99.9% Uptime Guarantee",
       tech: ["REST", "gRPC", "WebSocket", "OAuth2"],
-      image: "/api-illustration.svg",
     },
   ];
 
   const trustBadges = [
     { icon: FaShieldAlt, text: "GDPR Compliant" },
-    { icon: FaChartLine, text: "ISO 27001 Certified" },
+
     { icon: FaRegClock, text: "24/7 Support" },
+    { text: "ISO 9001 Certified", icon: FaAward },
+
+    { text: "AWS Partner", icon: FaProjectDiagram },
   ];
 
   return (
@@ -101,11 +102,6 @@ function ServicesSection() {
               {/* Service Icon & Image */}
               <div className="flex items-center gap-4 mb-6">
                 <service.icon className="h-8 w-8 text-teal-500" />
-                <img
-                  src={service.image}
-                  alt={service.name}
-                  className="h-12 w-12 object-contain opacity-90 group-hover:opacity-100 transition-opacity"
-                />
               </div>
 
               {/* Service Content */}
@@ -171,7 +167,7 @@ function ServicesSection() {
             whileHover={{ scale: 1.05 }}
             className="p-6 bg-gray-800/50 rounded-xl"
           >
-            <div className="text-4xl font-bold text-teal-500 mb-2">250+</div>
+            <div className="text-4xl font-bold text-teal-500 mb-2">100+</div>
             <div className="text-gray-400">Projects Completed</div>
           </motion.div>
           <motion.div

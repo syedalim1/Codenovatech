@@ -76,7 +76,7 @@ function AboutHeroSection() {
               variants={staggerChildren}
             >
               {[
-                { icon: FaRocket, value: "150+", label: "Projects Deployed" },
+                { icon: FaRocket, value: "100+", label: "Projects Deployed" },
                 { icon: FaUsers, value: "98%", label: "Client Retention" },
                 { icon: FaAward, value: "25+", label: "Industry Awards" },
                 { icon: FaCode, value: "1M+", label: "Lines of Code" },
@@ -127,6 +127,7 @@ function AboutHeroSection() {
         </motion.div>
 
         {/* Timeline */}
+        {/* Timeline */}
         <motion.div
           className="mt-16 border-t border-gray-800 pt-16"
           variants={staggerChildren}
@@ -135,34 +136,106 @@ function AboutHeroSection() {
           <div className="grid gap-8 md:grid-cols-3">
             {[
               {
-                year: "2019",
-                title: "Founded",
-                description: "Started as a small team of passionate developers",
+                year: "2025",
+                title: "Company Founded",
+                description:
+                  "Launched with a vision to revolutionize tech solutions",
+                icon: (
+                  <svg
+                    className="w-6 h-6 text-teal-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                  </svg>
+                ),
+                stats: "5 core team members | $2M seed funding",
               },
               {
-                year: "2021",
-                title: "Expansion",
-                description: "Opened international offices in 3 countries",
+                year: "2026",
+                title: "Global Expansion",
+                description:
+                  "Opened offices in 3 continents and doubled workforce",
+                icon: (
+                  <svg
+                    className="w-6 h-6 text-teal-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                ),
+                stats: "50+ employees | 3 international offices",
               },
               {
-                year: "2023",
-                title: "AI Focus",
-                description: "Launched dedicated AI/ML division",
+                year: "2027",
+                title: "AI Breakthrough",
+                description:
+                  "Launched industry-first AI platform with 95% accuracy",
+                icon: (
+                  <svg
+                    className="w-6 h-6 text-teal-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
+                    />
+                  </svg>
+                ),
+                stats: "10K+ active users | 98% client retention",
               },
             ].map((milestone, index) => (
               <motion.div
                 key={index}
-                className="p-6 bg-gray-800/50 rounded-xl border border-gray-700/50 hover:border-teal-500/30 transition-colors"
+                className="p-6 bg-gray-800/50 rounded-xl border border-gray-700/50 hover:border-teal-500/30 transition-colors group relative overflow-hidden"
                 variants={fadeIn}
                 whileHover={{ y: -5 }}
               >
-                <div className="text-teal-500 font-bold text-xl mb-2">
-                  {milestone.year}
+                {/* Animated background effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 bg-gray-700/50 rounded-lg">
+                    {milestone.icon}
+                  </div>
+                  <div className="text-teal-500 font-bold text-xl">
+                    {milestone.year}
+                  </div>
                 </div>
                 <h4 className="text-lg font-semibold text-white mb-2">
                   {milestone.title}
                 </h4>
-                <p className="text-gray-400">{milestone.description}</p>
+                <p className="text-gray-400 mb-3">{milestone.description}</p>
+                <div className="text-sm text-teal-400/80 font-mono">
+                  {milestone.stats}
+                </div>
+
+                {/* Progress line for future milestones */}
+                {index !== 0 && (
+                  <div className="absolute top-0 left-0 w-1 h-full bg-teal-500/20">
+                    <div
+                      className="w-full h-full bg-teal-500 animate-pulse"
+                      style={{ width: "2px" }}
+                    />
+                  </div>
+                )}
               </motion.div>
             ))}
           </div>

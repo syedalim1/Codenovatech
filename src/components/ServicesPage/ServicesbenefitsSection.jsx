@@ -13,7 +13,7 @@ const benefits = [
   {
     icon: FaStar,
     title: "Quality Excellence",
-    description: "150+ projects delivered with 98% client satisfaction",
+    description: "100+ projects delivered with 98% client satisfaction",
     stat: "ISO 9001 Certified",
     color: "from-purple-500 to-pink-500",
     pattern: "pattern-1",
@@ -46,7 +46,7 @@ const benefits = [
 
 function ServicesBenefitsSection() {
   return (
-    <div className="relative py-24 overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800">
+    <div className="relative py-24 overflow-hidden 800">
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-20">
         <motion.div

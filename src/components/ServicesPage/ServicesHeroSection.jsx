@@ -118,7 +118,7 @@ function ServicesHeroSection() {
         >
           {[
             { value: "5+", label: "Years Experience" },
-            { value: "150+", label: "Projects Delivered" },
+            { value: "100+", label: "Projects Delivered" },
             { value: "98%", label: "Client Satisfaction" },
             { value: "24/7", label: "Support Coverage" },
           ].map((stat, index) => (

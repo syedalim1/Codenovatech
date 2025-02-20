@@ -9,7 +9,7 @@ const fadeIn = {
 };
 
 const stats = [
-  { value: "500+", label: "Projects Completed" },
+  { value: "100+", label: "Projects Completed" },
   { value: "99%", label: "Client Satisfaction" },
   { value: "1M+", label: "Revenue Generated" },
   { value: "50+", label: "Awards Won" },
@@ -23,7 +23,7 @@ const trustedClients = [
 
 const PortfolioHeroSection = () => {
   return (
-    <div className="relative overflow-hidden bg-gradient-to-br from-blue-900 to-indigo-900 py-24">
+    <div className="relative overflow-hidden  py-24">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(6)].map((_, i) => (

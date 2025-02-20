@@ -5,7 +5,7 @@ import Servicessection from "../components/ServicesPage/Servicessection";
 
 export default function Services() {
   return (
-    <div className=" pt-24">
+    <div className="bg-gradient-to-b from-gray-900 to-gray-800 pt-24">
       {/* Hero Section with Animated Background */}
       <ServicesHeroSection />
 
@@ -14,7 +14,7 @@ export default function Services() {
         <ServicesbenefitsSection />
 
         {/* Services Section */}
-        <h1>Giii</h1>
+
         <Servicessection />
       </div>
 

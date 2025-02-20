@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import CountUp from "react-countup";
 
 import {
@@ -16,57 +16,14 @@ import { FaUsers, FaProjectDiagram, FaRegClock } from "react-icons/fa";
 import { FiActivity } from "react-icons/fi";
 
 function StatisticsSection() {
-  const [isVisible, setIsVisible] = useState(false);
-  const statsRef = useRef(null);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const fadeIn = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.5 },
-  };
-
-  const stats = [
-    {
-      icon: FaChartLine,
-      value: 150,
-      suffix: "+",
-      label: "Projects Delivered",
-      description: "Successful deployments across multiple industries",
-    },
-    {
-      icon: FaUser,
-      value: 98,
-      suffix: "%",
-      label: "Client Satisfaction",
-      description: "Consistently high client feedback scores",
-    },
-    {
-      icon: FaCode,
-      value: 50,
-      suffix: "+",
-      label: "Technologies Used",
-      description: "Cutting-edge tools and frameworks",
-    },
-    {
-      icon: FaNewspaper,
-      value: 10,
-      suffix: "+",
-      label: "Years of Experience",
-      description: "Proven track record since 2013",
-    },
-  ];
-
-  const certifications = [
-    { icon: SiAwslambda, text: "AWS Certified" },
-    { icon: SiGooglecloud, text: "Google Cloud Partner" },
-    { icon: FaShieldAlt, text: "GDPR Compliant" },
-    { icon: FaAward, text: "ISO 27001 Certified" },
-  ];
   const statistics = [
     {
       id: 1,
       name: "Projects Completed",
-      value: 250,
+      value: 100,
       icon: FaProjectDiagram,
       suffix: "+",
       color: "#3E92CC",
@@ -102,7 +59,7 @@ function StatisticsSection() {
       value: 24,
       icon: FaRegClock,
       suffix: "/7",
-      color: "#EF4444",
+      color: "#EC4899",
     },
     {
       id: 6,
@@ -115,271 +72,55 @@ function StatisticsSection() {
     },
   ];
 
-  const trustBadges = [
-    { text: "ISO 9001 Certified", icon: FaAward },
-    { text: "GDPR Compliant", icon: FaChartLine },
-    { text: "AWS Partner", icon: FaProjectDiagram },
-  ];
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (statsRef.current) {
-      observer.observe(statsRef.current);
-    }
-
-    return () => {
-      if (statsRef.current) {
-        observer.unobserve(statsRef.current);
-      }
-    };
-  }, []);
-
   return (
-    <div className="relative py-24  overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute -top-32 left-1/3 w-64 h-64 bg-teal-500/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl" />
-      </div>
-
-      <div ref={statsRef} className="container-custom relative z-10">
+    <div className="py-24 relative" ref={ref}>
+      <div className="container-custom">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: isVisible ? 1 : 0 }}
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <motion.h2
-              className="text-3xl font-bold text-white mb-4"
-              initial={{ y: 20 }}
-              animate={{ y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              Driving Digital Excellence
-            </motion.h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              Trusted by industry leaders worldwide - delivering measurable
-              results through technical expertise
-            </p>
-          </div>
+          <h2 className="text-4xl font-bold text-white mb-4">
+            Driving Digital Excellence
+          </h2>
+          <p className="text-xl text-gray-400">
+            Trusted by industry leaders worldwide - delivering measurable results through technical expertise
+          </p>
+        </motion.div>
 
-          {/* Statistics Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
-            {statistics.map((stat, index) => (
-              <motion.div
-                key={stat.id}
-                className="p-6 bg-gray-800/30 rounded-xl border border-gray-700/50 hover:border-teal-500/30 transition-all"
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={isVisible ? { scale: 1, opacity: 1 } : {}}
-                transition={{ delay: index * 0.1, type: "spring" }}
-                whileHover={{ y: -5 }}
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <stat.icon
-                    className="h-6 w-6"
-                    style={{ color: stat.color }}
-                  />
-                  <h3 className="text-sm font-semibold text-gray-300">
-                    {stat.name}
-                  </h3>
-                </div>
-
-                <div className="text-4xl font-bold text-white mb-2">
-                  {isVisible && (
-                    <CountUp
-                      start={0}
-                      end={stat.value}
-                      duration={2}
-                      suffix={stat.suffix}
-                      decimals={stat.decimals || 0}
-                    >
-                      {({ countUpRef }) => <span ref={countUpRef} />}
-                    </CountUp>
-                  )}
-                </div>
-
-                {/* Progress Bar */}
-                <div className="h-1 bg-gray-700/50 rounded-full overflow-hidden">
-                  <motion.div
-                    className="h-full"
-                    style={{ background: stat.color }}
-                    initial={{ width: 0 }}
-                    animate={{ width: isVisible ? "100%" : 0 }}
-                    transition={{ duration: 2, delay: 0.5 }}
-                  />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Trust Badges */}
-          <motion.div
-            className="mt-16 flex flex-wrap justify-center gap-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: isVisible ? 1 : 0 }}
-            transition={{ delay: 0.5 }}
-          >
-            {trustBadges.map((badge) => (
-              <div
-                key={badge.text}
-                className="flex items-center gap-3 px-6 py-3 bg-gray-800/50 rounded-full border border-gray-700/30"
-              >
-                <badge.icon className="h-5 w-5 text-teal-500" />
-                <span className="text-gray-300 text-sm font-medium">
-                  {badge.text}
-                </span>
-              </div>
-            ))}
-          </motion.div>
-
-          {/* Tech Stack Section */}
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {statistics.map((stat) => (
             <motion.div
-              className="p-8 bg-gray-800/50 rounded-2xl"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : -20 }}
-              transition={{ delay: 0.4 }}
+              key={stat.id}
+              className="p-6 bg-gray-800/50 rounded-xl border border-gray-700/50 hover:border-teal-500/30 transition-all duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
+              transition={{ duration: 0.5, delay: stat.id * 0.1 }}
             >
-              <h4 className="text-lg font-semibold text-white mb-4">
-                Tech Stack
-              </h4>
-              <div className="flex flex-wrap gap-3">
-                {[
-                  "React",
-                  "Node.js",
-                  "TensorFlow",
-                  "AWS",
-                  "GraphQL",
-                  "Docker",
-                ].map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1.5 text-sm bg-gray-900/50 text-teal-300 rounded-full"
-                  >
-                    {tech}
-                  </span>
-                ))}
+              <div className="flex items-center gap-4">
+                <stat.icon className="h-8 w-8" style={{ color: stat.color }} />
+                <div className="flex-1">
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-3xl font-bold text-white">
+                      {isInView && (
+                        <CountUp
+                          start={0}
+                          end={stat.value}
+                          duration={2}
+                          decimals={stat.decimals || 0}
+                          separator=","
+                          useEasing={true}
+                        />
+                      )}
+                    </span>
+                    <span className="text-2xl text-white">{stat.suffix}</span>
+                  </div>
+                  <div className="text-sm text-gray-400 mt-1">{stat.name}</div>
+                </div>
               </div>
             </motion.div>
-
-            {/* ... other sections ... */}
-          </div>
-        </motion.div>
-      </div>
-
-      <div className="relative py-24 sm:py-32  overflow-hidden">
-        {/* Animated background elements */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute -top-32 left-1/3 w-64 h-64 bg-teal-500/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl" />
-        </div>
-
-        <div className="container-custom relative z-10">
-          {/* Section Header */}
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-base font-semibold leading-7 text-teal-500">
-              Quantifying Excellence
-            </h2>
-            <motion.p
-              className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl"
-              initial={{ y: 20 }}
-              animate={{ y: 0 }}
-            >
-              Measurable Impact
-            </motion.p>
-            <p className="mt-6 text-lg leading-8 text-gray-400">
-              Our numbers tell the story of consistent delivery and technical
-              expertise
-            </p>
-          </motion.div>
-
-          {/* Statistics Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                className="p-8 bg-gray-800/50 rounded-2xl border border-gray-700/50 hover:border-teal-500/30 transition-all"
-                variants={fadeIn}
-                initial="initial"
-                animate="animate"
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -10 }}
-              >
-                <div className="text-center">
-                  <stat.icon className="h-12 w-12 text-teal-500 mx-auto" />
-                  <div className="mt-6 text-5xl font-bold text-white">
-                    <CountUp
-                      start={0}
-                      end={stat.value}
-                      duration={2}
-                      suffix={stat.suffix}
-                    />
-                  </div>
-                  <h3 className="mt-4 text-xl font-semibold text-white">
-                    {stat.label}
-                  </h3>
-                  <p className="mt-2 text-sm text-gray-400">
-                    {stat.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Certifications */}
-          <motion.div
-            className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            {certifications.map((cert, index) => (
-              <div
-                key={index}
-                className="p-6 bg-gray-800/50 rounded-xl border border-gray-700/30"
-              >
-                <div className="flex items-center gap-4">
-                  <cert.icon className="h-8 w-8 text-teal-500" />
-                  <span className="text-sm text-gray-400">{cert.text}</span>
-                </div>
-              </div>
-            ))}
-          </motion.div>
-
-          {/* Performance Metrics */}
-          <div className="mt-16 p-12 bg-gradient-to-r from-teal-500/20 to-blue-600/20 rounded-3xl">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-white">99.99%</div>
-                <div className="text-sm text-gray-400">System Uptime</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-white">24/7</div>
-                <div className="text-sm text-gray-400">Support Coverage</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-white">200ms</div>
-                <div className="text-sm text-gray-400">Avg API Response</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-white">98%</div>
-                <div className="text-sm text-gray-400">Code Coverage</div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

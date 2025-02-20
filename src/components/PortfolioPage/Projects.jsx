@@ -135,7 +135,7 @@ function Projects() {
   });
 
   return (
-    <div className="bg-gradient-to-b from-gray-50 to-white py-24">
+    <div className=" py-24">
       <div className="container-custom">
         <motion.div
           className="mx-auto max-w-4xl text-center"
@@ -143,12 +143,12 @@ function Projects() {
           animate="animate"
           variants={fadeIn}
         >
-          <div className="inline-flex items-center bg-primary/10 px-4 py-2 rounded-full mb-6">
+          <div className="inline-flex items-center bg-primary/10 text-white px-4 py-2 rounded-full mb-6">
             <span className="text-sm font-semibold text-primary">
               Trusted by 500+ Companies
             </span>
           </div>
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-gray-900 to-primary bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold text-white bg-gradient-to-r from-gray-900 to-primary bg-clip-text text-transparent">
             Transforming Ideas into Digital Success
           </h2>
           <p className="mt-6 text-lg text-gray-600 leading-relaxed">
@@ -166,8 +166,8 @@ function Projects() {
                 onClick={() => setActiveCategory(category.id)}
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
                   activeCategory === category.id
-                    ? "bg-primary text-white shadow-lg"
-                    : "bg-white text-gray-600 shadow-md hover:shadow-lg"
+                    ? "bg-gradient-to-r from-gray-900 to-primary text-white shadow-lg"
+                    : "bg-gary-600 text-white shadow-md hover:shadow-lg"
                 }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -322,22 +322,22 @@ function Projects() {
           </h3>
           <div className="flex justify-center items-center gap-12 flex-wrap">
             <img
-              src="/logos/adobe.svg"
+              src="/logos/adobe.png"
               alt="Adobe"
               className="h-12 w-auto opacity-50 hover:opacity-100 transition-opacity"
             />
             <img
-              src="/logos/microsoft.svg"
+              src="/logos/microsoft.webp"
               alt="Microsoft"
               className="h-12 w-auto opacity-50 hover:opacity-100 transition-opacity"
             />
             <img
-              src="/logos/google.svg"
+              src="/logos/google.png"
               alt="Google"
               className="h-12 w-auto opacity-50 hover:opacity-100 transition-opacity"
             />
             <img
-              src="/logos/aws.svg"
+              src="/logos/aws.png"
               alt="AWS"
               className="h-12 w-auto opacity-50 hover:opacity-100 transition-opacity"
             />

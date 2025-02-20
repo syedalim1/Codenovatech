@@ -4,7 +4,8 @@ import {
   FaMedal,
   FaHandshake,
   FaUsers,
-  FaChartLine,
+  
+  FaTrophy,
 } from "react-icons/fa";
 import { SiGooglescholar } from "react-icons/si";
 
@@ -13,8 +14,11 @@ const values = [
     name: "Innovation",
     icon: FaRocket,
     description: "Pioneering solutions that drive digital transformation",
-    stat: "150+ Innovative Projects Deployed",
+    stat: "50+ Innovative Projects Deployed",
     color: "from-teal-500 to-blue-600",
+    progress: 92, // Percentage for radial progress
+    clients: ["Logo1", "Logo2", "Logo3"], // Client logos
+    achievement: "AI Tech Award 2025 Winner",
   },
   {
     name: "Excellence",
@@ -22,6 +26,9 @@ const values = [
     description: "Award-winning quality in every deliverable",
     stat: "98% Client Satisfaction Rate",
     color: "from-purple-500 to-pink-600",
+    progress: 98,
+    clients: ["Logo4", "Logo5", "Logo6"],
+    achievement: "ISO 9001 Certified",
   },
   {
     name: "Transparency",
@@ -29,6 +36,9 @@ const values = [
     description: "Full visibility into development processes",
     stat: "100% Project Milestones Met",
     color: "from-orange-500 to-red-600",
+    progress: 100,
+    clients: ["Logo7", "Logo8", "Logo9"],
+    achievement: "Forbes Transparency Seal",
   },
   {
     name: "Client-Centric",
@@ -36,6 +46,9 @@ const values = [
     description: "Tailored solutions for unique business needs",
     stat: "85% Long-Term Client Retention",
     color: "from-green-500 to-cyan-600",
+    progress: 85,
+    clients: ["Logo10", "Logo11", "Logo12"],
+    achievement: "Top Partner 2025",
   },
 ];
 
@@ -69,7 +82,7 @@ function AboutValuesSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl font-bold text-white mb-4">
             Core Principles
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -87,22 +100,96 @@ function AboutValuesSection() {
           {values.map((value, index) => (
             <motion.div
               key={index}
-              className="group p-8 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all"
+              className="p-6 bg-gray-800/50 rounded-xl border border-gray-700/50 hover:border-teal-500/30 transition-colors group relative overflow-hidden"
               variants={fadeIn}
               whileHover={{ y: -10 }}
             >
+              {/* Animated background pattern */}
+              <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity">
+                <div
+                  className={`absolute inset-0 bg-gradient-to-r ${value.color} opacity-20`}
+                />
+                <div className="pattern-dots pattern-gray-400 pattern-size-2 pattern-opacity-20 w-full h-full" />
+              </div>
+
+              {/* Radial progress indicator */}
+              <div className="absolute top-4 right-4">
+                <div className="relative w-16 h-16">
+                  <svg className="w-full h-full transform -rotate-90">
+                    <circle
+                      cx="50%"
+                      cy="50%"
+                      r="30"
+                      className="fill-none stroke-white"
+                      strokeWidth="6"
+                    />
+                    <circle
+                      cx="50%"
+                      cy="50%"
+                      r="30"
+                      className={`fill-none stroke-current ${
+                        value.color.split(" ")[0]
+                      }`}
+                      strokeWidth="6"
+                      strokeDasharray={`${2 * Math.PI * 30}`}
+                      strokeDashoffset={`${
+                        2 * Math.PI * 30 * (1 - value.progress / 100)
+                      }`}
+                    />
+                  </svg>
+                  <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-sm font-bold text-white">
+                    {value.progress}%
+                  </span>
+                </div>
+              </div>
+
               <div
-                className={`mb-6 p-4 rounded-xl bg-gradient-to-r ${value.color} w-fit`}
+                className={`mb-6 p-4 rounded-xl bg-gradient-to-r ${value.color} w-fit relative`}
               >
                 <value.icon className="h-8 w-8 text-white" />
+                {/* Animated sparkle */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="animate-ping absolute inset-0 bg-white/20 rounded-xl" />
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+
+              <h3 className="text-2xl font-bold text-white mb-4">
                 {value.name}
               </h3>
               <p className="text-gray-600 mb-6">{value.description}</p>
-              <div className="flex items-center gap-3 text-sm text-teal-600 font-medium">
-                <FaChartLine className="h-5 w-5" />
+
+              {/* Client logos */}
+              {/* <div className="flex gap-3 mb-6">
+                {value.clients.map((client, i) => (
+                  <div
+                    key={i}
+                    className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center"
+                  >
+                    Replace with actual client logos
+                    <span className="text-xs font-medium text-gray-500">
+                      {client}
+                    </span>
+                  </div>
+                ))}
+              </div> */}
+
+              {/* Stat with animated chart */}
+              <div className="flex items-center gap-3 text-sm text-teal-600 font-medium mb-4">
+                <div className="relative w-full bg-gray-100 rounded-full h-2">
+                  <div
+                    className={`absolute left-0 top-0 h-full rounded-full bg-gradient-to-r ${value.color} transition-all duration-1000`}
+                    style={{ width: `${value.progress}%` }}
+                  />
+                </div>
                 <span>{value.stat}</span>
+              </div>
+
+              {/* Achievement badge */}
+              <div className="border-t pt-4 mt-4">
+                <div className="flex items-center gap-2 text-xs font-medium text-gray-500">
+                  <FaTrophy className="h-4 w-4 text-yellow-500" />
+                  <span>{value.achievement}</span>
+                </div>
               </div>
             </motion.div>
           ))}
@@ -115,35 +202,35 @@ function AboutValuesSection() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="p-6 bg-white rounded-xl shadow-md flex items-center gap-4">
+          <div className="p-6 bg-gray-800/50  border border-gray-700/50 hover:border-teal-500/30 transition-colors group relative overflow-hidden rounded-xl shadow-md flex items-center gap-4">
             <SiGooglescholar className="h-8 w-8 text-teal-600" />
             <div>
-              <div className="text-xl font-bold text-gray-900">ISO 27001</div>
-              <div className="text-sm text-gray-600">Certified Security</div>
+              <div className="text-xl font-bold text-teal-500">ISO 27001</div>
+              <div className="text-sm text-white">Certified Security</div>
             </div>
           </div>
 
-          <div className="p-6 bg-white rounded-xl shadow-md flex items-center gap-4">
+          <div className="p-6 bg-gray-800/50  border border-gray-700/50 hover:border-teal-500/30 transition-colors group relative overflow-hidden rounded-xl shadow-md flex items-center gap-4">
             <FaMedal className="h-8 w-8 text-purple-600" />
             <div>
-              <div className="text-xl font-bold text-gray-900">5★ Rating</div>
-              <div className="text-sm text-gray-600">Client Reviews</div>
+              <div className="text-xl font-bold text-teal-500">5★ Rating</div>
+              <div className="text-sm text-white">Client Reviews</div>
             </div>
           </div>
 
-          <div className="p-6 bg-white rounded-xl shadow-md flex items-center gap-4">
+          <div className="p-6 bg-gray-800/50  border border-gray-700/50 hover:border-teal-500/30 transition-colors group relative overflow-hidden rounded-xl shadow-md flex items-center gap-4">
             <FaUsers className="h-8 w-8 text-orange-600" />
             <div>
-              <div className="text-xl font-bold text-gray-900">200+</div>
-              <div className="text-sm text-gray-600">Satisfied Clients</div>
+              <div className="text-xl font-bold text-teal-500">50+</div>
+              <div className="text-sm text-white">Satisfied Clients</div>
             </div>
           </div>
 
-          <div className="p-6 bg-white rounded-xl shadow-md flex items-center gap-4">
+          <div className="p-6 bg-gray-800/50  border border-gray-700/50 hover:border-teal-500/30 transition-colors group relative overflow-hidden rounded-xl shadow-md flex items-center gap-4">
             <FaRocket className="h-8 w-8 text-green-600" />
             <div>
-              <div className="text-xl font-bold text-gray-900">10+ Years</div>
-              <div className="text-sm text-gray-600">Industry Experience</div>
+              <div className="text-xl font-bold text-teal-500">5+ Years</div>
+              <div className="text-sm text-white">Industry Experience</div>
             </div>
           </div>
         </motion.div>

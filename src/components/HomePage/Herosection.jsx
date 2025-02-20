@@ -108,24 +108,24 @@ function HeroSection() {
                 variants={scaleUp}
               >
                 <img
-                  src="/path/to/ssl-secured.png"
+                  src="/SSLSecured.png"
                   alt="SSL Secured"
                   className="h-12"
                 />
                 <img
-                  src="/path/to/iso-certified.png"
+                  src="/iso-certified.png"
                   alt="ISO Certified"
                   className="h-12"
                 />
                 <img
-                  src="/path/to/google-cloud-partner.png"
+                  src="/google-cloud-partner.png"
                   alt="Google Cloud Partner"
                   className="h-12"
                 />
               </motion.div>
 
               {/* Client Logo Carousel */}
-              <motion.div
+              {/* <motion.div
                 className="mt-16 overflow-hidden"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -149,7 +149,7 @@ function HeroSection() {
                     />
                   ))}
                 </motion.div>
-              </motion.div>
+              </motion.div> */}
             </motion.div>
           </div>
         </div>
