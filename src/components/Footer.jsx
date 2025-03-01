@@ -77,7 +77,7 @@ const navigation = {
 
 export default function Footer() {
   return (
-    <footer className="relative bg-gray-900 border-t border-gray-800">
+    <footer className="relative ">
       {/* AI Neural Network Background Animation */}
       <div className="absolute inset-0 overflow-hidden -z-10">
         <NeuralNetworkBackground />

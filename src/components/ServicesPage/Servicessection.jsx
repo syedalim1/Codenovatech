@@ -1,99 +1,148 @@
 import { motion } from "framer-motion";
-import { FaCode, FaMobile, FaRobot, FaServer } from "react-icons/fa";
+import { FaBrain, FaRobot, FaServer, FaDatabase, FaChartLine, FaShieldAlt } from "react-icons/fa";
 import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
+
 const services = [
   {
-    id: "web",
-    name: "Web Development",
+    id: "ai-assistant",
+    name: "AI Assistant Solutions",
     description:
-      "Create stunning, responsive websites and web applications that deliver exceptional user experiences.",
+      "Revolutionize customer interactions and internal workflows with our custom AI assistant technology powered by large language models.",
     features: [
-      "Custom Web Applications",
-      "E-commerce Solutions",
-      "Progressive Web Apps (PWA)",
-      "Content Management Systems",
-      "Website Maintenance & Support",
-      "Performance Optimization",
-    ],
-    icon: FaCode,
-    caseStudies: [
-      {
-        title: "E-commerce Platform",
-        result: "150% increase in online sales",
-        duration: "3 months",
-      },
-    ],
-    technologies: ["React", "Node.js", "MongoDB", "AWS"],
-  },
-  {
-    id: "app",
-    name: "App Development",
-    description:
-      "Build powerful mobile applications that engage users and drive business growth.",
-    features: [
-      "iOS App Development",
-      "Android App Development",
-      "Cross-platform Solutions",
-      "App UI/UX Design",
-      "App Testing & QA",
-      "App Store Optimization",
-    ],
-    icon: FaMobile,
-    caseStudies: [
-      {
-        title: "Food Delivery App",
-        result: "1M+ downloads",
-        duration: "4 months",
-      },
-    ],
-    technologies: ["React Native", "Flutter", "Firebase", "Swift"],
-  },
-  {
-    id: "ai",
-    name: "AI Solutions",
-    description:
-      "Leverage artificial intelligence to automate processes and gain valuable insights.",
-    features: [
-      "Machine Learning Models",
+      "Custom AI Chatbots",
+      "Workflow Automation",
       "Natural Language Processing",
-      "Computer Vision Solutions",
-      "Predictive Analytics",
-      "AI Integration Services",
-      "Custom AI Development",
+      "Multi-modal Interactions",
+      "Knowledge Base Integration",
+      "Continuous Learning Systems"
     ],
     icon: FaRobot,
     caseStudies: [
       {
-        title: "Predictive Analytics System",
-        result: "40% reduction in operational costs",
-        duration: "6 months",
+        title: "Enterprise Support AI",
+        result: "85% reduction in support ticket resolution time",
+        duration: "4 months",
       },
+      {
+        title: "Healthcare Virtual Assistant",
+        result: "Improved patient engagement by 67%",
+        duration: "6 months",
+      }
     ],
-    technologies: ["TensorFlow", "PyTorch", "OpenAI", "scikit-learn"],
+    technologies: ["GPT-4", "LangChain", "Hugging Face", "Azure OpenAI"],
   },
   {
-    id: "api",
-    name: "API Services",
+    id: "generative-ai",
+    name: "Generative AI Solutions",
     description:
-      "Design and develop robust APIs that enable seamless integration and scalability.",
+      "Leverage the power of generative AI to create content, designs, and solutions that drive innovation and efficiency in your business.",
     features: [
-      "RESTful API Development",
-      "GraphQL APIs",
-      "API Integration",
-      "API Documentation",
-      "API Security",
-      "API Maintenance",
+      "Custom Large Language Models",
+      "Text-to-Image Generation",
+      "Content Creation Automation",
+      "Code Generation & Analysis",
+      "Fine-tuning & RAG Implementation",
+      "Ethical AI Frameworks"
+    ],
+    icon: FaBrain,
+    caseStudies: [
+      {
+        title: "Marketing Content Generator",
+        result: "10x content creation efficiency",
+        duration: "3 months",
+      },
+      {
+        title: "Legal Document Analysis",
+        result: "98% accuracy in document summaries",
+        duration: "5 months",
+      }
+    ],
+    technologies: ["DALL-E", "Stable Diffusion", "LLaMA", "Anthropic Claude"],
+  },
+  {
+    id: "predictive-analytics",
+    name: "AI Predictive Analytics",
+    description:
+      "Transform your data into actionable intelligence with our advanced predictive analytics powered by machine learning algorithms.",
+    features: [
+      "Demand Forecasting",
+      "Customer Behavior Analytics",
+      "Anomaly Detection",
+      "Risk Assessment Models",
+      "Performance Prediction",
+      "Time Series Analysis"
+    ],
+    icon: FaChartLine,
+    caseStudies: [
+      {
+        title: "Retail Inventory Optimization",
+        result: "42% reduction in stockouts",
+        duration: "4 months",
+      },
+      {
+        title: "Financial Fraud Detection",
+        result: "93.7% accuracy in fraud detection",
+        duration: "6 months",
+      }
+    ],
+    technologies: ["TensorFlow", "PyTorch", "Scikit-learn", "Keras"],
+  },
+  {
+    id: "ai-infrastructure",
+    name: "AI Infrastructure",
+    description:
+      "Build robust, scalable, and efficient infrastructure for deploying and managing AI models in production environments.",
+    features: [
+      "AI Model Deployment",
+      "Scalable ML Pipelines",
+      "GPU/TPU Optimization",
+      "Real-time Inference Systems",
+      "Model Monitoring & Observability",
+      "MLOps Automation"
     ],
     icon: FaServer,
     caseStudies: [
       {
-        title: "Payment Gateway API",
-        result: "99.99% uptime achieved",
-        duration: "2 months",
+        title: "Enterprise MLOps Platform",
+        result: "99.99% model serving uptime",
+        duration: "8 months",
       },
+      {
+        title: "Real-time Recommendation Engine",
+        result: "30ms average inference time",
+        duration: "5 months",
+      }
     ],
-    technologies: ["REST", "GraphQL", "Node.js", "Docker"],
+    technologies: ["Kubernetes", "Docker", "TensorFlow Serving", "Ray"],
+  },
+  {
+    id: "ai-security",
+    name: "AI Security & Ethics",
+    description:
+      "Ensure your AI systems are secure, compliant, and ethically designed with our comprehensive AI security and governance solutions.",
+    features: [
+      "Adversarial Attack Protection",
+      "Bias Detection & Mitigation",
+      "Privacy-preserving AI",
+      "Explainable AI Frameworks",
+      "Regulatory Compliance",
+      "Ethical AI Governance"
+    ],
+    icon: FaShieldAlt,
+    caseStudies: [
+      {
+        title: "Healthcare AI Compliance",
+        result: "Full HIPAA compliance with 0 violations",
+        duration: "3 months",
+      },
+      {
+        title: "Financial Services AI Audit",
+        result: "Reduced bias by 94% in credit decisions",
+        duration: "4 months",
+      }
+    ],
+    technologies: ["Differential Privacy", "SHAP", "IBM AI Fairness 360", "TensorFlow Privacy"],
   },
 ];
 
@@ -108,35 +157,64 @@ const slideIn = {
   animate: { x: 0, opacity: 1 },
   transition: { duration: 0.5 },
 };
+
 function Servicessection() {
   const [activeTab, setActiveTab] = useState("features");
+  const [activeService, setActiveService] = useState(services[0].id);
 
   return (
     <div>
-      {services.map((service, index) => (
-        <motion.div
-          key={service.id}
-          id={service.id}
-          className={`flex flex-col lg:flex-row gap-x-8 gap-y-16 ${
-            index % 2 === 0 ? "" : "lg:flex-row-reverse"
-          } py-24 ${
-            index !== services.length - 1 ? "border-b border-gray-700" : ""
-          }`}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          variants={fadeIn}
+      {/* Service Navigation */}
+      <div className="mb-12">
+        <motion.h2 
+          className="text-3xl font-bold text-white mb-8 text-center"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
         >
-          <div className="lg:w-1/2">
+          Our Advanced AI Services
+        </motion.h2>
+        
+        <div className="flex flex-wrap justify-center gap-4">
+          {services.map((service) => (
+            <motion.button
+              key={service.id}
+              className={`px-5 py-3 rounded-full transition-all duration-300 ${
+                activeService === service.id 
+                  ? "bg-gradient-to-r from-teal-500 to-blue-600 text-white" 
+                  : "bg-gray-800 text-gray-300 hover:bg-gray-700"
+              }`}
+              onClick={() => setActiveService(service.id)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <div className="flex items-center gap-2">
+                <service.icon className="h-5 w-5" />
+                <span>{service.name}</span>
+              </div>
+            </motion.button>
+          ))}
+        </div>
+      </div>
+
+      {services.map((service) => (
+        service.id === activeService && (
+          <motion.div
+            key={service.id}
+            id={service.id}
+            className="bg-gray-800/50 p-8 rounded-2xl border border-gray-700/50"
+            initial="initial"
+            animate="animate"
+            variants={fadeIn}
+          >
             <motion.div
-              className="flex items-center gap-x-3"
+              className="flex items-center gap-x-3 mb-6"
               variants={slideIn}
             >
               <service.icon
-                className="h-8 w-8 flex-none text-primary"
+                className="h-12 w-12 flex-none text-teal-500"
                 aria-hidden="true"
               />
-              <h3 className="text-2xl font-bold tracking-tight text-white">
+              <h3 className="text-3xl font-bold tracking-tight text-white">
                 {service.name}
               </h3>
             </motion.div>
@@ -144,26 +222,32 @@ function Servicessection() {
             <div className="mt-6">
               <div className="flex space-x-4 mb-6">
                 <button
-                  className={
-                    "px-4 py-2 rounded-full bg-black  hover:bg-primary hover:text-white transition-all duration-300"
-                  }
-                  onClick={() => setActiveTab("tech")}
+                  className={`px-4 py-2 rounded-full transition-all duration-300 ${
+                    activeTab === "features" 
+                      ? "bg-teal-500 text-white" 
+                      : "bg-gray-900 text-gray-300 hover:bg-teal-900/50"
+                  }`}
+                  onClick={() => setActiveTab("features")}
                 >
                   Features
                 </button>
                 <button
-                  className={
-                    "px-4 py-2 rounded-full bg-black  hover:bg-primary hover:text-white transition-all duration-300"
-                  }
-                  onClick={() => setActiveTab("tech")}
+                  className={`px-4 py-2 rounded-full transition-all duration-300 ${
+                    activeTab === "caseStudies" 
+                      ? "bg-teal-500 text-white" 
+                      : "bg-gray-900 text-gray-300 hover:bg-teal-900/50"
+                  }`}
+                  onClick={() => setActiveTab("caseStudies")}
                 >
                   Case Studies
                 </button>
                 <button
-                  className={
-                    "px-4 py-2 rounded-full bg-black  hover:bg-primary hover:text-white transition-all duration-300"
-                  }
-                  onClick={() => setActiveTab("tech")}
+                  className={`px-4 py-2 rounded-full transition-all duration-300 ${
+                    activeTab === "technologies" 
+                      ? "bg-teal-500 text-white" 
+                      : "bg-gray-900 text-gray-300 hover:bg-teal-900/50"
+                  }`}
+                  onClick={() => setActiveTab("technologies")}
                 >
                   Technologies
                 </button>
@@ -181,15 +265,15 @@ function Servicessection() {
                     <p className="text-lg leading-8 text-gray-300 mb-6">
                       {service.description}
                     </p>
-                    <ul className="grid grid-cols-1 gap-4 text-sm leading-6 text-gray-300 sm:grid-cols-2">
+                    <div className="grid grid-cols-1 gap-4 text-sm leading-6 text-gray-300 sm:grid-cols-2">
                       {service.features.map((feature) => (
-                        <motion.li
+                        <motion.div
                           key={feature}
-                          className="flex gap-x-3"
-                          whileHover={{ x: 5 }}
+                          className="flex gap-x-3 bg-gray-900/50 p-4 rounded-lg"
+                          whileHover={{ scale: 1.02, backgroundColor: "rgba(45, 212, 191, 0.1)" }}
                         >
                           <svg
-                            className="h-6 w-5 flex-none text-primary"
+                            className="h-6 w-5 flex-none text-teal-500"
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             aria-hidden="true"
@@ -200,85 +284,65 @@ function Servicessection() {
                               clipRule="evenodd"
                             />
                           </svg>
-                          {feature}
-                        </motion.li>
+                          <span>{feature}</span>
+                        </motion.div>
                       ))}
-                    </ul>
+                    </div>
                   </motion.div>
                 )}
-
-                {activeTab === "case-studies" && (
+                
+                {activeTab === "caseStudies" && (
                   <motion.div
-                    key="case-studies"
+                    key="caseStudies"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.3 }}
-                    className="space-y-6"
                   >
-                    {service.caseStudies.map((study, idx) => (
-                      <motion.div
-                        key={idx}
-                        className="bg-gray-700 p-6 rounded-lg"
-                        whileHover={{ scale: 1.02 }}
-                      >
-                        <h4 className="font-semibold text-lg mb-2 text-white">
-                          {study.title}
-                        </h4>
-                        <p className="text-primary font-medium">
-                          {study.result}
-                        </p>
-                        <p className="text-sm text-gray-300">
-                          Duration: {study.duration}
-                        </p>
-                      </motion.div>
-                    ))}
+                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                      {service.caseStudies.map((study, index) => (
+                        <motion.div
+                          key={index}
+                          className="bg-gray-900/50 p-6 rounded-xl border border-gray-700/50 hover:border-teal-500/30"
+                          whileHover={{ y: -5 }}
+                        >
+                          <h4 className="text-xl font-bold text-white mb-2">{study.title}</h4>
+                          <p className="text-teal-400 font-semibold mb-1">Result: {study.result}</p>
+                          <p className="text-gray-400">Timeline: {study.duration}</p>
+                        </motion.div>
+                      ))}
+                    </div>
                   </motion.div>
                 )}
-
-                {activeTab === "tech" && (
+                
+                {activeTab === "technologies" && (
                   <motion.div
-                    key="tech"
+                    key="technologies"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.3 }}
-                    className="flex flex-wrap gap-3"
                   >
-                    {service.technologies.map((tech, idx) => (
-                      <motion.span
-                        key={idx}
-                        className="px-4 py-2 bg-black rounded-full text-sm text-white"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        {tech}
-                      </motion.span>
-                    ))}
+                    <div className="flex flex-wrap gap-3">
+                      {service.technologies.map((tech, index) => (
+                        <motion.span
+                          key={index}
+                          className="px-4 py-2 bg-gray-900/70 text-teal-300 rounded-full"
+                          whileHover={{ scale: 1.05, y: -2 }}
+                        >
+                          {tech}
+                        </motion.span>
+                      ))}
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>
             </div>
-          </div>
-
-          <div className="lg:w-1/2">
-            <motion.div
-              className="w-full aspect-video bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl flex items-center justify-center glass-effect"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
-              <service.icon
-                className="h-24 w-24 text-primary/40"
-                aria-hidden="true"
-              />
-            </motion.div>
-          </div>
-        </motion.div>
+          </motion.div>
+        )
       ))}
     </div>
   );
-
-  
 }
 
 export default Servicessection;

@@ -5,7 +5,7 @@ import AboutTeamsection from "../components/AboutPage/AboutTeamsection";
 
 export default function About() {
   return (
-    <div className="bg-gradient-to-b from-gray-900 to-gray-800 pt-24">
+    <div className="">
       {/* Hero section */}
       <AboutHerosection />
       {/* Values section */}

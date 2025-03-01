@@ -16,7 +16,7 @@ const ProjectDetails = lazy(() => import('./pages/ProjectDetails'))
 
 function App() {
   return (
-    <div className="bg-gradient-to-b from-gray-900 to-gray-800">
+    <div className="">
       <Router>
         <Background />
         <div className="relative min-h-screen">
