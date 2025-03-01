@@ -142,19 +142,21 @@ export default function Navbar() {
         <button
           className="lg:hidden p-2 text-gray-300 hover:text-white relative"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle mobile menu"
         >
           <Bars3Icon className="h-7 w-7" />
           <div className="absolute top-0 right-0 w-2 h-2 bg-teal-400 rounded-full animate-pulse" />
         </button>
 
+        {/* Mobile menu */}
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              className="fixed inset-y-0 right-0 w-full max-w-xs bg-gray-900/95 backdrop-blur-xl"
-              style={{ filter: "url(#ai-noise)" }}
+              initial={{ opacity: 0, x: "100%" }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: "100%" }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-gray-900/95 backdrop-blur-xl shadow-xl overflow-y-auto lg:hidden"
             >
               <div className="flex flex-col h-full p-6">
                 <div className="flex justify-between items-center mb-8">
@@ -164,16 +166,19 @@ export default function Navbar() {
                   <button
                     onClick={() => setMobileMenuOpen(false)}
                     className="p-2 text-gray-400 hover:text-white"
+                    aria-label="Close mobile menu"
                   >
                     <XMarkIcon className="h-6 w-6" />
                   </button>
                 </div>
                 <nav className="flex-1 space-y-4">
-                  {navigation.map((item) => (
+                  {navigation.map((item, index) => (
                     <motion.div
                       key={item.name}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
                       whileHover={{ x: 10 }}
-                      transition={{ type: "spring" }}
                     >
                       <Link
                         to={item.href}
@@ -186,9 +191,29 @@ export default function Navbar() {
                     </motion.div>
                   ))}
                 </nav>
+                
+                {/* Mobile CTA */}
+                <div className="mt-6 pt-6 border-t border-gray-800">
+                  <motion.div 
+                    whileHover={{ scale: 1.05 }} 
+                    className="w-full"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.3 }}
+                  >
+                    <Link
+                      to="/contact"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="w-full block text-center px-6 py-3 bg-gradient-to-r from-teal-500 via-blue-500 to-purple-600 text-white rounded-full relative overflow-hidden"
+                    >
+                      <span className="relative z-10">Start Project</span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 opacity-0 hover:opacity-100 transition-opacity" />
+                    </Link>
+                  </motion.div>
+                </div>
 
                 {/* Animated Background Elements */}
-                <div className="absolute inset-0 -z-10 opacity-10">
+                <div className="absolute inset-0 -z-10 opacity-10 pointer-events-none">
                   {[...Array(10)].map((_, i) => (
                     <motion.div
                       key={i}
@@ -199,11 +224,12 @@ export default function Navbar() {
                       }}
                       animate={{
                         scale: [0.5, 1.5, 0.5],
-                        opacity: [0.2, 1, 0.2],
+                        opacity: [0.2, 0.8, 0.2],
                       }}
                       transition={{
-                        duration: 2 + Math.random() * 3,
+                        duration: 3,
                         repeat: Infinity,
+                        delay: i * 0.2,
                       }}
                     />
                   ))}
@@ -213,18 +239,6 @@ export default function Navbar() {
           )}
         </AnimatePresence>
       </nav>
-
-      {/* SVG Filters */}
-      <svg className="hidden">
-        <filter id="ai-noise">
-          <feTurbulence
-            type="fractalNoise"
-            baseFrequency="0.8"
-            numOctaves="4"
-          />
-          <feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 150 -30" />
-        </filter>
-      </svg>
     </header>
   );
 }
