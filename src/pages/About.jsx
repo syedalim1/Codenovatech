@@ -1,6 +1,7 @@
-import AboutHeroSection from "../components/AboutPage/AboutHeroSection";
-import Storysection from "../components/AboutPage/Storysection";
-import Teamsection from "../components/AboutPage/Teamsection";
+import AboutHerosection from "../components/AboutPage/AboutHerosection";
+import AboutValuessection from "../components/AboutPage/AboutValuessection";
+import AboutStatssection from "../components/AboutPage/AboutStatssection";
+import AboutTeamsection from "../components/AboutPage/AboutTeamsection";
 import PageSEO from "../components/SEO/PageSEO";
 
 export default function About() {
@@ -13,14 +14,17 @@ export default function About() {
         canonicalUrl="https://codenovatech.in/about"
       />
 
-      {/* Hero Section with Animation */}
-      <AboutHeroSection />
-
-      {/* Story Section */}
-      <Storysection />
-
-      {/* Team Section */}
-      <Teamsection />
+      {/* Hero section */}
+      <AboutHerosection />
+      
+      {/* Values section */}
+      <AboutValuessection />
+      
+      {/* Stats section */}
+      <AboutStatssection />
+      
+      {/* Team section */}
+      <AboutTeamsection />
     </div>
   );
 }
