@@ -119,7 +119,7 @@ const ContactModal = ({ onClose }) => {
                 </div>
                 <div>
                   <h4 className="text-white font-medium mb-2">Contact Sales</h4>
-                  <p className="text-gray-400">+1 (555) 123-4567</p>
+                  <p className="text-gray-400">+91 8300904920</p>
                   <p className="text-gray-400">24/7 Support Available</p>
                 </div>
               </div>

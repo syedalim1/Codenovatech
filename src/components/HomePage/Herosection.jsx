@@ -65,228 +65,6 @@ function HeroSection() {
               }}
             />
           </div>
-
-          {/* Enhanced floating elements with more vibrant colors */}
-          <motion.div
-            className="absolute top-1/4 left-1/4 w-40 h-40 bg-pink-500/40 rounded-full blur-2xl"
-            animate={{
-              y: [0, -25, 0],
-              scale: [1, 1.2, 1],
-              opacity: [0.5, 0.8, 0.5],
-              background: [
-                "rgba(236, 72, 153, 0.4)",
-                "rgba(168, 85, 247, 0.4)",
-                "rgba(236, 72, 153, 0.4)",
-              ],
-            }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-
-          <motion.div
-            className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-teal-500/40 rounded-full blur-2xl"
-            animate={{
-              y: [0, 30, 0],
-              scale: [1, 1.3, 1],
-              opacity: [0.5, 0.9, 0.5],
-              background: [
-                "rgba(45, 212, 191, 0.4)",
-                "rgba(56, 189, 248, 0.4)",
-                "rgba(45, 212, 191, 0.4)",
-              ],
-            }}
-            transition={{
-              duration: 7,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 1,
-            }}
-          />
-
-          <motion.div
-            className="absolute top-1/2 right-1/3 w-32 h-32 bg-blue-500/40 rounded-full blur-2xl"
-            animate={{
-              y: [0, -35, 0],
-              x: [0, 25, 0],
-              scale: [1, 1.25, 1],
-              opacity: [0.5, 0.8, 0.5],
-              background: [
-                "rgba(59, 130, 246, 0.4)",
-                "rgba(99, 102, 241, 0.4)",
-                "rgba(59, 130, 246, 0.4)",
-              ],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 2,
-            }}
-          />
-
-          {/* Additional animated elements */}
-          <motion.div
-            className="absolute bottom-1/3 left-1/3 w-36 h-36 bg-purple-500/40 rounded-full blur-2xl"
-            animate={{
-              y: [0, 20, 0],
-              x: [0, -15, 0],
-              scale: [1, 1.15, 1],
-              opacity: [0.4, 0.7, 0.4],
-              background: [
-                "rgba(168, 85, 247, 0.4)",
-                "rgba(139, 92, 246, 0.4)",
-                "rgba(168, 85, 247, 0.4)",
-              ],
-            }}
-            transition={{
-              duration: 9,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 1.5,
-            }}
-          />
-
-          <motion.div
-            className="absolute top-1/3 right-1/4 w-28 h-28 bg-yellow-500/40 rounded-full blur-2xl"
-            animate={{
-              y: [0, -15, 0],
-              x: [0, 10, 0],
-              scale: [1, 1.1, 1],
-              opacity: [0.3, 0.6, 0.3],
-              background: [
-                "rgba(234, 179, 8, 0.4)",
-                "rgba(245, 158, 11, 0.4)",
-                "rgba(234, 179, 8, 0.4)",
-              ],
-            }}
-            transition={{
-              duration: 7,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 3,
-            }}
-          />
-
-          {/* AI-themed floating elements */}
-          <motion.div
-            className="absolute top-1/5 right-1/5 w-16 h-16 flex items-center justify-center"
-            animate={{
-              y: [0, -20, 0],
-              rotate: [0, 360],
-              opacity: [0.7, 1, 0.7],
-            }}
-            transition={{
-              duration: 15,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          >
-            <div className="w-full h-full relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg opacity-80"></div>
-              <div className="absolute inset-0 flex items-center justify-center text-white font-bold text-xl">
-                AI
-              </div>
-              <div className="absolute inset-0 border-2 border-white/30 rounded-lg"></div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="absolute bottom-1/5 left-1/5 w-20 h-20 flex items-center justify-center"
-            animate={{
-              y: [0, 20, 0],
-              rotate: [0, -360],
-              opacity: [0.7, 1, 0.7],
-            }}
-            transition={{
-              duration: 18,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 2,
-            }}
-          >
-            <div className="w-full h-full relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full opacity-80"></div>
-              <div className="absolute inset-0 flex items-center justify-center text-white font-bold text-xl">
-                ML
-              </div>
-              <div className="absolute inset-0 border-2 border-white/30 rounded-full"></div>
-            </div>
-          </motion.div>
-
-          {/* Neural network visualization */}
-          <div className="absolute inset-0 opacity-20">
-            {[...Array(8)].map((_, i) => (
-              <motion.div
-                key={`node-${i}`}
-                className="absolute w-3 h-3 rounded-full bg-white"
-                style={{
-                  top: `${20 + Math.random() * 60}%`,
-                  left: `${10 + Math.random() * 80}%`,
-                }}
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.5, 1, 0.5],
-                  boxShadow: [
-                    "0 0 0 rgba(255,255,255,0)",
-                    "0 0 10px rgba(255,255,255,0.5)",
-                    "0 0 0 rgba(255,255,255,0)",
-                  ],
-                }}
-                transition={{
-                  duration: 3 + Math.random() * 2,
-                  repeat: Infinity,
-                  delay: Math.random() * 2,
-                }}
-              />
-            ))}
-            {[...Array(12)].map((_, i) => (
-              <motion.div
-                key={`line-${i}`}
-                className="absolute h-px bg-gradient-to-r from-transparent via-white to-transparent"
-                style={{
-                  top: `${20 + Math.random() * 60}%`,
-                  left: `${10 + Math.random() * 40}%`,
-                  width: `${20 + Math.random() * 30}%`,
-                  transform: `rotate(${Math.random() * 180}deg)`,
-                }}
-                animate={{
-                  opacity: [0, 0.5, 0],
-                }}
-                transition={{
-                  duration: 4 + Math.random() * 3,
-                  repeat: Infinity,
-                  delay: Math.random() * 3,
-                }}
-              />
-            ))}
-          </div>
-
-          {/* Animated particles */}
-          <div className="absolute inset-0">
-            {[...Array(25)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="absolute w-2 h-2 rounded-full bg-white"
-                style={{
-                  top: `${Math.random() * 100}%`,
-                  left: `${Math.random() * 100}%`,
-                }}
-                animate={{
-                  y: [0, Math.random() * -100, 0],
-                  opacity: [0, 0.8, 0],
-                  scale: [0, Math.random() * 0.5 + 0.5, 0],
-                }}
-                transition={{
-                  duration: 5 + Math.random() * 5,
-                  repeat: Infinity,
-                  delay: Math.random() * 5,
-                }}
-              />
-            ))}
-          </div>
         </div>
 
         <div className="py-24 sm:py-32">
@@ -320,7 +98,7 @@ function HeroSection() {
                   }}
                   className="bg-clip-text text-transparent"
                 >
-                  Creating New AI For New Evolution
+                CODENOVATECH: AI-Powered Solutions for Businesses
                 </motion.span>
               </motion.h1>
 
@@ -338,47 +116,14 @@ function HeroSection() {
                 }}
               />
 
-              {/* Subheading with typing animation */}
+              {/* Subheading  */}
               <motion.div
-                className="mt-6 text-xl text-gray-300 leading-8 h-8 overflow-hidden"
+                className="mt-6 text-xl text-gray-300 leading-8"
                 variants={fadeIn}
               >
-                <motion.p
-                  animate={{
-                    y: [
-                      0, -40, -80, -120, -160, -200, -240, -280, -320, -360,
-                      -400, 0,
-                    ],
-                  }}
-                  transition={{
-                    duration: 20,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    times: [
-                      0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95, 1,
-                    ],
-                  }}
-                  className="space-y-8"
-                >
-                  <span className="block h-8">
-                    Pioneering the Future with Advanced Artificial Intelligence
-                  </span>
-                  <span className="block h-8">
-                    Transforming Industries through Intelligent Automation
-                  </span>
-                  <span className="block h-8">
-                    Revolutionizing Decision-Making with Predictive Analytics
-                  </span>
-                  <span className="block h-8">
-                    Enhancing Human Potential with AI Collaboration
-                  </span>
-                  <span className="block h-8">
-                    Creating Smarter Solutions for Tomorrow's Challenges
-                  </span>
-                  <span className="block h-8">
-                    Pioneering the Future with Advanced Artificial Intelligence
-                  </span>
-                </motion.p>
+                <p>
+                  We are a Coimbatore-based IT company specializing in Artificial Intelligence. As a product-based startup, we deliver cutting-edge AI solutions tailored to your needs. Our expertise includes Generative AI, Predictive Analytics, and Computer Vision. We build robust AI infrastructure and ensure ethical, secure AI deployments. Partner with CODENOVATECH to transform your business with the power of AI.
+                </p>
               </motion.div>
 
               {/* AI Product Announcement - Enhanced with animations and colors */}
@@ -388,56 +133,6 @@ function HeroSection() {
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                {/* Animated background patterns */}
-                <div className="absolute inset-0 overflow-hidden opacity-20">
-                  {/* Circuit board pattern */}
-                  {[...Array(20)].map((_, i) => (
-                    <motion.div
-                      key={`circuit-${i}`}
-                      className="absolute h-px bg-white"
-                      style={{
-                        top: `${Math.random() * 100}%`,
-                        left: `${Math.random() * 100}%`,
-                        width: `${10 + Math.random() * 20}%`,
-                        transform: `rotate(${
-                          Math.floor(Math.random() * 4) * 90
-                        }deg)`,
-                      }}
-                      animate={{
-                        opacity: [0.3, 0.8, 0.3],
-                      }}
-                      transition={{
-                        duration: 3 + Math.random() * 2,
-                        repeat: Infinity,
-                        delay: Math.random() * 2,
-                      }}
-                    />
-                  ))}
-                  {[...Array(15)].map((_, i) => (
-                    <motion.div
-                      key={`node-${i}`}
-                      className="absolute w-2 h-2 rounded-full bg-white"
-                      style={{
-                        top: `${Math.random() * 100}%`,
-                        left: `${Math.random() * 100}%`,
-                      }}
-                      animate={{
-                        opacity: [0.3, 0.8, 0.3],
-                        boxShadow: [
-                          "0 0 0px rgba(255,255,255,0.3)",
-                          "0 0 3px rgba(255,255,255,0.8)",
-                          "0 0 0px rgba(255,255,255,0.3)",
-                        ],
-                      }}
-                      transition={{
-                        duration: 2 + Math.random() * 2,
-                        repeat: Infinity,
-                        delay: Math.random() * 2,
-                      }}
-                    />
-                  ))}
-                </div>
-
                 <motion.h2
                   className="text-3xl font-bold mb-4 relative z-10"
                   animate={{
@@ -450,11 +145,10 @@ function HeroSection() {
                   }}
                   transition={{ duration: 3, repeat: Infinity }}
                 >
-                  🚀 Exciting Announcement from CODENOVATECH! 🤖✨
+                  CODENOVATECH - Your AI Innovation Partner
                 </motion.h2>
                 <p className="text-xl relative z-10">
-                  We're thrilled to introduce our revolutionary AI product,
-                  designed to transform the way you work with AI! 🎯💡
+                  We&#x27;re not just building software; we&#x27;re building the future with AI.
                 </p>
                 <ul className="list-none mt-6 space-y-3 relative z-10">
                   <motion.li
@@ -471,7 +165,7 @@ function HeroSection() {
                     >
                       🔹
                     </motion.span>
-                    <span>Cutting-edge technology meets intuitive design</span>
+                    <span>Cutting-edge AI technology for your unique needs</span>
                   </motion.li>
                   <motion.li
                     className="flex items-center justify-center gap-2 text-lg"
@@ -487,7 +181,7 @@ function HeroSection() {
                     >
                       🔹
                     </motion.span>
-                    <span>Unlock unprecedented efficiency & innovation</span>
+                    <span>Transforming data into intelligent, actionable insights</span>
                   </motion.li>
                   <motion.li
                     className="flex items-center justify-center gap-2 text-lg"
@@ -504,8 +198,7 @@ function HeroSection() {
                       🔹
                     </motion.span>
                     <span>
-                      Built for businesses & developers to elevate productivity
-                      🚀
+                      Driving efficiency and innovation in Coimbatore and beyond
                     </span>
                   </motion.li>
                 </ul>
@@ -536,10 +229,9 @@ function HeroSection() {
                       transition={{ duration: 1.5, repeat: Infinity }}
                       className="inline-block"
                     >
-                      📅
+                      💡
                     </motion.span>{" "}
-                    Official Launch: April 4, 2025 – The future of AI is almost
-                    here!{" "}
+                    Explore the possibilities of AI with CODENOVATECH! {" "}
                     <motion.span
                       animate={{ scale: [1, 1.2, 1] }}
                       transition={{
@@ -549,12 +241,12 @@ function HeroSection() {
                       }}
                       className="inline-block"
                     >
-                      🔥
+                      🚀
                     </motion.span>
                   </motion.p>
                 </motion.div>
                 <p className="mt-4 text-lg relative z-10">
-                  Stay tuned for updates!{" "}
+                  Join us on the journey to an AI-powered future.{" "}
                   <motion.span
                     className="font-bold text-yellow-300"
                     animate={{
@@ -566,7 +258,7 @@ function HeroSection() {
                     }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
-                    #AIRevolution #Innovation #FutureTech
+                    #AI #Innovation #Coimbatore #Technology
                   </motion.span>
                 </p>
               </motion.div>

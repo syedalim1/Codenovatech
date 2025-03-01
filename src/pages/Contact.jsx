@@ -3,10 +3,18 @@ import ContactHeraSection from "../components/ContactPage/ContactHeraSection";
 import AiCreativeSection from "../components/ContactPage/AiCreativeSection";
 import AiBackgroundAnimation from "../components/ContactPage/AiBackgroundAnimation";
 import AiFeatureShowcase from "../components/ContactPage/AiFeatureShowcase";
+import PageSEO from "../components/SEO/PageSEO";
 
 export default function Contact() {
   return (
     <div className="relative pt-24">
+      <PageSEO 
+        title="Contact CODENOVATECH | AI & Software Development Company in Coimbatore" 
+        description="Get in touch with CODENOVATECH, Coimbatore's leading AI and software development company. Reach out for consultations, project inquiries, or partnership opportunities. Our team of experts is ready to discuss your business needs and provide tailored technology solutions. Whether you need AI development, custom software, mobile apps, or web development services, we're here to help transform your vision into reality."
+        keywords="contact Codenovatech, AI company contact, software development inquiry, IT consultation Coimbatore, hire AI developers, software project quote, technology partnership, Coimbatore IT services contact, software development consultation, AI solution providers, custom software quote, mobile app development inquiry, web development services Coimbatore, technology consulting services, AI implementation experts, software outsourcing Coimbatore, IT project consultation, software development team Coimbatore, enterprise software solutions, startup technology partner, AI integration specialists, digital transformation experts, IT service providers Coimbatore, business automation solutions, software development company location, Coimbatore tech consultants, AI development team contact"
+        canonicalUrl="https://codenovatech.in/contact"
+      />
+      
       {/* AI Background Animation */}
       <AiBackgroundAnimation />
       

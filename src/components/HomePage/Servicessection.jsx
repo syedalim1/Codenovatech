@@ -9,12 +9,7 @@ import {
   FaAward,
   FaProjectDiagram,
   FaBrain,
-  FaDatabase,
-  FaCloudUploadAlt,
-  FaRocket,
-  FaMagic,
-  FaLightbulb,
-  FaCogs,
+    FaRocket,
 } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
 import { SiTensorflow, SiPytorch } from "react-icons/si";
@@ -24,15 +19,15 @@ function ServicesSection() {
     {
       name: "Revolutionary AI Assistant",
       description:
-        "Our flagship AI product designed to transform how you work with artificial intelligence",
+        "Our flagship AI product designed to transform how you work with artificial intelligence. As a leading Coimbatore IT company, we are launching this product on April 4, 2025.",
       icon: FaRocket,
       href: "/services#ai-assistant",
       stats: "Coming April 4, 2025",
       tech: [
-        "Natural Language",
+        "Natural Language Processing",
         "Task Automation",
         "Personalization",
-        "Multi-modal",
+        "Multi-modal AI",
       ],
       color: "from-purple-500 to-pink-600",
       featured: true,
@@ -40,7 +35,7 @@ function ServicesSection() {
     {
       name: "Generative AI Solutions",
       description:
-        "Custom large language models and generative AI tailored to your business needs",
+        "Custom large language models and generative AI tailored to your business needs. We specialize in creating unique content, designs, and innovative solutions.",
       icon: FaBrain,
       href: "/services#generative-ai",
       stats: "85% Reduction in Content Creation Time",
@@ -48,23 +43,23 @@ function ServicesSection() {
       color: "from-indigo-500 to-blue-600",
     },
     {
-      name: "Predictive Analytics",
-      description: "Data-driven forecasting and decision support systems",
+      name: "AI Predictive Analytics",
+      description: "Data-driven forecasting and decision support systems, leveraging machine learning for accurate predictions.",
       icon: FaChartLine,
       href: "/services#predictive-analytics",
       stats: "93% Prediction Accuracy",
       tech: [
         "Machine Learning",
-        "Time Series",
+        "Time Series Analysis",
         "Anomaly Detection",
-        "Forecasting",
+        "Forecasting Models",
       ],
       color: "from-blue-500 to-teal-500",
     },
     {
       name: "Computer Vision",
       description:
-        "Advanced image and video analysis for automation and insights",
+        "Advanced image and video analysis for automation and insights, utilizing cutting-edge object detection and image segmentation.",
       icon: FaRobot,
       href: "/services#computer-vision",
       stats: "99.7% Object Detection Accuracy",
@@ -74,7 +69,7 @@ function ServicesSection() {
     {
       name: "AI Infrastructure",
       description:
-        "Scalable, secure infrastructure for deploying AI at enterprise scale",
+        "Scalable, secure infrastructure for deploying AI at enterprise scale, including Kubernetes and GPU clusters.",
       icon: FaServer,
       href: "/services#ai-infrastructure",
       stats: "99.99% Uptime SLA",
@@ -89,7 +84,7 @@ function ServicesSection() {
     {
       name: "AI Security & Compliance",
       description:
-        "Ensuring your AI systems are secure, ethical, and compliant",
+        "Ensuring your AI systems are secure, ethical, and compliant with regulations like GDPR and CCPA.",
       icon: FaShieldAlt,
       href: "/services#ai-security",
       stats: "GDPR & CCPA Compliant",
@@ -118,92 +113,6 @@ function ServicesSection() {
 
   return (
     <div className="relative py-24 sm:py-32 overflow-hidden">
-      {/* Enhanced animated background elements */}
-      <div className="absolute inset-0 -z-10">
-        <motion.div
-          className="absolute top-0 left-0 w-full h-full"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.15 }}
-          transition={{ duration: 1 }}
-        >
-          <svg
-            width="100%"
-            height="100%"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-          >
-            <defs>
-              <motion.radialGradient
-                id="grad1"
-                cx="50%"
-                cy="50%"
-                r="50%"
-                fx="50%"
-                fy="50%"
-                animate={{
-                  cx: ["30%", "70%", "30%"],
-                  cy: ["30%", "70%", "30%"],
-                }}
-                transition={{
-                  duration: 20,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                <stop offset="0%" stopColor="#4F46E5" stopOpacity="0.5" />
-                <stop offset="100%" stopColor="#4F46E5" stopOpacity="0" />
-              </motion.radialGradient>
-              <motion.radialGradient
-                id="grad2"
-                cx="50%"
-                cy="50%"
-                r="50%"
-                fx="50%"
-                fy="50%"
-                animate={{
-                  cx: ["70%", "30%", "70%"],
-                  cy: ["70%", "30%", "70%"],
-                }}
-                transition={{
-                  duration: 25,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                <stop offset="0%" stopColor="#0EA5E9" stopOpacity="0.5" />
-                <stop offset="100%" stopColor="#0EA5E9" stopOpacity="0" />
-              </motion.radialGradient>
-            </defs>
-            <rect x="0" y="0" width="100" height="100" fill="url(#grad1)" />
-            <rect x="0" y="0" width="100" height="100" fill="url(#grad2)" />
-          </svg>
-        </motion.div>
-
-        {/* Floating particles */}
-        <div className="absolute inset-0">
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 rounded-full bg-white"
-              style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-              }}
-              animate={{
-                y: [0, Math.random() * -100, 0],
-                opacity: [0, 0.7, 0],
-                scale: [0, 1, 0],
-              }}
-              transition={{
-                duration: 5 + Math.random() * 5,
-                repeat: Infinity,
-                delay: Math.random() * 5,
-              }}
-            />
-          ))}
-        </div>
-      </div>
-
       <div className="container-custom relative z-10">
         {/* Section Header */}
         <motion.div
@@ -215,12 +124,12 @@ function ServicesSection() {
           <h2 className="text-lg font-semibold text-teal-500 tracking-wide uppercase">
             AI Expertise
           </h2>
-          <p className="mt-4 text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600 sm:text-5xl">
+          <p className="mt-2 text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600 sm:text-5xl">
             Transformative AI Solutions
           </p>
           <p className="mt-4 text-xl text-gray-300 max-w-3xl mx-auto">
             Accelerate your business transformation with our cutting-edge
-            artificial intelligence solutions
+            artificial intelligence solutions, tailored for the Coimbatore IT landscape.
           </p>
         </motion.div>
 
@@ -279,10 +188,10 @@ function ServicesSection() {
 
                     <div className="flex flex-wrap gap-3 mb-6">
                       {[
-                        "Natural Language",
+                        "Natural Language Processing",
                         "Task Automation",
                         "Personalization",
-                        "Multi-modal",
+                        "Multi-modal AI",
                       ].map((tech, i) => (
                         <motion.span
                           key={i}

@@ -8,11 +8,8 @@ import {
   FaShieldAlt,
   FaRegClock,
   FaRocket,
-  FaHandshake,
-
 } from "react-icons/fa";
 
-// Animation Variants
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
@@ -35,11 +32,10 @@ const itemAnimation = {
   animate: { opacity: 1, y: 0 },
 };
 
-// Existing Data Arrays
 const contactMethods = [
   {
     name: "Phone Support",
-    description: "24/7 Technical Assistance",
+    description: "24/7 Technical Assistance from our expert AI consultants",
     link: "tel:+918300904920",
     value: "+91 8300904920",
     icon: FaPhone,
@@ -47,7 +43,7 @@ const contactMethods = [
   },
   {
     name: "Email Us",
-    description: "Project Inquiries & Support",
+    description: "Project Inquiries & Support for AI solutions",
     link: "mailto:hello@codenovatech.in",
     value: "hello@codenovatech.in",
     icon: FaEnvelope,
@@ -55,7 +51,7 @@ const contactMethods = [
   },
   {
     name: "HQ Location",
-    description: "Visit Our Innovation Center",
+    description: "Visit Our Innovation Center in Coimbatore",
     value: "Coimbatore, Tamil Nadu",
     icon: FaMapMarkerAlt,
     badge: "Book a Tour",
@@ -67,44 +63,9 @@ const socialLinks = [
   { name: "Twitter", url: "https://x.com/codenovatech", icon: FaTwitter },
 ];
 
-const trustedClients = [
-  "https://via.placeholder.com/120x40?text=Google",
-  "https://via.placeholder.com/120x40?text=Microsoft",
-  "https://via.placeholder.com/120x40?text=Amazon",
-  "https://via.placeholder.com/120x40?text=StartupZone",
-];
-
-// New Data Arrays
-const achievements = [
-  {
-    title: "Clients Served",
-    value: "50+",
-    icon: FaHandshake,
-  },
-  {
-    title: "Years in Business",
-    value: "5+",
-    icon: FaRegClock,
-  },
-  {
-    title: "Projects Delivered",
-    value: "100+",
-    icon: FaRocket,
-  },
-  {
-    title: "Awards Won",
-    value: "10+",
-    icon: FaShieldAlt,
-  },
-];
-
-
-
 function ContactHeraSection() {
   return (
     <div className="relative py-24 px-6 lg:px-8">
-      <div className="absolute inset-0 [background-size:16px_16px]" />
-
       <div className="relative max-w-7xl mx-auto">
         {/* Header Section */}
         <motion.div
@@ -115,10 +76,13 @@ function ContactHeraSection() {
         >
           <h2 className="text-lg font-semibold leading-7 text-primary mb-2 flex items-center justify-center gap-2">
             <FaRocket className="h-5 w-5" />
-            Connect with Innovation
+            Connect with CODENOVATECH - Coimbatore's Leading AI Company
           </h2>
           <p className="mt-2 text-4xl font-bold tracking-tight text-teal-500 sm:text-5xl">
-            Transform Your Digital Future
+            Get in Touch for AI Solutions
+          </p>
+          <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
+            Contact our Coimbatore-based team to discuss your project, explore our AI capabilities, or schedule a consultation. We're here to help you transform your business with innovative AI solutions.
           </p>
         </motion.div>
 
@@ -128,7 +92,7 @@ function ContactHeraSection() {
           initial="initial"
           animate="animate"
         >
-          {/* Left Column: Contact Methods, Trusted Clients & Social Links */}
+          {/* Left Column: Contact Methods & Social Links */}
           <div className="space-y-12">
             {/* Contact Methods */}
             <motion.div
@@ -181,8 +145,6 @@ function ContactHeraSection() {
               </div>
             </motion.div>
 
-            {/* Trusted By Section */}
-
             {/* Social Links */}
             <motion.div className="text-center" variants={itemAnimation}>
               <h4 className="text-gray-600 mb-4">
@@ -220,7 +182,7 @@ function ContactHeraSection() {
                 <input
                   type="text"
                   className="w-full px-4 py-3 rounded-lg text-black border bg-teal-100 text-black border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent"
-                  placeholder="John Anderson"
+                  placeholder="Enter your full name"
                 />
               </div>
 
@@ -232,7 +194,7 @@ function ContactHeraSection() {
                   <input
                     type="email"
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-teal-100 text-black focus:ring-2 focus:ring-primary focus:border-transparent"
-                    placeholder="john@company.com"
+                    placeholder="Enter your email address"
                   />
                 </div>
                 <div>
@@ -241,8 +203,8 @@ function ContactHeraSection() {
                   </label>
                   <input
                     type="tel"
-                    className="w-full px-4 py-3 rounded-lg border  border-gray-300 bg-teal-100 text-black focus:ring-2 focus:ring-primary focus:border-transparent"
-                    placeholder="+1 (555) 000-0000"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-teal-100 text-black focus:ring-2 focus:ring-primary focus:border-transparent"
+                    placeholder="Enter your phone number"
                   />
                 </div>
               </div>
@@ -251,9 +213,8 @@ function ContactHeraSection() {
                 <label className="block text-sm font-medium text-white mb-2">
                   Project Budget
                 </label>
-                <select className="w-full  px-4 py-3 rounded-lg border border-gray-300 bg-teal-100 text-black focus:ring-2 focus:ring-primary focus:border-transparent">
-                  <option 
-              >Select Budget Range</option>
+                <select className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-teal-100 text-black focus:ring-2 focus:ring-primary focus:border-transparent">
+                  <option>Select Budget Range</option>
                   <option>$10k - $50k</option>
                   <option>$50k - $100k</option>
                   <option>$100k+</option>
@@ -262,12 +223,12 @@ function ContactHeraSection() {
 
               <div>
                 <label className="block text-sm font-medium text-white mb-2">
-                  Project Details
+                  AI Project Details / Inquiry
                 </label>
                 <textarea
                   rows={4}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-teal-100 text-black focus:ring-2 focus:ring-primary focus:border-transparent"
-                  placeholder="Describe your vision and objectives..."
+                  placeholder="Describe your AI project vision, objectives, or any specific questions you have for our Coimbatore team..."
                 />
               </div>
 
@@ -286,68 +247,6 @@ function ContactHeraSection() {
               </div>
             </form>
           </motion.div>
-        </motion.div>
-
-        {/* New Section: Achievements */}
-        <motion.div className="mt-20" variants={itemAnimation}>
-          <div className="text-center mb-12">
-            <h3 className="text-2xl font-bold text-teal-500">
-              Our Achievements
-            </h3>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {achievements.map((item) => (
-              <div key={item.title} className="flex flex-col items-center">
-                <div className="text-primary text-4xl mb-2">
-                  <item.icon />
-                </div>
-                <h4 className="text-xl font-semibold">{item.value}</h4>
-                <p className="text-gray-600">{item.title}</p>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* New Section: Video Introduction */}
-        {/* <motion.div className="mt-20" variants={itemAnimation}>
-          <div className="text-center mb-12">
-            <h3 className="text-2xl font-bold text-teal-500">
-              Video Introduction
-            </h3>
-          </div>
-          <div className="flex justify-center">
-            <div className="w-full md:w-3/4 lg:w-1/2 aspect-w-16 aspect-h-9">
-              <iframe
-                title="Company Introduction Video"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full rounded-3xl shadow-lg"
-              />
-            </div>
-          </div>
-        </motion.div> */}
-
-        {/* Live Map Section */}
-        <motion.div
-          className="mt-20 rounded-3xl overflow-hidden shadow-xl"
-          variants={itemAnimation}
-        >
-           <div style={{ width: "100%" }}>
-      <iframe
-        width="100%"
-        height="600"
-        frameBorder="0"
-        scrolling="no"
-        marginHeight="0"
-        marginWidth="0"
-        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=K6,%20Pollachi%20Main%20Rd,%20SIDCO%20Post,%20SIDCO%20Private%20Industrial%20Estate,%20Coimbatore,%20Tamil%20Nadu%20641021+(CodenovaTech)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-      >
-        <a href="https://www.gps.ie/">cat gps tracker</a>
-      </iframe>
-    </div>
-
         </motion.div>
       </div>
     </div>

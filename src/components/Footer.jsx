@@ -81,7 +81,7 @@ export default function Footer() {
       {/* AI Neural Network Background Animation */}
       <div className="absolute inset-0 overflow-hidden -z-10">
         <NeuralNetworkBackground />
-        
+
         {/* Animated gradient blobs */}
         <motion.div
           className="absolute top-32 left-1/3 w-64 h-64 bg-teal-500/20 rounded-full blur-3xl"
@@ -131,7 +131,7 @@ export default function Footer() {
             ease: "easeInOut",
           }}
         />
-        
+
         {/* Enhanced AI-themed animated elements */}
         <motion.div
           className="absolute top-10 right-1/4 w-72 h-72 bg-blue-600/15 rounded-full blur-3xl"
@@ -158,22 +158,22 @@ export default function Footer() {
             ease: "easeInOut",
           }}
         />
-        
+
         {/* NEW: AI Data Stream Effect */}
         <div className="absolute inset-0">
           <DataStreamEffect />
         </div>
-        
+
         {/* NEW: Glowing AI Cells Background */}
         <div className="absolute inset-0">
           <AIGlowCells />
         </div>
-        
+
         {/* NEW: Animated Binary Code Layer */}
         <div className="absolute inset-0 opacity-5">
           <BinaryCodeLayer />
         </div>
-        
+
         {/* Digital circuit pattern */}
         <div className="absolute inset-0 bg-[url('/circuit-pattern.svg')] opacity-5"></div>
       </div>
@@ -188,7 +188,7 @@ export default function Footer() {
             transition={{ duration: 0.5 }}
           >
             <Link to="/" className="flex items-center">
-              <img src="/Logo.png" className="h-12 w-auto" alt="CODENOVATECH" />
+              <img src="/logo.png" className="h-12 w-auto" alt="CODENOVATECH" />
               <span className="ml-3 text-xl font-bold text-white">
                 CODENOVATECH
               </span>
@@ -197,18 +197,28 @@ export default function Footer() {
               Pioneering the future with advanced artificial intelligence
               solutions. Our revolutionary AI product launches April 4, 2025.
             </p>
-            
+
             {/* NEW: Enhanced 3D Brain Visualization with Particle Effects */}
             <div className="h-40 w-full rounded-lg overflow-hidden bg-gray-800/50 border border-gray-700">
-              <Suspense fallback={<div className="h-full w-full flex items-center justify-center text-gray-400">Loading 3D Model...</div>}>
+              <Suspense
+                fallback={
+                  <div className="h-full w-full flex items-center justify-center text-gray-400">
+                    Loading 3D Model...
+                  </div>
+                }
+              >
                 <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
                   <ambientLight intensity={0.5} />
                   <pointLight position={[10, 10, 10]} />
-                  <pointLight position={[-10, -10, -10]} color="#a855f7" intensity={0.5} />
+                  <pointLight
+                    position={[-10, -10, -10]}
+                    color="#a855f7"
+                    intensity={0.5}
+                  />
                   <BrainModelEnhanced />
                   <NeuralParticles />
-                  <OrbitControls 
-                    enableZoom={false} 
+                  <OrbitControls
+                    enableZoom={false}
                     enablePan={false}
                     autoRotate
                     autoRotateSpeed={1}
@@ -216,7 +226,7 @@ export default function Footer() {
                 </Canvas>
               </Suspense>
             </div>
-            
+
             {/* NEW: AI Technology Radial Visualization */}
             {/* <div className="relative h-32 w-full overflow-hidden">
               <AITechRadial />
@@ -234,26 +244,26 @@ export default function Footer() {
                 <FaCogs className="h-6 w-6 text-yellow-400" />
               </motion.div>
               <motion.div whileHover={{ scale: 1.2, rotate: -5 }}>
-                <FaChartLine className="h-6 w-6 text-pink-500"/>
+                <FaChartLine className="h-6 w-6 text-pink-500" />
               </motion.div>
               <motion.div whileHover={{ scale: 1.2, rotate: 5 }}>
-                <FaNetworkWired className="h-6 w-6 text-blue-500"/>
+                <FaNetworkWired className="h-6 w-6 text-blue-500" />
               </motion.div>
               <motion.div whileHover={{ scale: 1.2, rotate: -5 }}>
-                <FaMicrochip className="h-6 w-6 text-emerald-500"/>
+                <FaMicrochip className="h-6 w-6 text-emerald-500" />
               </motion.div>
               <motion.div whileHover={{ scale: 1.2, rotate: 5 }}>
-                <FaDatabase className="h-6 w-6 text-orange-500"/>
+                <FaDatabase className="h-6 w-6 text-orange-500" />
               </motion.div>
               <motion.div whileHover={{ scale: 1.2, rotate: -5 }}>
-                <FaCode className="h-6 w-6 text-indigo-500"/>
+                <FaCode className="h-6 w-6 text-indigo-500" />
               </motion.div>
               {/* NEW: Additional AI-themed icons */}
               <motion.div whileHover={{ scale: 1.2, rotate: 5 }}>
-                <FaAtom className="h-6 w-6 text-cyan-500"/>
+                <FaAtom className="h-6 w-6 text-cyan-500" />
               </motion.div>
               <motion.div whileHover={{ scale: 1.2, rotate: -5 }}>
-                <FaSatelliteDish className="h-6 w-6 text-rose-500"/>
+                <FaSatelliteDish className="h-6 w-6 text-rose-500" />
               </motion.div>
             </div>
           </motion.div>
@@ -309,8 +319,8 @@ export default function Footer() {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               {navigation.services.map((item, index) => (
-                <motion.li 
-                  key={item.name} 
+                <motion.li
+                  key={item.name}
                   whileHover={{ x: 5 }}
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -322,15 +332,17 @@ export default function Footer() {
                   >
                     {/* NEW: Enhanced hover effects for icons */}
                     <motion.div
-                      whileHover={{ 
+                      whileHover={{
                         rotate: 360,
-                        transition: { duration: 0.5 }
+                        transition: { duration: 0.5 },
                       }}
                       className="mr-2"
                     >
                       {index === 0 && <FaBrain className="text-blue-500" />}
                       {index === 1 && <FaRobot className="text-purple-500" />}
-                      {index === 2 && <FaChartBar className="text-yellow-400" />}
+                      {index === 2 && (
+                        <FaChartBar className="text-yellow-400" />
+                      )}
                       {index === 3 && <FaLightbulb className="text-pink-500" />}
                     </motion.div>
                     {item.name}
@@ -338,7 +350,7 @@ export default function Footer() {
                 </motion.li>
               ))}
             </motion.ul>
-            
+
             {/* NEW: AI Technology Pulse Visualization */}
             {/* <div className="mt-8 py-4">
               <AIPulseBars />
@@ -363,7 +375,7 @@ export default function Footer() {
             >
               <motion.li className="flex items-start" whileHover={{ x: 5 }}>
                 <FaPhoneAlt className="h-5 w-5 text-teal-500 mt-0.5 mr-2" />
-                <span className="text-gray-400">+1 (555) 123-4567</span>
+                <span className="text-gray-400">+91 8300904920</span>
               </motion.li>
               <motion.li className="flex items-start" whileHover={{ x: 5 }}>
                 <FaEnvelope className="h-5 w-5 text-teal-500 mt-0.5 mr-2" />
@@ -371,12 +383,10 @@ export default function Footer() {
               </motion.li>
               <motion.li className="flex items-start" whileHover={{ x: 5 }}>
                 <SiGooglemaps className="h-5 w-5 text-teal-500 mt-0.5 mr-2" />
-                <span className="text-gray-400">
-                  123 Innovation Drive, Tech Valley, CA 94043
-                </span>
+                <span className="text-gray-400">Coimbatore</span>
               </motion.li>
             </motion.ul>
-            
+
             {/* NEW: AI Assistant Chat Bubble */}
             {/* <motion.div 
               className="mt-6 p-4 bg-gray-800/50 border border-gray-700 rounded-lg"
@@ -405,8 +415,8 @@ export default function Footer() {
                 key={item.name}
                 href={item.href}
                 className="text-gray-400 hover:text-teal-500 relative"
-                whileHover={{ 
-                  scale: 1.2, 
+                whileHover={{
+                  scale: 1.2,
                   rotate: 5,
                   color: "#14b8a6",
                 }}
@@ -419,16 +429,16 @@ export default function Footer() {
                 {/* NEW: Glow effect on hover */}
                 <motion.div
                   className="absolute -inset-2 rounded-full bg-teal-500/0"
-                  whileHover={{ 
+                  whileHover={{
                     backgroundColor: "rgba(20, 184, 166, 0.2)",
-                    boxShadow: "0 0 15px rgba(20, 184, 166, 0.5)"
+                    boxShadow: "0 0 15px rgba(20, 184, 166, 0.5)",
                   }}
                 ></motion.div>
               </motion.a>
             ))}
           </div>
         </motion.div>
-        
+
         {/* NEW: Enhanced AI Pulse Animation with multiple dots */}
         {/* <div className="mt-8 flex justify-center">
           <AIPulseAnimation />
@@ -441,52 +451,52 @@ export default function Footer() {
 // Brain 3D Model Component Enhanced
 function BrainModelEnhanced() {
   const groupRef = useRef();
-  
+
   return (
     <group ref={groupRef}>
       {/* Main brain structure */}
       <Sphere args={[1, 32, 32]} position={[0, 0, 0]}>
-        <meshStandardMaterial 
-          color="#14b8a6" 
-          wireframe 
+        <meshStandardMaterial
+          color="#14b8a6"
+          wireframe
           emissive="#14b8a6"
           emissiveIntensity={0.5}
         />
       </Sphere>
-      
+
       <Sphere args={[0.8, 20, 20]} position={[0, 0, 0]}>
-        <meshStandardMaterial 
-          color="#a855f7" 
-          wireframe 
+        <meshStandardMaterial
+          color="#a855f7"
+          wireframe
           emissive="#a855f7"
           emissiveIntensity={0.5}
         />
       </Sphere>
-      
+
       {/* Synaptic connections */}
       {[...Array(8)].map((_, i) => (
-        <mesh 
-          key={i} 
+        <mesh
+          key={i}
           position={[
-            Math.sin(i / 8 * Math.PI * 2) * 0.7,
-            Math.cos(i / 8 * Math.PI * 2) * 0.7,
-            0
+            Math.sin((i / 8) * Math.PI * 2) * 0.7,
+            Math.cos((i / 8) * Math.PI * 2) * 0.7,
+            0,
           ]}
         >
           <sphereGeometry args={[0.08, 16, 16]} />
-          <meshStandardMaterial 
-            color={i % 2 === 0 ? "#14b8a6" : "#a855f7"} 
+          <meshStandardMaterial
+            color={i % 2 === 0 ? "#14b8a6" : "#a855f7"}
             emissive={i % 2 === 0 ? "#14b8a6" : "#a855f7"}
             emissiveIntensity={0.8}
           />
         </mesh>
       ))}
-      
+
       {/* Outer neural network layer */}
       <Sphere args={[1.2, 16, 16]} position={[0, 0, 0]}>
-        <meshStandardMaterial 
-          color="#3b82f6" 
-          wireframe 
+        <meshStandardMaterial
+          color="#3b82f6"
+          wireframe
           opacity={0.3}
           transparent
           emissive="#3b82f6"
@@ -500,43 +510,43 @@ function BrainModelEnhanced() {
 // Neural Particles Effect for Brain
 function NeuralParticles() {
   const particles = useRef();
-  
+
   // Create particle positions
   const particlePositions = [];
   const numParticles = 50;
-  
+
   for (let i = 0; i < numParticles; i++) {
     const theta = Math.random() * Math.PI * 2;
     const phi = Math.random() * Math.PI * 2;
     const r = 0.8 + Math.random() * 0.8;
-    
+
     particlePositions.push(
       Math.sin(theta) * Math.cos(phi) * r,
       Math.sin(theta) * Math.sin(phi) * r,
       Math.cos(theta) * r
     );
   }
-  
+
   useEffect(() => {
     if (!particles.current) return;
-    
+
     const positionArray = particles.current.geometry.attributes.position.array;
-    
+
     const animate = () => {
       for (let i = 0; i < positionArray.length; i += 3) {
         // Animate particles in a subtle motion
         positionArray[i] += Math.sin(Date.now() * 0.001 + i) * 0.002;
-        positionArray[i+1] += Math.cos(Date.now() * 0.002 + i) * 0.002;
-        positionArray[i+2] += Math.sin(Date.now() * 0.001 + i) * 0.002;
+        positionArray[i + 1] += Math.cos(Date.now() * 0.002 + i) * 0.002;
+        positionArray[i + 2] += Math.sin(Date.now() * 0.001 + i) * 0.002;
       }
-      
+
       particles.current.geometry.attributes.position.needsUpdate = true;
       requestAnimationFrame(animate);
     };
-    
+
     animate();
   }, []);
-  
+
   return (
     <points ref={particles}>
       <bufferGeometry>
@@ -583,7 +593,7 @@ function NeuralNetworkBackground() {
           }}
         />
       ))}
-      
+
       {/* Connection lines - enhanced with more paths */}
       <svg className="absolute inset-0 w-full h-full opacity-10">
         <motion.path
@@ -602,7 +612,12 @@ function NeuralNetworkBackground() {
           fill="none"
           initial={{ pathLength: 0, opacity: 0 }}
           animate={{ pathLength: 1, opacity: 0.5 }}
-          transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 0.5 }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "linear",
+            delay: 0.5,
+          }}
         />
         <motion.path
           d="M150,300 C200,250 250,350 300,300 S350,250 400,300"
@@ -611,9 +626,14 @@ function NeuralNetworkBackground() {
           fill="none"
           initial={{ pathLength: 0, opacity: 0 }}
           animate={{ pathLength: 1, opacity: 0.5 }}
-          transition={{ duration: 2.5, repeat: Infinity, ease: "linear", delay: 1 }}
+          transition={{
+            duration: 2.5,
+            repeat: Infinity,
+            ease: "linear",
+            delay: 1,
+          }}
         />
-        
+
         {/* NEW: Additional neural paths */}
         <motion.path
           d="M300,50 C350,100 400,75 450,120"
@@ -622,7 +642,12 @@ function NeuralNetworkBackground() {
           fill="none"
           initial={{ pathLength: 0, opacity: 0 }}
           animate={{ pathLength: 1, opacity: 0.5 }}
-          transition={{ duration: 2, repeat: Infinity, ease: "linear", delay: 1.5 }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "linear",
+            delay: 1.5,
+          }}
         />
         <motion.path
           d="M0,150 C50,180 100,120 150,150"
@@ -631,7 +656,12 @@ function NeuralNetworkBackground() {
           fill="none"
           initial={{ pathLength: 0, opacity: 0 }}
           animate={{ pathLength: 1, opacity: 0.5 }}
-          transition={{ duration: 2.2, repeat: Infinity, ease: "linear", delay: 0.7 }}
+          transition={{
+            duration: 2.2,
+            repeat: Infinity,
+            ease: "linear",
+            delay: 0.7,
+          }}
         />
         <motion.path
           d="M250,350 C300,320 350,380 400,350"
@@ -640,7 +670,12 @@ function NeuralNetworkBackground() {
           fill="none"
           initial={{ pathLength: 0, opacity: 0 }}
           animate={{ pathLength: 1, opacity: 0.5 }}
-          transition={{ duration: 2.7, repeat: Infinity, ease: "linear", delay: 1.2 }}
+          transition={{
+            duration: 2.7,
+            repeat: Infinity,
+            ease: "linear",
+            delay: 1.2,
+          }}
         />
       </svg>
     </div>
@@ -657,7 +692,7 @@ function DataStreamEffect() {
           key={`data-stream-${i}`}
           className="absolute w-px h-24 bg-gradient-to-b from-transparent via-teal-500/40 to-transparent"
           style={{
-            left: `${5 + (i * 8)}%`,
+            left: `${5 + i * 8}%`,
             top: "-10%",
           }}
           animate={{
@@ -671,7 +706,7 @@ function DataStreamEffect() {
           }}
         />
       ))}
-      
+
       {/* Binary numbers floating upward */}
       {Array.from({ length: 15 }).map((_, i) => (
         <motion.div
@@ -684,7 +719,7 @@ function DataStreamEffect() {
           initial={{ opacity: 0 }}
           animate={{
             y: [0, -500],
-            opacity: [0, 0.3, 0]
+            opacity: [0, 0.3, 0],
           }}
           transition={{
             duration: 10 + Math.random() * 15,
@@ -707,13 +742,13 @@ function AIGlowCells() {
       {Array.from({ length: 20 }).map((_, i) => {
         const size = 20 + Math.random() * 30;
         const color = [
-          "bg-teal-500/10", 
-          "bg-purple-500/10", 
-          "bg-blue-500/10", 
+          "bg-teal-500/10",
+          "bg-purple-500/10",
+          "bg-blue-500/10",
           "bg-cyan-500/10",
-          "bg-emerald-500/10"
+          "bg-emerald-500/10",
         ][Math.floor(Math.random() * 5)];
-        
+
         return (
           <motion.div
             key={`cell-${i}`}
@@ -729,8 +764,8 @@ function AIGlowCells() {
               boxShadow: [
                 "0 0 10px rgba(20, 184, 166, 0)",
                 "0 0 20px rgba(20, 184, 166, 0.2)",
-                "0 0 10px rgba(20, 184, 166, 0)"
-              ]
+                "0 0 10px rgba(20, 184, 166, 0)",
+              ],
             }}
             transition={{
               duration: 3 + Math.random() * 5,
@@ -760,7 +795,7 @@ function BinaryCodeLayer() {
           initial={{ opacity: 0 }}
           animate={{
             y: [0, -500],
-            opacity: [0, 0.3, 0]
+            opacity: [0, 0.3, 0],
           }}
           transition={{
             duration: 10 + Math.random() * 15,
