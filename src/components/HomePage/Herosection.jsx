@@ -365,66 +365,7 @@ function HeroSection() {
                 </Link>
               </motion.div>
 
-              {/* Trust Badges - Enhanced with animations */}
-              <motion.div
-                className="mt-16 flex flex-wrap items-center justify-center gap-8"
-                variants={scaleUp}
-              >
-                <motion.div
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  className="relative"
-                >
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-teal-500/20 to-blue-500/20 rounded-full blur-md"
-                    animate={{
-                      scale: [1, 1.2, 1],
-                      opacity: [0.5, 0.8, 0.5],
-                    }}
-                    transition={{ duration: 3, repeat: Infinity }}
-                  />
-                  <img
-                    src="/SSLSecured.png"
-                    alt="SSL Secured"
-                    className="h-14 relative z-10"
-                  />
-                </motion.div>
-                <motion.div
-                  whileHover={{ scale: 1.1, rotate: -5 }}
-                  className="relative"
-                >
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-md"
-                    animate={{
-                      scale: [1, 1.2, 1],
-                      opacity: [0.5, 0.8, 0.5],
-                    }}
-                    transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
-                  />
-                  <img
-                    src="/iso-certified.png"
-                    alt="ISO Certified"
-                    className="h-14 relative z-10"
-                  />
-                </motion.div>
-                <motion.div
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  className="relative"
-                >
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-md"
-                    animate={{
-                      scale: [1, 1.2, 1],
-                      opacity: [0.5, 0.8, 0.5],
-                    }}
-                    transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-                  />
-                  <img
-                    src="/google-cloud-partner.png"
-                    alt="Google Cloud Partner"
-                    className="h-14 relative z-10"
-                  />
-                </motion.div>
-              </motion.div>
+             
             </motion.div>
           </div>
         </div>

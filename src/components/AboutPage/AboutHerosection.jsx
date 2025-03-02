@@ -361,7 +361,7 @@ function AboutHeroSection() {
                   animate={{ opacity: [0, 0.5, 0] }}
                   transition={{ duration: 3, repeat: Infinity }}
                 />
-                <span className="relative">Founded in 2019,</span>
+                <span className="relative">Founded in 2024,</span>
               </motion.span>{" "}
               CodeNovaTech emerged as a catalyst for AI transformation. Our
               journey began with a simple vision: to bridge the gap between
@@ -652,45 +652,7 @@ function AboutHeroSection() {
               </div>
             </motion.div>
 
-            {/* Enhanced Trust Badges with animations */}
-            <div className="flex flex-wrap gap-4 mt-8 justify-center">
-              <motion.div
-                className="flex items-center gap-2 px-4 py-2 bg-gray-900 rounded-full border border-gray-700 hover:border-teal-500/30 transition-colors"
-                whileHover={{ y: -5, scale: 1.05 }}
-              >
-                <motion.div
-                  animate={{
-                    rotate: [0, 10, 0, -10, 0],
-                    color: ["#2dd4bf", "#0ea5e9", "#2dd4bf"],
-                  }}
-                  transition={{
-                    rotate: { duration: 2, repeat: Infinity },
-                    color: { duration: 3, repeat: Infinity },
-                  }}
-                >
-                  <FaAward className="h-5 w-5" />
-                </motion.div>
-                <span className="text-sm text-white">ISO 27001 Certified</span>
-              </motion.div>
-              <motion.div
-                className="flex items-center gap-2 px-4 py-2 bg-gray-900 rounded-full border border-gray-700 hover:border-blue-500/30 transition-colors"
-                whileHover={{ y: -5, scale: 1.05 }}
-              >
-                <motion.div
-                  animate={{
-                    rotate: [0, 10, 0, -10, 0],
-                    color: ["#0ea5e9", "#2dd4bf", "#0ea5e9"],
-                  }}
-                  transition={{
-                    rotate: { duration: 2, repeat: Infinity },
-                    color: { duration: 3, repeat: Infinity },
-                  }}
-                >
-                  <FaUsers className="h-5 w-5" />
-                </motion.div>
-                <span className="text-sm text-white">AWS Partner</span>
-              </motion.div>
-            </div>
+           
           </motion.div>
         </motion.div>
 
