@@ -28,6 +28,14 @@ function HeroSection() {
       {/* Enhanced Loading Animation */}
       {isLoading && (
         <div className="fixed inset-0 flex items-center justify-center bg-gray-900 z-50">
+          {/* Background Image */}
+          <div className="absolute inset-0 -z-10">
+            <div
+              className="absolute inset-0 bg-cover bg-center opacity-20"
+              style={{ backgroundImage: `url('/circuit-pattern.svg')` }}
+            />
+          </div>
+
           <div className="relative">
             <motion.div
               className="w-20 h-20 border-4 border-teal-500 rounded-full"
@@ -37,6 +45,7 @@ function HeroSection() {
               }}
               transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
             />
+
             <motion.div
               className="absolute inset-0 flex items-center justify-center text-white font-bold"
               animate={{ scale: [0.8, 1.2, 0.8] }}
@@ -54,6 +63,14 @@ function HeroSection() {
 
       <div className="relative isolate pt-24">
         {/* Enhanced Animated Background Elements */}
+        {/* Background Image */}
+        <div className="absolute inset-0 -z-10">
+          <div
+            className="absolute inset-0 bg-cover bg-center opacity-20"
+            style={{ backgroundImage: `url('/circuit-pattern.svg')` }}
+          />
+        </div>
+
         <div className="absolute inset-0 overflow-hidden -z-10">
           {/* Primary gradient blob */}
           <div className="absolute inset-x-0 -top-40 transform-gpu overflow-hidden blur-3xl sm:-top-80">
@@ -98,7 +115,7 @@ function HeroSection() {
                   }}
                   className="bg-clip-text text-transparent"
                 >
-                CODENOVATECH: AI-Powered Solutions for Businesses
+                  CODENOVATECH: AI-Powered Solutions for Businesses
                 </motion.span>
               </motion.h1>
 
@@ -122,13 +139,19 @@ function HeroSection() {
                 variants={fadeIn}
               >
                 <p>
-                  We are a Coimbatore-based IT company specializing in Artificial Intelligence. As a product-based startup, we deliver cutting-edge AI solutions tailored to your needs. Our expertise includes Generative AI, Predictive Analytics, and Computer Vision. We build robust AI infrastructure and ensure ethical, secure AI deployments. Partner with CODENOVATECH to transform your business with the power of AI.
+                  We are a Coimbatore-based IT company specializing in
+                  Artificial Intelligence. As a product-based startup, we
+                  deliver cutting-edge AI solutions tailored to your needs. Our
+                  expertise includes Generative AI, Predictive Analytics, and
+                  Computer Vision. We build robust AI infrastructure and ensure
+                  ethical, secure AI deployments. Partner with CODENOVATECH to
+                  transform your business with the power of AI.
                 </p>
               </motion.div>
 
               {/* AI Product Announcement - Enhanced with animations and colors */}
               <motion.div
-                className="mt-8 text-center text-white bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-xl p-8 shadow-2xl border border-white/10 relative overflow-hidden"
+                className="mt-8 text-center text-white  rounded-xl p-8 shadow-2xl border border-white/10 relative overflow-hidden"
                 variants={fadeIn}
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -148,7 +171,8 @@ function HeroSection() {
                   CODENOVATECH - Your AI Innovation Partner
                 </motion.h2>
                 <p className="text-xl relative z-10">
-                  We&#x27;re not just building software; we&#x27;re building the future with AI.
+                  We&#x27;re not just building software; we&#x27;re building the
+                  future with AI.
                 </p>
                 <ul className="list-none mt-6 space-y-3 relative z-10">
                   <motion.li
@@ -165,7 +189,9 @@ function HeroSection() {
                     >
                       🔹
                     </motion.span>
-                    <span>Cutting-edge AI technology for your unique needs</span>
+                    <span>
+                      Cutting-edge AI technology for your unique needs
+                    </span>
                   </motion.li>
                   <motion.li
                     className="flex items-center justify-center gap-2 text-lg"
@@ -181,7 +207,9 @@ function HeroSection() {
                     >
                       🔹
                     </motion.span>
-                    <span>Transforming data into intelligent, actionable insights</span>
+                    <span>
+                      Transforming data into intelligent, actionable insights
+                    </span>
                   </motion.li>
                   <motion.li
                     className="flex items-center justify-center gap-2 text-lg"
@@ -231,7 +259,7 @@ function HeroSection() {
                     >
                       💡
                     </motion.span>{" "}
-                    Explore the possibilities of AI with CODENOVATECH! {" "}
+                    Explore the possibilities of AI with CODENOVATECH!{" "}
                     <motion.span
                       animate={{ scale: [1, 1.2, 1] }}
                       transition={{

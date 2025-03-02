@@ -27,6 +27,12 @@ function ServicesHeroSection() {
     <div className="relative overflow-hidden py-24 ">
       {/* AI Neural Background */}
       <div className="absolute inset-0 opacity-30">
+        <div className="absolute inset-0 -z-10">
+          <div
+            className="absolute inset-0 bg-cover bg-center opacity-20"
+            style={{ backgroundImage: `url('/circuit-pattern.svg')` }}
+          />
+        </div>
         <AiNetworkAnimation />
 
         {/* Floating AI Nodes */}

@@ -4,7 +4,6 @@ import {
   FaRobot,
   FaMicrochip,
   FaShieldAlt,
-  FaRocket,
   FaChartLine,
 } from "react-icons/fa";
 import { SiTensorflow, SiNvidia, SiOpenai } from "react-icons/si";
@@ -49,6 +48,12 @@ function ServicesBenefitsSection() {
   return (
     <div className="relative py-24 overflow-hidden ">
       {/* AI Network Background */}
+      <div className="absolute inset-0 -z-10">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{ backgroundImage: `url('/circuit-pattern.svg')` }}
+        />
+      </div>
       <div className="absolute inset-0 opacity-15">
         <motion.div
           className="absolute top-0 left-0 w-full h-full bg-[url('/neural-network.svg')] bg-contain"
@@ -88,7 +93,7 @@ function ServicesBenefitsSection() {
         >
           {benefits.map((benefit, index) => (
             <motion.div
-              key={benefit.title}
+              key={index}
               className="relative group p-8 rounded-2xl bg-gray-800/20 border border-cyan-500/20 hover:border-cyan-400/40 backdrop-blur-lg"
               whileHover={{ y: -10, scale: 1.02 }}
             >
@@ -157,7 +162,7 @@ function ServicesBenefitsSection() {
         </motion.div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes float {
           0%,
           100% {

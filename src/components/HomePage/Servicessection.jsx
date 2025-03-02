@@ -9,7 +9,7 @@ import {
   FaAward,
   FaProjectDiagram,
   FaBrain,
-    FaRocket,
+  FaRocket,
 } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
 import { SiTensorflow, SiPytorch } from "react-icons/si";
@@ -44,7 +44,8 @@ function ServicesSection() {
     },
     {
       name: "AI Predictive Analytics",
-      description: "Data-driven forecasting and decision support systems, leveraging machine learning for accurate predictions.",
+      description:
+        "Data-driven forecasting and decision support systems, leveraging machine learning for accurate predictions.",
       icon: FaChartLine,
       href: "/services#predictive-analytics",
       stats: "93% Prediction Accuracy",
@@ -113,6 +114,14 @@ function ServicesSection() {
 
   return (
     <div className="relative py-24 sm:py-32 overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 -z-10">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{ backgroundImage: `url('/circuit-pattern.svg')` }}
+        />
+      </div>
+
       <div className="container-custom relative z-10">
         {/* Section Header */}
         <motion.div
@@ -129,16 +138,15 @@ function ServicesSection() {
           </p>
           <p className="mt-4 text-xl text-gray-300 max-w-3xl mx-auto">
             Accelerate your business transformation with our cutting-edge
-            artificial intelligence solutions, tailored for the Coimbatore IT landscape.
+            artificial intelligence solutions, tailored for the Coimbatore IT
+            landscape.
           </p>
         </motion.div>
 
         {/* Featured Product Announcement */}
         <motion.div
           className="mt-16 mx-auto max-w-4xl"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+
         >
           <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-purple-600 via-blue-600 to-teal-600 p-1">
             <div className="bg-gray-900 p-8 rounded-[calc(1.5rem-4px)] relative overflow-hidden">
@@ -220,9 +228,7 @@ function ServicesSection() {
                   <div className="w-full md:w-1/3 aspect-square relative">
                     <motion.div
                       className="absolute inset-0 flex items-center justify-center"
-                      animate={{
-                        rotate: 360,
-                      }}
+                      animate={{ rotate: 360 }}
                       transition={{
                         duration: 20,
                         repeat: Infinity,
@@ -234,9 +240,7 @@ function ServicesSection() {
 
                     <motion.div
                       className="absolute inset-0 flex items-center justify-center"
-                      animate={{
-                        rotate: -360,
-                      }}
+                      animate={{ rotate: -360 }}
                       transition={{
                         duration: 30,
                         repeat: Infinity,
@@ -249,9 +253,7 @@ function ServicesSection() {
                     <motion.div
                       className="absolute inset-0 flex items-center justify-center"
                       initial={{ scale: 0 }}
-                      animate={{
-                        scale: [0.8, 1, 0.8],
-                      }}
+                      animate={{ scale: [0.8, 1, 0.8] }}
                       transition={{
                         duration: 4,
                         repeat: Infinity,
@@ -269,15 +271,14 @@ function ServicesSection() {
           </div>
         </motion.div>
 
+        {/* Services Grid */}
         <motion.div
           className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:mt-20 sm:grid-cols-2 lg:max-w-none lg:grid-cols-3"
           variants={{
             initial: { opacity: 0 },
             animate: {
               opacity: 1,
-              transition: {
-                staggerChildren: 0.1,
-              },
+              transition: { staggerChildren: 0.1 },
             },
           }}
           initial="initial"
@@ -356,7 +357,7 @@ function ServicesSection() {
             ))}
         </motion.div>
 
-        {/* Trust Badges with animations */}
+        {/* Trust Badges */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -380,7 +381,7 @@ function ServicesSection() {
           ))}
         </motion.div>
 
-        {/* Performance Metrics with enhanced animations */}
+        {/* Performance Metrics */}
         <div className="mt-24 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -389,7 +390,7 @@ function ServicesSection() {
             whileHover={{ scale: 1.05, y: -5 }}
             className="p-6 bg-gray-800/50 rounded-xl border border-gray-700/30 hover:border-purple-500/30 transition-all overflow-hidden group"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10 opacity-0  transition-opacity" />
             <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 mb-2">
               100+
             </div>
@@ -403,7 +404,7 @@ function ServicesSection() {
             whileHover={{ scale: 1.05, y: -5 }}
             className="p-6 bg-gray-800/50 rounded-xl border border-gray-700/30 hover:border-blue-500/30 transition-all overflow-hidden group"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-teal-500/10 opacity-0  transition-opacity" />
             <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-500 mb-2">
               99.7%
             </div>
@@ -417,7 +418,7 @@ function ServicesSection() {
             whileHover={{ scale: 1.05, y: -5 }}
             className="p-6 bg-gray-800/50 rounded-xl border border-gray-700/30 hover:border-amber-500/30 transition-all overflow-hidden group"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-red-500/10 opacity-0  transition-opacity" />
             <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-red-500 mb-2">
               24/7
             </div>
@@ -431,7 +432,7 @@ function ServicesSection() {
             whileHover={{ scale: 1.05, y: -5 }}
             className="p-6 bg-gray-800/50 rounded-xl border border-gray-700/30 hover:border-green-500/30 transition-all overflow-hidden group"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-500/10 opacity-0  transition-opacity" />
             <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-500 mb-2">
               10x
             </div>
@@ -439,7 +440,7 @@ function ServicesSection() {
           </motion.div>
         </div>
 
-        {/* Framework logos */}
+        {/* Framework Logos */}
         <motion.div
           className="mt-16 flex justify-center gap-8 items-center"
           initial={{ opacity: 0 }}

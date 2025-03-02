@@ -1,11 +1,17 @@
 import { motion } from "framer-motion";
-import { FaAward, FaCloud } from "react-icons/fa";
+import { FaCloud } from "react-icons/fa";
 import { SiAwslambda, SiGooglecloud } from "react-icons/si";
 
 function AboutStatsSection() {
   return (
     <div className="relative  py-24 overflow-hidden">
       {/* Animated background elements */}
+      <div className="absolute inset-0 -z-10">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{ backgroundImage: `url('/circuit-pattern.svg')` }}
+        />
+      </div>
       <div className="absolute inset-0 opacity-10">
         <div className="absolute -top-40 left-1/3 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl" />
@@ -41,14 +47,10 @@ function AboutStatsSection() {
             </div>
           </div>
 
-        
-
           <div className="p-6 bg-gray-800/50 rounded-xl border border-gray-700/50 hover:border-teal-500/30 transition-colors group relative overflow-hidden  flex items-center gap-4">
             <SiGooglecloud className="h-8 w-8 text-blue-600" />
             <div>
-              <div className="text-xl font-bold text-white">
-                Google Cloud
-              </div>
+              <div className="text-xl font-bold text-white">Google Cloud</div>
               <div className="text-sm text-gray-600">Premier Partner</div>
             </div>
           </div>

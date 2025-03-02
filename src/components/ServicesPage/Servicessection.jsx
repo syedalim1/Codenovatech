@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 import { AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
 const services = [
   {
@@ -311,10 +312,13 @@ const PulseEffect = ({ active }) => {
             }
           : {}
       }
+      
     />
   );
 };
-
+PulseEffect.propTypes = {
+  active: PropTypes.bool.isRequired,
+};
 function ServicesSection() {
   const [activeTab, setActiveTab] = useState("features");
   const [activeService, setActiveService] = useState(services[0].id);
@@ -347,6 +351,12 @@ function ServicesSection() {
       <NeuralNetworkAnimation />
       <ParticleEffect />
       <BinaryCodeAnimation />
+      <div className="absolute inset-0 -z-10">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{ backgroundImage: `url('/circuit-pattern.svg')` }}
+        />
+      </div>
 
       {/* Optional mouse spotlight effect */}
       {showSpotlight && (

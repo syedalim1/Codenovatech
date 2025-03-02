@@ -1,16 +1,8 @@
-import { useEffect, useState, useRef } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import CountUp from "react-countup";
 
-import {
-  FaChartLine,
-  FaCode,
-  FaNewspaper,
-  FaUser,
-  FaAward,
-  FaShieldAlt,
-} from "react-icons/fa";
-import { SiGooglecloud, SiAwslambda } from "react-icons/si";
+import { FaUser, FaAward } from "react-icons/fa";
 
 import { FaUsers, FaProjectDiagram, FaRegClock } from "react-icons/fa";
 import { FiActivity } from "react-icons/fi";
@@ -74,6 +66,12 @@ function StatisticsSection() {
 
   return (
     <div className="py-24 relative" ref={ref}>
+      <div className="absolute inset-0 -z-10">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{ backgroundImage: `url('/circuit-pattern.svg')` }}
+        />
+      </div>
       <div className="container-custom">
         <motion.div
           className="text-center mb-16"
@@ -85,7 +83,8 @@ function StatisticsSection() {
             Driving Digital Excellence
           </h2>
           <p className="text-xl text-gray-400">
-            Trusted by industry leaders worldwide - delivering measurable results through technical expertise
+            Trusted by industry leaders worldwide - delivering measurable
+            results through technical expertise
           </p>
         </motion.div>
 

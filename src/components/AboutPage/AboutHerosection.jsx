@@ -1,6 +1,20 @@
 import { motion } from "framer-motion";
-import { FaRocket, FaAward, FaUsers, FaCode, FaBrain, FaRobot, FaDatabase, FaChartLine, FaMicrochip } from "react-icons/fa";
-import { SiGooglecloud, SiAwslambda, SiTensorflow, SiPytorch, SiOpenai,  SiNvidia } from "react-icons/si";
+import {
+  FaAward,
+  FaUsers,
+  FaBrain,
+  FaRobot,
+  FaDatabase,
+  FaChartLine,
+  FaMicrochip,
+} from "react-icons/fa";
+import {
+  
+  SiTensorflow,
+  SiPytorch,
+  SiOpenai,
+  SiNvidia,
+} from "react-icons/si";
 import { TypeAnimation } from "react-type-animation";
 
 const fadeIn = {
@@ -19,33 +33,33 @@ const staggerChildren = {
 
 // 3D card animation variants
 const cardVariants = {
-  initial: { 
-    opacity: 0, 
+  initial: {
+    opacity: 0,
     y: 50,
     rotateY: 25,
-    scale: 0.9
+    scale: 0.9,
   },
-  animate: { 
-    opacity: 1, 
+  animate: {
+    opacity: 1,
     y: 0,
     rotateY: 0,
     scale: 1,
-    transition: { 
-      type: "spring", 
+    transition: {
+      type: "spring",
       stiffness: 100,
-      damping: 20
-    }
+      damping: 20,
+    },
   },
   hover: {
     y: -15,
     scale: 1.05,
     rotateY: 5,
-    transition: { 
-      type: "spring", 
+    transition: {
+      type: "spring",
       stiffness: 400,
-      damping: 10
-    }
-  }
+      damping: 10,
+    },
+  },
 };
 
 // 3D animation variants
@@ -56,9 +70,9 @@ const float = {
     transition: {
       duration: 5,
       repeat: Infinity,
-      ease: "easeInOut"
-    }
-  }
+      ease: "easeInOut",
+    },
+  },
 };
 
 // Particle colors
@@ -74,6 +88,12 @@ function AboutHeroSection() {
     <div className="relative isolate overflow-hidden">
       {/* Enhanced Animated background elements */}
       <div className="absolute inset-0">
+        <div className="absolute inset-0 -z-10">
+          <div
+            className="absolute inset-0 bg-cover bg-center opacity-20"
+            style={{ backgroundImage: `url('/circuit-pattern.svg')` }}
+          />
+        </div>
         {/* Primary animated gradient blobs */}
         <motion.div
           className="absolute -top-40 -left-40 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"

@@ -14,34 +14,39 @@ import {
   FaCogs,
   FaNetworkWired,
 } from "react-icons/fa";
-import { SiGooglescholar, SiTensorflow, SiPytorch, SiOpenai } from "react-icons/si";
+import {
+  SiGooglescholar,
+  SiTensorflow,
+  SiPytorch,
+  SiOpenai,
+} from "react-icons/si";
 
 // 3D card animation variants
 const cardVariants = {
-  initial: { 
-    opacity: 0, 
+  initial: {
+    opacity: 0,
     y: 50,
-    scale: 0.9
+    scale: 0.9,
   },
-  animate: { 
-    opacity: 1, 
+  animate: {
+    opacity: 1,
     y: 0,
     scale: 1,
-    transition: { 
-      type: "spring", 
+    transition: {
+      type: "spring",
       stiffness: 100,
-      damping: 20
-    }
+      damping: 20,
+    },
   },
   hover: {
     y: -10,
     scale: 1.05,
-    transition: { 
-      type: "spring", 
+    transition: {
+      type: "spring",
       stiffness: 400,
-      damping: 10
-    }
-  }
+      damping: 10,
+    },
+  },
 };
 
 const values = [
@@ -103,11 +108,6 @@ const values = [
   },
 ];
 
-const fadeIn = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5 },
-};
 
 const staggerChildren = {
   animate: {
@@ -130,50 +130,56 @@ function AboutValuesSection() {
     <div className="relative py-24 overflow-hidden">
       {/* Enhanced Animated background elements */}
       <div className="absolute inset-0">
+        <div className="absolute inset-0 -z-10">
+          <div
+            className="absolute inset-0 bg-cover bg-center opacity-20"
+            style={{ backgroundImage: `url('/circuit-pattern.svg')` }}
+          />
+        </div>
         {/* Primary animated gradient blobs */}
-        <motion.div 
+        <motion.div
           className="absolute -top-40 left-1/3 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl"
-          animate={{ 
+          animate={{
             scale: [1, 1.2, 1],
             opacity: [0.1, 0.2, 0.1],
             x: [0, 30, 0],
             y: [0, -20, 0],
           }}
-          transition={{ 
-            duration: 15, 
+          transition={{
+            duration: 15,
             repeat: Infinity,
-            ease: "easeInOut" 
+            ease: "easeInOut",
           }}
         />
-        <motion.div 
+        <motion.div
           className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"
-          animate={{ 
+          animate={{
             scale: [1, 1.3, 1],
             opacity: [0.1, 0.3, 0.1],
             x: [0, -40, 0],
             y: [0, 30, 0],
           }}
-          transition={{ 
-            duration: 18, 
+          transition={{
+            duration: 18,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: 2
+            delay: 2,
           }}
         />
-        <motion.div 
+        <motion.div
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"
-          animate={{ 
+          animate={{
             scale: [1, 1.5, 1],
             opacity: [0.05, 0.15, 0.05],
           }}
-          transition={{ 
-            duration: 12, 
+          transition={{
+            duration: 12,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: 1
+            delay: 1,
           }}
         />
-        
+
         {/* AI-themed floating elements */}
         <motion.div
           className="absolute top-1/4 right-1/4 w-16 h-16 flex items-center justify-center"
@@ -196,7 +202,7 @@ function AboutValuesSection() {
             <div className="absolute inset-0 border-2 border-white/30 rounded-lg"></div>
           </div>
         </motion.div>
-        
+
         <motion.div
           className="absolute bottom-1/4 left-1/4 w-20 h-20 flex items-center justify-center"
           animate={{
@@ -219,7 +225,7 @@ function AboutValuesSection() {
             <div className="absolute inset-0 border-2 border-white/30 rounded-full"></div>
           </div>
         </motion.div>
-        
+
         {/* Neural network visualization */}
         <div className="absolute inset-0 opacity-20">
           {[...Array(8)].map((_, i) => (
@@ -267,7 +273,7 @@ function AboutValuesSection() {
             />
           ))}
         </div>
-        
+
         {/* Animated particles */}
         <div className="absolute inset-0">
           {[...Array(15)].map((_, i) => (
@@ -321,12 +327,13 @@ function AboutValuesSection() {
             transition={{ delay: 0.3, duration: 0.5 }}
           >
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              The foundation of our success in delivering exceptional AI solutions
+              The foundation of our success in delivering exceptional AI
+              solutions
             </p>
           </motion.div>
-          
+
           {/* Animated divider */}
-          <motion.div 
+          <motion.div
             className="h-1 w-24 bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600 rounded-full mx-auto mt-6"
             animate={{
               width: ["10%", "20%", "10%"],
@@ -358,34 +365,76 @@ function AboutValuesSection() {
             >
               {/* 3D Card with animated gradient border */}
               <div className="absolute inset-0 rounded-xl p-[2px] overflow-hidden">
-                <motion.div 
+                <motion.div
                   className={`absolute inset-0 bg-gradient-to-r ${value.color} rounded-xl`}
                   animate={{
                     background: [
-                      `linear-gradient(to right, ${value.color.split(' ')[0].replace('from-', '')}, ${value.color.split(' ')[1].replace('to-', '')})`,
-                      `linear-gradient(to bottom, ${value.color.split(' ')[0].replace('from-', '')}, ${value.color.split(' ')[1].replace('to-', '')})`,
-                      `linear-gradient(to left, ${value.color.split(' ')[0].replace('from-', '')}, ${value.color.split(' ')[1].replace('to-', '')})`,
-                      `linear-gradient(to top, ${value.color.split(' ')[0].replace('from-', '')}, ${value.color.split(' ')[1].replace('to-', '')})`,
-                      `linear-gradient(to right, ${value.color.split(' ')[0].replace('from-', '')}, ${value.color.split(' ')[1].replace('to-', '')})`,
+                      `linear-gradient(to right, ${value.color
+                        .split(" ")[0]
+                        .replace("from-", "")}, ${value.color
+                        .split(" ")[1]
+                        .replace("to-", "")})`,
+                      `linear-gradient(to bottom, ${value.color
+                        .split(" ")[0]
+                        .replace("from-", "")}, ${value.color
+                        .split(" ")[1]
+                        .replace("to-", "")})`,
+                      `linear-gradient(to left, ${value.color
+                        .split(" ")[0]
+                        .replace("from-", "")}, ${value.color
+                        .split(" ")[1]
+                        .replace("to-", "")})`,
+                      `linear-gradient(to top, ${value.color
+                        .split(" ")[0]
+                        .replace("from-", "")}, ${value.color
+                        .split(" ")[1]
+                        .replace("to-", "")})`,
+                      `linear-gradient(to right, ${value.color
+                        .split(" ")[0]
+                        .replace("from-", "")}, ${value.color
+                        .split(" ")[1]
+                        .replace("to-", "")})`,
                     ],
                   }}
-                  transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                  transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
                 />
               </div>
-              
+
               <div className="p-6 bg-gray-900 rounded-xl border border-gray-700/50 relative z-10 h-full transform-gpu">
                 {/* Animated background pattern */}
                 <div className="absolute inset-0 opacity-5 overflow-hidden rounded-xl">
-                  <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                  <svg
+                    width="100%"
+                    height="100%"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <defs>
-                      <pattern id={`grid-${index}`} width="20" height="20" patternUnits="userSpaceOnUse">
-                        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="white" strokeWidth="0.5" />
+                      <pattern
+                        id={`grid-${index}`}
+                        width="20"
+                        height="20"
+                        patternUnits="userSpaceOnUse"
+                      >
+                        <path
+                          d="M 20 0 L 0 0 0 20"
+                          fill="none"
+                          stroke="white"
+                          strokeWidth="0.5"
+                        />
                       </pattern>
                     </defs>
-                    <rect width="100%" height="100%" fill={`url(#grid-${index})`} />
+                    <rect
+                      width="100%"
+                      height="100%"
+                      fill={`url(#grid-${index})`}
+                    />
                   </svg>
                 </div>
-                
+
                 {/* Animated particles specific to each card */}
                 <div className="absolute inset-0 overflow-hidden rounded-xl">
                   {[...Array(10)].map((_, i) => (
@@ -395,7 +444,10 @@ function AboutValuesSection() {
                       style={{
                         top: `${Math.random() * 100}%`,
                         left: `${Math.random() * 100}%`,
-                        backgroundColor: particleColors[value.particles][Math.floor(Math.random() * 3)],
+                        backgroundColor:
+                          particleColors[value.particles][
+                            Math.floor(Math.random() * 3)
+                          ],
                       }}
                       animate={{
                         y: [0, Math.random() * -50, 0],
@@ -427,25 +479,33 @@ function AboutValuesSection() {
                         cx="50%"
                         cy="50%"
                         r="30"
-                        className={`fill-none stroke-current text-${value.color.split(" ")[0].replace('from-', '')}`}
+                        className={`fill-none stroke-current text-${value.color
+                          .split(" ")[0]
+                          .replace("from-", "")}`}
                         strokeWidth="6"
                         strokeDasharray={`${2 * Math.PI * 30}`}
                         initial={{ strokeDashoffset: `${2 * Math.PI * 30}` }}
-                        animate={{ 
-                          strokeDashoffset: `${2 * Math.PI * 30 * (1 - value.progress / 100)}`,
+                        animate={{
+                          strokeDashoffset: `${
+                            2 * Math.PI * 30 * (1 - value.progress / 100)
+                          }`,
                           stroke: [
-                            value.color.split(" ")[0].replace('from-', ''),
-                            value.color.split(" ")[1].replace('to-', ''),
-                            value.color.split(" ")[0].replace('from-', '')
-                          ]
+                            value.color.split(" ")[0].replace("from-", ""),
+                            value.color.split(" ")[1].replace("to-", ""),
+                            value.color.split(" ")[0].replace("from-", ""),
+                          ],
                         }}
-                        transition={{ 
+                        transition={{
                           strokeDashoffset: { duration: 1.5, ease: "easeOut" },
-                          stroke: { duration: 3, repeat: Infinity, ease: "linear" }
+                          stroke: {
+                            duration: 3,
+                            repeat: Infinity,
+                            ease: "linear",
+                          },
                         }}
                       />
                     </svg>
-                    <motion.div 
+                    <motion.div
                       className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-sm font-bold text-white"
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
@@ -460,18 +520,24 @@ function AboutValuesSection() {
                 <motion.div
                   className={`mb-6 p-4 rounded-xl bg-gradient-to-r ${value.color} w-fit relative`}
                   whileHover={{ scale: 1.1, rotate: 5 }}
-                  animate={{ 
+                  animate={{
                     boxShadow: [
-                      `0 0 0px ${value.color.split(' ')[0].replace('from-', '')}`,
-                      `0 0 20px ${value.color.split(' ')[0].replace('from-', '')}`,
-                      `0 0 0px ${value.color.split(' ')[0].replace('from-', '')}`,
-                    ]
+                      `0 0 0px ${value.color
+                        .split(" ")[0]
+                        .replace("from-", "")}`,
+                      `0 0 20px ${value.color
+                        .split(" ")[0]
+                        .replace("from-", "")}`,
+                      `0 0 0px ${value.color
+                        .split(" ")[0]
+                        .replace("from-", "")}`,
+                    ],
                   }}
                   transition={{ boxShadow: { duration: 2, repeat: Infinity } }}
                 >
                   <value.icon className="h-8 w-8 text-white" />
                   {/* Animated sparkle */}
-                  <motion.div 
+                  <motion.div
                     className="absolute inset-0 rounded-xl"
                     animate={{
                       boxShadow: [
@@ -485,23 +551,33 @@ function AboutValuesSection() {
                 </motion.div>
 
                 {/* Title with gradient animation */}
-                <motion.h3 
+                <motion.h3
                   className={`text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${value.color} mb-4`}
                   animate={{
-                    backgroundPosition: ['0% center', '100% center', '0% center'],
+                    backgroundPosition: [
+                      "0% center",
+                      "100% center",
+                      "0% center",
+                    ],
                   }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
                 >
                   {value.name}
                 </motion.h3>
-                
+
                 <p className="text-gray-300 mb-6">{value.description}</p>
 
                 {/* AI Feature Badge */}
                 <div className="mb-6 p-3 bg-gray-800/80 rounded-lg border-l-2 border-teal-500">
                   <div className="flex items-center gap-2 mb-1">
                     <FaRobot className="h-4 w-4 text-teal-400" />
-                    <p className="text-teal-400 text-sm font-medium">{value.aiFeature}</p>
+                    <p className="text-teal-400 text-sm font-medium">
+                      {value.aiFeature}
+                    </p>
                   </div>
                   <p className="text-gray-400 text-xs">{value.aiMetric}</p>
                 </div>
@@ -512,10 +588,12 @@ function AboutValuesSection() {
                     <motion.div
                       key={i}
                       className="p-2 bg-gray-800 rounded-lg"
-                      whileHover={{ 
-                        scale: 1.2, 
+                      whileHover={{
+                        scale: 1.2,
                         rotate: 10,
-                        backgroundColor: value.color.split(' ')[0].replace('from-', '')
+                        backgroundColor: value.color
+                          .split(" ")[0]
+                          .replace("from-", ""),
                       }}
                     >
                       <Icon className="h-5 w-5 text-white" />
@@ -540,13 +618,13 @@ function AboutValuesSection() {
                 <div className="border-t border-gray-700 pt-4 mt-4">
                   <div className="flex items-center gap-2 text-xs font-medium text-gray-400">
                     <motion.div
-                      animate={{ 
+                      animate={{
                         rotate: [0, 10, 0, -10, 0],
-                        color: ["#fcd34d", "#fbbf24", "#fcd34d"]
+                        color: ["#fcd34d", "#fbbf24", "#fcd34d"],
                       }}
-                      transition={{ 
+                      transition={{
                         rotate: { duration: 2, repeat: Infinity },
-                        color: { duration: 3, repeat: Infinity }
+                        color: { duration: 3, repeat: Infinity },
                       }}
                     >
                       <FaTrophy className="h-4 w-4" />
@@ -566,14 +644,18 @@ function AboutValuesSection() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <motion.div 
+          <motion.div
             className="p-6 bg-gray-900 rounded-xl border border-gray-700/50 hover:border-teal-500/30 transition-colors group relative overflow-hidden shadow-md flex items-center gap-4"
-            whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
+            whileHover={{
+              y: -5,
+              boxShadow:
+                "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+            }}
           >
             {/* Animated background glow */}
-            <motion.div 
+            <motion.div
               className="absolute inset-0 bg-teal-500/5 rounded-xl"
-              animate={{ 
+              animate={{
                 boxShadow: [
                   "inset 0 0 0px rgba(45,212,191,0)",
                   "inset 0 0 30px rgba(45,212,191,0.2)",
@@ -582,7 +664,7 @@ function AboutValuesSection() {
               }}
               transition={{ duration: 3, repeat: Infinity }}
             />
-            
+
             <motion.div
               whileHover={{ rotate: 10, scale: 1.1 }}
               className="text-teal-500"
@@ -590,12 +672,16 @@ function AboutValuesSection() {
               <SiGooglescholar className="h-8 w-8" />
             </motion.div>
             <div>
-              <motion.div 
+              <motion.div
                 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500"
                 animate={{
-                  backgroundPosition: ['0% center', '100% center', '0% center'],
+                  backgroundPosition: ["0% center", "100% center", "0% center"],
                 }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               >
                 ISO 27001
               </motion.div>
@@ -603,14 +689,18 @@ function AboutValuesSection() {
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="p-6 bg-gray-900 rounded-xl border border-gray-700/50 hover:border-purple-500/30 transition-colors group relative overflow-hidden shadow-md flex items-center gap-4"
-            whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
+            whileHover={{
+              y: -5,
+              boxShadow:
+                "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+            }}
           >
             {/* Animated background glow */}
-            <motion.div 
+            <motion.div
               className="absolute inset-0 bg-purple-500/5 rounded-xl"
-              animate={{ 
+              animate={{
                 boxShadow: [
                   "inset 0 0 0px rgba(168,85,247,0)",
                   "inset 0 0 30px rgba(168,85,247,0.2)",
@@ -619,7 +709,7 @@ function AboutValuesSection() {
               }}
               transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
             />
-            
+
             <motion.div
               whileHover={{ rotate: -10, scale: 1.1 }}
               className="text-purple-500"
@@ -627,12 +717,16 @@ function AboutValuesSection() {
               <FaMedal className="h-8 w-8" />
             </motion.div>
             <div>
-              <motion.div 
+              <motion.div
                 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500"
                 animate={{
-                  backgroundPosition: ['0% center', '100% center', '0% center'],
+                  backgroundPosition: ["0% center", "100% center", "0% center"],
                 }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               >
                 5★ Rating
               </motion.div>
@@ -640,14 +734,18 @@ function AboutValuesSection() {
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="p-6 bg-gray-900 rounded-xl border border-gray-700/50 hover:border-orange-500/30 transition-colors group relative overflow-hidden shadow-md flex items-center gap-4"
-            whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
+            whileHover={{
+              y: -5,
+              boxShadow:
+                "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+            }}
           >
             {/* Animated background glow */}
-            <motion.div 
+            <motion.div
               className="absolute inset-0 bg-orange-500/5 rounded-xl"
-              animate={{ 
+              animate={{
                 boxShadow: [
                   "inset 0 0 0px rgba(249,115,22,0)",
                   "inset 0 0 30px rgba(249,115,22,0.2)",
@@ -656,7 +754,7 @@ function AboutValuesSection() {
               }}
               transition={{ duration: 3, repeat: Infinity, delay: 1 }}
             />
-            
+
             <motion.div
               whileHover={{ rotate: 10, scale: 1.1 }}
               className="text-orange-500"
@@ -664,12 +762,16 @@ function AboutValuesSection() {
               <FaUsers className="h-8 w-8" />
             </motion.div>
             <div>
-              <motion.div 
+              <motion.div
                 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500"
                 animate={{
-                  backgroundPosition: ['0% center', '100% center', '0% center'],
+                  backgroundPosition: ["0% center", "100% center", "0% center"],
                 }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               >
                 50+
               </motion.div>
@@ -677,14 +779,18 @@ function AboutValuesSection() {
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="p-6 bg-gray-900 rounded-xl border border-gray-700/50 hover:border-green-500/30 transition-colors group relative overflow-hidden shadow-md flex items-center gap-4"
-            whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
+            whileHover={{
+              y: -5,
+              boxShadow:
+                "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+            }}
           >
             {/* Animated background glow */}
-            <motion.div 
+            <motion.div
               className="absolute inset-0 bg-green-500/5 rounded-xl"
-              animate={{ 
+              animate={{
                 boxShadow: [
                   "inset 0 0 0px rgba(16,185,129,0)",
                   "inset 0 0 30px rgba(16,185,129,0.2)",
@@ -693,7 +799,7 @@ function AboutValuesSection() {
               }}
               transition={{ duration: 3, repeat: Infinity, delay: 1.5 }}
             />
-            
+
             <motion.div
               whileHover={{ rotate: -10, scale: 1.1 }}
               className="text-green-500"
@@ -701,12 +807,16 @@ function AboutValuesSection() {
               <FaRocket className="h-8 w-8" />
             </motion.div>
             <div>
-              <motion.div 
+              <motion.div
                 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-500"
                 animate={{
-                  backgroundPosition: ['0% center', '100% center', '0% center'],
+                  backgroundPosition: ["0% center", "100% center", "0% center"],
                 }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               >
                 5+ Years
               </motion.div>
@@ -737,7 +847,7 @@ function AboutValuesSection() {
               Ready to experience our AI-driven development approach?
             </p>
           </motion.div>
-          
+
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
@@ -745,7 +855,7 @@ function AboutValuesSection() {
           >
             {/* Animated gradient border */}
             <div className="absolute inset-0 rounded-full p-[2px] overflow-hidden">
-              <motion.div 
+              <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-teal-500 via-blue-600 to-purple-600 rounded-full"
                 animate={{
                   background: [
@@ -758,7 +868,7 @@ function AboutValuesSection() {
                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
               />
             </div>
-            
+
             <button className="relative z-10 bg-gray-900 text-white px-8 py-4 rounded-full font-semibold shadow-lg transition-all">
               Start Your AI Project Today
             </button>

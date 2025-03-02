@@ -13,7 +13,7 @@ import {
 } from "react-icons/fa";
 import { SiTrustpilot } from "react-icons/si";
 import ContactModal from "./ContactModal";
-
+import PropTypes from "prop-types";
 function CallToAction() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [countdown, setCountdown] = useState({
@@ -50,6 +50,12 @@ function CallToAction() {
     <section className="relative overflow-hidden  py-24">
       {/* Enhanced AI-themed animated background elements */}
       <AIBackgroundEffects />
+      <div className="absolute inset-0 -z-10">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{ backgroundImage: `url('/circuit-pattern.svg')` }}
+        />
+      </div>
 
       <div className="relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -232,8 +238,8 @@ function CallToAction() {
             {/* Enhanced founder message */}
             <div className="mt-16 max-w-2xl mx-auto bg-gradient-to-r from-gray-900 to-gray-800 p-6 rounded-lg border border-gray-700">
               <p className="text-gray-300 italic mb-4">
-                "We're committed to innovation, integrity, collaboration, and
-                excellence in every AI solution we deliver."
+                &quot;We are committed to innovation, integrity, collaboration,
+                and excellence in every AI solution we deliver &quot;
               </p>
               <div className="flex items-center justify-center">
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
@@ -418,6 +424,12 @@ function MetricBadge({ icon, value, label, color }) {
     </motion.div>
   );
 }
+MetricBadge.propTypes = {
+  icon: PropTypes.node.isRequired,
+  value: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+};
 
 function ServiceCard({ icon, title, description, color }) {
   return (
@@ -448,7 +460,12 @@ function ServiceCard({ icon, title, description, color }) {
     </motion.div>
   );
 }
-
+ServiceCard.propTypes = {
+  icon: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+};
 function CountdownUnit({ value, label, color }) {
   return (
     <div className="flex flex-col items-center">
@@ -463,5 +480,9 @@ function CountdownUnit({ value, label, color }) {
     </div>
   );
 }
-
+CountdownUnit.propTypes = {
+  value: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+};
 export default CallToAction;

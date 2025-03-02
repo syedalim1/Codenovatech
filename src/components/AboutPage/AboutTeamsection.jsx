@@ -44,7 +44,12 @@ function AboutTeamSection() {
     <div className="relative py-24 overflow-hidden">
       {/* Background Animation */}
       <AiNetworkAnimation />
-
+      <div className="absolute inset-0 -z-10">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{ backgroundImage: `url('/circuit-pattern.svg')` }}
+        />
+      </div>
       <div className="container-custom relative z-10">
         <motion.div
           className="mx-auto"
