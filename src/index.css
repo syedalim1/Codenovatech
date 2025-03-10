@@ -4,6 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import custom animations */
+@import "./components/HomePage/HeroSectionComponents/animations.css";
+
 @layer base {
   body {
     @apply text-white;

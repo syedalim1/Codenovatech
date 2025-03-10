@@ -1,6 +1,7 @@
-import React, { memo, useMemo } from "react";
+import { memo, useMemo } from "react";
 import { motion } from "framer-motion";
-import { useAnimationVisibility, usePerformanceOptimizedAnimations } from "../../utils/performanceUtils";
+import PropTypes from "prop-types";
+import { useAnimationVisibility, usePerformanceOptimizedAnimations } from "../utils/performanceUtils";
 
 // Memoized neural network SVG for better performance
 const NeuralNetworkSVG = memo(() => (
@@ -34,13 +35,14 @@ const NeuralNetworkSVG = memo(() => (
     </g>
   </svg>
 ));
+NeuralNetworkSVG.displayName = 'NeuralNetworkSVG';
 
 // Memoized neural nodes with deterministic positioning
 const FloatingNeuralNodes = memo(({ shouldAnimate, performanceSettings }) => {
   // Calculate deterministic positions instead of random for better performance
   const nodePositions = useMemo(() => {
     const positions = [];
-    const nodeCount = performanceSettings.particleCount || 10;
+    const nodeCount = performanceSettings?.particleCount || 10;
     
     for (let i = 0; i < nodeCount; i++) {
       // Create a grid pattern with slight variations instead of random positions
@@ -57,7 +59,7 @@ const FloatingNeuralNodes = memo(({ shouldAnimate, performanceSettings }) => {
       });
     }
     return positions;
-  }, [performanceSettings.particleCount]);
+  }, [performanceSettings?.particleCount]);
 
   if (!shouldAnimate) return null;
 
@@ -89,14 +91,22 @@ const FloatingNeuralNodes = memo(({ shouldAnimate, performanceSettings }) => {
     </div>
   );
 });
+FloatingNeuralNodes.displayName = 'FloatingNeuralNodes';
+FloatingNeuralNodes.propTypes = {
+  shouldAnimate: PropTypes.bool,
+  performanceSettings: PropTypes.shape({
+    particleCount: PropTypes.number,
+    tier: PropTypes.string
+  })
+};
 
 // Memoized particles with deterministic positioning
 const GlowingParticles = memo(({ shouldAnimate, performanceSettings }) => {
   // Calculate deterministic positions for particles
   const particlePositions = useMemo(() => {
     const positions = [];
-    const particleCount = performanceSettings.tier === 'low' ? 10 : 
-                         performanceSettings.tier === 'medium' ? 20 : 30;
+    const particleCount = performanceSettings?.tier === 'low' ? 10 : 
+                         performanceSettings?.tier === 'medium' ? 20 : 30;
     
     for (let i = 0; i < particleCount; i++) {
       const row = Math.floor(i / 6) % 5;
@@ -112,7 +122,7 @@ const GlowingParticles = memo(({ shouldAnimate, performanceSettings }) => {
       });
     }
     return positions;
-  }, [performanceSettings.tier]);
+  }, [performanceSettings?.tier]);
 
   if (!shouldAnimate) return null;
 
@@ -143,6 +153,14 @@ const GlowingParticles = memo(({ shouldAnimate, performanceSettings }) => {
     </div>
   );
 });
+GlowingParticles.displayName = 'GlowingParticles';
+GlowingParticles.propTypes = {
+  shouldAnimate: PropTypes.bool,
+  performanceSettings: PropTypes.shape({
+    particleCount: PropTypes.number,
+    tier: PropTypes.string
+  })
+};
 
 // Optimized code rain effect with reduced components
 const CodeRainEffect = memo(({ shouldAnimate }) => {
@@ -183,23 +201,31 @@ const CodeRainEffect = memo(({ shouldAnimate }) => {
     </motion.div>
   );
 });
+CodeRainEffect.displayName = 'CodeRainEffect';
+CodeRainEffect.propTypes = {
+  shouldAnimate: PropTypes.bool
+};
 
-const AiBackgroundAnimation = () => {
+const SharedAiBackground = () => {
   const [ref, isVisible] = useAnimationVisibility();
   const performanceSettings = usePerformanceOptimizedAnimations();
   
   return (
-    <div ref={ref} className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+    <div ref={ref} className="absolute inset-0 -z-5 overflow-hidden pointer-events-none">
       {/* Static elements are always rendered */}
       <NeuralNetworkSVG />
       
-   
       {/* Dynamic elements only render when visible */}
       <FloatingNeuralNodes shouldAnimate={isVisible} performanceSettings={performanceSettings} />
       <GlowingParticles shouldAnimate={isVisible} performanceSettings={performanceSettings} />
-      <CodeRainEffect shouldAnimate={isVisible && performanceSettings.tier !== 'low'} />
+      <CodeRainEffect shouldAnimate={isVisible && performanceSettings?.tier !== 'low'} />
+      
+      {/* Circuit pattern overlay */}
+      <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url('/circuit-pattern.svg')` }} />
     </div>
   );
 };
 
-export default memo(AiBackgroundAnimation);
+SharedAiBackground.displayName = 'SharedAiBackground';
+
+export default memo(SharedAiBackground);

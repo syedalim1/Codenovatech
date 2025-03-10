@@ -2,7 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { Stars, OrbitControls } from "@react-three/drei";
 
 const Background = () => (
-  <div className="fixed top-0 left-0 w-screen h-screen -z-10 bg-gradient-to-b from-gray-900 to-gray-800">
+  <div className="fixed top-0 left-0 w-screen h-screen -z-10 bg-black">
     <Canvas>
       <ambientLight intensity={0.5} />
       <Stars

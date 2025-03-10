@@ -2,6 +2,7 @@ import { FaBrain, FaMicrochip, FaRobot } from "react-icons/fa";
 import { SiTensorflow, SiOpenai, SiNvidia } from "react-icons/si";
 import { motion } from "framer-motion";
 import AiNetworkAnimation from "./AiNetworkAnimation";
+import { useMemo, memo } from "react";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -9,23 +10,87 @@ const fadeIn = {
   transition: { duration: 0.5 },
 };
 
-const floatingAnimation = (delay = 0) => ({
-  animate: {
-    y: [0, -40, 0],
-    rotate: [0, 5, -5, 0],
-    transition: {
-      delay,
-      duration: 8 + Math.random() * 4,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
-  },
+// Pre-computed animation values for better performance
+const getFloatingAnimations = () => {
+  return Array(8).fill(0).map((_, i) => ({
+    delay: i * 0.3,
+    duration: 8 + (i % 4) * 2,
+    x: Math.floor((i % 3) * 33), // More deterministic positions
+    y: Math.floor((i % 4) * 25),
+  }));
+};
+
+// Memoized floating AI nodes component
+const FloatingNodes = memo(({ animate = true }) => {
+  const nodeAnimations = useMemo(() => getFloatingAnimations(), []);
+  
+  // Reduced number of nodes for better performance
+  return nodeAnimations.map((anim, i) => (
+    <motion.div
+      key={i}
+      className="absolute w-8 h-8 border-2 border-teal-400/30 rounded-full"
+      style={{
+        left: `${20 + anim.x}%`,
+        top: `${10 + anim.y}%`,
+        willChange: "transform",
+      }}
+      animate={animate ? {
+        y: [0, -40, 0],
+        rotate: [0, 5, -5, 0],
+      } : {}}
+      transition={animate ? {
+        delay: anim.delay,
+        duration: anim.duration,
+        repeat: Infinity,
+        ease: "easeInOut",
+      } : {}}
+    />
+  ));
 });
 
-function ServicesHeroSection() {
+// Memoized tech icons with improved performance
+const TechIcons = memo(({ animate = true }) => {
+  const iconData = useMemo(() => [
+    { Icon: FaBrain, color: "text-blue-400", size: "text-5xl", left: "10%", top: "20%" },
+    { Icon: FaRobot, color: "text-purple-400", size: "text-4xl", left: "70%", top: "15%" },
+    { Icon: FaMicrochip, color: "text-teal-400", size: "text-3xl", left: "20%", top: "70%" },
+    { Icon: SiTensorflow, color: "text-orange-400", size: "text-3xl", left: "80%", top: "75%" },
+    { Icon: SiOpenai, color: "text-green-400", size: "text-4xl", left: "15%", top: "40%" },
+    { Icon: SiNvidia, color: "text-green-500", size: "text-3xl", left: "75%", top: "50%" }
+  ], []);
+
+  return iconData.map(({ Icon, color, size, left, top }, i) => (
+    <motion.div
+      key={i}
+      className={`absolute ${color} ${size} opacity-30`}
+      style={{
+        left,
+        top,
+        willChange: "transform, opacity",
+      }}
+      animate={animate ? {
+        y: [0, -10, 0],
+        opacity: [0.3, 0.5, 0.3],
+        rotate: [0, 10, 0],
+      } : {}}
+      transition={{
+        duration: 3 + i,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: i * 0.5,
+      }}
+    >
+      <Icon />
+    </motion.div>
+  ));
+});
+
+// Main component with optimization
+function ServicesHeroSection({ isVisible = true }) {
+  // Main content is always rendered, but animations are only active when visible
   return (
-    <div className="relative overflow-hidden py-24 ">
-      {/* AI Neural Background */}
+    <div className="relative overflow-hidden py-24">
+      {/* AI Neural Background - Only active when visible */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute inset-0 -z-10">
           <div
@@ -33,125 +98,95 @@ function ServicesHeroSection() {
             style={{ backgroundImage: `url('/circuit-pattern.svg')` }}
           />
         </div>
-        <AiNetworkAnimation />
+        
+        {/* Only pass isVisible prop to control animations */}
+        <AiNetworkAnimation animate={isVisible} />
 
-        {/* Floating AI Nodes */}
-        {[...Array(15)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-8 h-8 border-2 border-teal-400/30 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            variants={floatingAnimation(i * 0.3)}
-            animate="animate"
-          />
-        ))}
-
-        {/* Pulsating AI Core */}
-        <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-radial-gradient(from-purple-500 to-transparent)"
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            repeatType: "mirror",
-          }}
-        >
-          <div className="absolute inset-0 border-2 border-purple-400/20 rounded-full blur-lg" />
-        </motion.div>
+        {/* Floating AI Nodes - reduced count and controlled by visibility */}
+        <FloatingNodes animate={isVisible} />
       </div>
 
-      <motion.div
-        className="container-custom text-center text-white relative z-10"
-        initial="initial"
-        animate="animate"
-        variants={fadeIn}
-      >
-        {/* Company Identity */}
-        <div className="mb-8">
-          <motion.div
-            className="text-sm font-mono text-teal-400 mb-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-          >
-            NEURAFLOW AI
-          </motion.div>
+      {/* Tech icons spread around the hero section */}
+      <TechIcons animate={isVisible} />
+
+      <div className="container-custom">
+        <motion.div
+          className="max-w-4xl mx-auto text-center text-white"
+          initial="initial"
+          animate={isVisible ? "animate" : "initial"}
+          variants={fadeIn}
+        >
           <motion.h1
-            className="text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent"
-            initial={{ scale: 0.5, opacity: 0 }}
-            animate={{
-              scale: 1,
-              opacity: 1,
-              backgroundImage: [
-                "linear-gradient(to right, #22d3ee, #3b82f6, #a855f7)",
-                "linear-gradient(to right, #a855f7, #22d3ee, #3b82f6)",
-              ],
-            }}
-            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+            className="text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-teal-400 via-blue-400 to-purple-400"
+            variants={fadeIn}
           >
-            Intelligent Cognitive Systems
+            AI-Powered Solutions for Modern Businesses
           </motion.h1>
-        </div>
-
-        {/* AI Product Features */}
-        <motion.div
-          className="grid grid-cols-3 gap-8 mb-16"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-        >
-          {["Machine Learning", "Neural Networks", "Predictive Analytics"].map(
-            (text, i) => (
-              <motion.div
-                key={text}
-                className="p-6 backdrop-blur-lg bg-white/5 rounded-xl border border-white/10 hover:border-teal-400/30 transition-all"
-                whileHover={{ y: -5 }}
-              >
-                <div className="text-teal-400 mb-3">
-                  {i === 0 ? (
-                    <FaBrain size={28} />
-                  ) : i === 1 ? (
-                    <FaMicrochip size={28} />
-                  ) : (
-                    <FaRobot size={28} />
-                  )}
-                </div>
-                <div className="font-semibold">{text}</div>
-              </motion.div>
-            )
-          )}
-        </motion.div>
-
-        {/* AI Platform Integration */}
-        <motion.div
-          className="flex flex-col items-center gap-8"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-        >
-          <motion.button
-            className="relative overflow-hidden px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-full font-semibold hover:shadow-xl transition-all group"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+          <motion.p
+            className="text-xl text-gray-300 mb-10"
+            variants={fadeIn}
           >
-            <span className="relative z-10 flex items-center gap-2">
-              Build AI Solution <FaMicrochip className="h-5 w-5" />
-            </span>
-            <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-20 transition-opacity -z-10" />
-          </motion.button>
+            From generative AI and predictive analytics to computer vision and
+            natural language processing, we leverage cutting-edge technologies to
+            transform your business.
+          </motion.p>
 
-          {/* AI Partner Stack */}
-          <div className="flex justify-center gap-12 opacity-80 hover:opacity-100 transition-opacity">
-            <SiOpenai className="h-12 w-12 text-white/90 hover:text-white transition-colors" />
-            <SiTensorflow className="h-12 w-12 text-orange-500/90 hover:text-orange-400 transition-colors" />
-            <SiNvidia className="h-12 w-12 text-green-500/90 hover:text-green-400 transition-colors" />
-          </div>
+          <motion.div
+            className="flex flex-wrap justify-center gap-6"
+            variants={fadeIn}
+          >
+            <a
+              href="#services-list"
+              className="px-8 py-3 bg-gradient-to-r from-teal-500 to-blue-600 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 transform"
+            >
+              Explore Our Services
+            </a>
+            <a
+              href="#services-cta"
+              className="px-8 py-3 bg-gray-800 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 transform border border-blue-500"
+            >
+              Contact Us
+            </a>
+          </motion.div>
+
+          {/* Service Highlights */}
+          <motion.div
+            className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8"
+            variants={fadeIn}
+          >
+            {[
+              {
+                icon: <FaBrain className="text-4xl text-blue-400" />,
+                title: "AI Integration",
+                description:
+                  "Seamlessly integrate AI capabilities into your existing systems and workflows.",
+              },
+              {
+                icon: <FaRobot className="text-4xl text-purple-400" />,
+                title: "Custom AI Development",
+                description:
+                  "Tailor-made AI solutions designed specifically for your business needs.",
+              },
+              {
+                icon: <FaMicrochip className="text-4xl text-teal-400" />,
+                title: "AI Consulting",
+                description:
+                  "Expert guidance on implementing AI strategies for maximum business impact.",
+              },
+            ].map((service, index) => (
+              <motion.div
+                key={index}
+                className="p-6 bg-gray-800/50 rounded-xl border border-gray-700 backdrop-blur-sm"
+                whileHover={{ y: -10, transition: { duration: 0.3 } }}
+              >
+                <div className="mb-4">{service.icon}</div>
+                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                <p className="text-gray-300">{service.description}</p>
+              </motion.div>
+            ))}
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
     </div>
   );
 }

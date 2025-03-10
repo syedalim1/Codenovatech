@@ -1,0 +1,78 @@
+/* MobileMenu styles */
+
+/* Ensure the menu is always on top */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 300px;
+  z-index: 10000;
+  overflow-y: auto;
+  background-color: rgba(17, 24, 39, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Prevent body scroll when menu is open */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* Animation keyframes */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.mobile-menu-enter {
+  animation: slideIn 0.3s forwards;
+}
+
+.mobile-menu-exit {
+  animation: slideOut 0.3s forwards;
+}
+
+/* Ensure links are visible and clickable */
+.mobile-menu a {
+  display: block;
+  padding: 12px 16px;
+  margin: 8px 0;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.mobile-menu a:hover,
+.mobile-menu a:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+} 

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import NavbarBackgroundAnimation from "./NavbarBackgroundAnimation";
+import MobileMenu from "./MobileMenu";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -27,7 +28,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed w-full z-50 transition-all duration-300 ${
+      className={`fixed w-full z-40 transition-all duration-300 ${
         isScrolled
           ? "backdrop-blur-md bg-gray-900/80 shadow-lg"
           : "bg-transparent"
@@ -144,101 +145,23 @@ export default function Navbar() {
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle mobile menu"
         >
-          <Bars3Icon className="h-7 w-7" />
+          {mobileMenuOpen ? (
+            <XMarkIcon className="h-7 w-7" />
+          ) : (
+            <Bars3Icon className="h-7 w-7" />
+          )}
           <div className="absolute top-0 right-0 w-2 h-2 bg-teal-400 rounded-full animate-pulse" />
         </button>
-
-        {/* Mobile menu */}
-        <AnimatePresence>
-          {mobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, x: "100%" }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: "100%" }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-gray-900/95 backdrop-blur-xl shadow-xl overflow-y-auto lg:hidden"
-            >
-              <div className="flex flex-col h-full p-6">
-                <div className="flex justify-between items-center mb-8">
-                  <span className="text-2xl font-bold bg-gradient-to-r from-teal-500 to-blue-600 bg-clip-text text-transparent">
-                    CODENOVATECH
-                  </span>
-                  <button
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="p-2 text-gray-400 hover:text-white"
-                    aria-label="Close mobile menu"
-                  >
-                    <XMarkIcon className="h-6 w-6" />
-                  </button>
-                </div>
-                <nav className="flex-1 space-y-4">
-                  {navigation.map((item, index) => (
-                    <motion.div
-                      key={item.name}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                      whileHover={{ x: 10 }}
-                    >
-                      <Link
-                        to={item.href}
-                        className="block px-4 py-3 text-gray-300 hover:bg-gray-800 rounded-lg flex items-center gap-2"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        <div className="w-2 h-2 bg-teal-400 rounded-full animate-pulse" />
-                        {item.name}
-                      </Link>
-                    </motion.div>
-                  ))}
-                </nav>
-                
-                {/* Mobile CTA */}
-                <div className="mt-6 pt-6 border-t border-gray-800">
-                  <motion.div 
-                    whileHover={{ scale: 1.05 }} 
-                    className="w-full"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.3 }}
-                  >
-                    <Link
-                      to="/contact"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="w-full block text-center px-6 py-3 bg-gradient-to-r from-teal-500 via-blue-500 to-purple-600 text-white rounded-full relative overflow-hidden"
-                    >
-                      <span className="relative z-10">Start Project</span>
-                      <div className="absolute inset-0 bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 opacity-0 hover:opacity-100 transition-opacity" />
-                    </Link>
-                  </motion.div>
-                </div>
-
-                {/* Animated Background Elements */}
-                <div className="absolute inset-0 -z-10 opacity-10 pointer-events-none">
-                  {[...Array(10)].map((_, i) => (
-                    <motion.div
-                      key={i}
-                      className="absolute w-1 h-1 bg-teal-400 rounded-full"
-                      style={{
-                        left: `${Math.random() * 100}%`,
-                        top: `${Math.random() * 100}%`,
-                      }}
-                      animate={{
-                        scale: [0.5, 1.5, 0.5],
-                        opacity: [0.2, 0.8, 0.2],
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        delay: i * 0.2,
-                      }}
-                    />
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </nav>
+
+      {/* Mobile menu using the new component */}
+      <AnimatePresence>
+        <MobileMenu 
+          isOpen={mobileMenuOpen} 
+          onClose={() => setMobileMenuOpen(false)} 
+          navigation={navigation} 
+        />
+      </AnimatePresence>
     </header>
   );
 }
