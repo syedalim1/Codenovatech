@@ -395,7 +395,7 @@ function ContactHeraSection() {
           <div className="space-y-12">
             {/* Contact Methods */}
             <motion.div
-              className="bg-gradient-to-br from-teal-500/10 to-transparent backdrop-blur-sm transition-opacity rounded-3xl shadow-xl p-8"
+              className="bg-gradient-to-br from-teal-500/20 to-transparent backdrop-blur-sm transition-opacity rounded-3xl shadow-xl p-8"
               variants={itemAnimation}
               style={{ willChange: "transform, opacity" }}
             >

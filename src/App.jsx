@@ -42,8 +42,8 @@ function App() {
                 <Route path="/projects" element={<AllProjects />} />
                 <Route path="/project/:id" element={<ProjectDetails />} />
               </Routes>
+              <Footer />
             </Suspense>
-            <Footer />
           </div>
         </Router>
       </div>

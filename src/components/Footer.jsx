@@ -35,9 +35,7 @@ const navigation = {
   main: [
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
-    { name: "Portfolio", href: "/portfolio" },
     { name: "About", href: "/about" },
-    { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
   ],
   services: [
@@ -54,34 +52,28 @@ const navigation = {
   social: [
     {
       name: "Facebook",
-      href: "#",
+      href: "https://www.facebook.com/codenovatech",
       icon: FaFacebook,
     },
     {
       name: "Twitter",
-      href: "#",
+      href: "https://x.com/codenovatech",
       icon: FaTwitter,
     },
     {
       name: "LinkedIn",
-      href: "#",
+      href: "https://www.linkedin.com/company/codenovatech",
       icon: FaLinkedin,
-    },
-    {
-      name: "GitHub",
-      href: "#",
-      icon: FaGithub,
-    },
+    }
+  
   ],
 };
 
 export default function Footer() {
   return (
-    <footer className="relative ">
+    <footer className="relative bg-gray-900 ">
       {/* AI Neural Network Background Animation */}
       <div className="absolute inset-0 overflow-hidden -z-10">
-        <NeuralNetworkBackground />
-
         {/* Animated gradient blobs */}
         <motion.div
           className="absolute top-32 left-1/3 w-64 h-64 bg-teal-500/20 rounded-full blur-3xl"
@@ -188,7 +180,6 @@ export default function Footer() {
             transition={{ duration: 0.5 }}
           >
             <Link to="/" className="flex items-center">
-              <img src="/logo.png" className="h-12 w-auto" alt="CODENOVATECH" />
               <span className="ml-3 text-xl font-bold text-white">
                 CODENOVATECH
               </span>
@@ -198,40 +189,8 @@ export default function Footer() {
               solutions. Our revolutionary AI product launches April 4, 2025.
             </p>
 
-            {/* NEW: Enhanced 3D Brain Visualization with Particle Effects */}
-            <div className="h-40 w-full rounded-lg overflow-hidden bg-gray-800/50 border border-gray-700">
-              <Suspense
-                fallback={
-                  <div className="h-full w-full flex items-center justify-center text-gray-400">
-                    Loading 3D Model...
-                  </div>
-                }
-              >
-                <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
-                  <ambientLight intensity={0.5} />
-                  <pointLight position={[10, 10, 10]} />
-                  <pointLight
-                    position={[-10, -10, -10]}
-                    color="#a855f7"
-                    intensity={0.5}
-                  />
-                  <BrainModelEnhanced />
-                  <NeuralParticles />
-                  <OrbitControls
-                    enableZoom={false}
-                    enablePan={false}
-                    autoRotate
-                    autoRotateSpeed={1}
-                  />
-                </Canvas>
-              </Suspense>
-            </div>
-
-            {/* NEW: AI Technology Radial Visualization */}
-            {/* <div className="relative h-32 w-full overflow-hidden">
-              <AITechRadial />
-            </div>
-             */}
+            
+          
             {/* Enhanced AI Icons with animations */}
             <div className="flex flex-wrap gap-4">
               <motion.div whileHover={{ scale: 1.2, rotate: 5 }}>

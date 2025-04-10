@@ -347,10 +347,9 @@ function ServicesSection() {
 
   return (
     <div className="relative py-24 overflow-hidden">
-      {/* Background Effects */}
-      <NeuralNetworkAnimation />
-      <ParticleEffect />
-      <BinaryCodeAnimation />
+     
+     
+    
       <div className="absolute inset-0 -z-10">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"

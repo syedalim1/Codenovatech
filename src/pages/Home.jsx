@@ -284,7 +284,7 @@ export default function Home() {
       </section>
       
       {/* Additional SEO-rich content section with company information */}
-      <div className="container mx-auto mt-16 mb-8 px-4 py-8 bg-gray-800/30 rounded-xl">
+      <div className="container mx-auto mt-16 px-4 py-8 bg-gray-800/30 rounded-xl block">
         <h2 className="text-2xl font-bold text-teal-500 mb-4">About CODENOVATECH - AI Innovation in Coimbatore</h2>
         <p className="text-gray-300 mb-4">
           CODENOVATECH (also known as Code Nova Tech or Codenova tech) is a premier artificial intelligence and software development company based in Coimbatore, Tamil Nadu. 

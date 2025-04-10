@@ -71,7 +71,7 @@ export default function About() {
   }, []);
 
   return (
-    <div className="pt-24">
+    <div className="pt-24 bg-gray-900">
       <PageSEO
         title="About CODENOVATECH | Leading AI & Software Company in Coimbatore"
         description="Learn about CODENOVATECH (Code Nova Tech) - a pioneering AI and software development company in Coimbatore with a mission to transform businesses through innovative technology solutions. Founded by experienced tech experts, our team combines deep technical knowledge with domain expertise to deliver exceptional results. We're committed to excellence, innovation, and creating lasting partnerships with our clients across various industries."
@@ -148,7 +148,7 @@ export default function About() {
       </Suspense>
 
       {/* Additional SEO-rich content section with company information */}
-      <div className="container mx-auto mt-16 mb-8 px-4 py-8 bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg  hover:shadow-teal-500/10 dark:bg-gray-800/30 rounded-xl">
+      <div className="container mx-auto mt-16  px-4 py-8 bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg  hover:shadow-teal-500/10 dark:bg-gray-800/30 rounded-xl">
         <h2 className="text-2xl font-bold text-teal-600 dark:text-teal-500 mb-4">
           About CODENOVATECH - Our Journey
         </h2>

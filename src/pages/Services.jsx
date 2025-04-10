@@ -147,40 +147,69 @@ export default function Services() {
   }, []);
 
   return (
-    <div className="pt-24 ">
-      <PageSEO 
-        title="AI & Software Development Services in Coimbatore | CODENOVATECH" 
+    <div className="pt-24 bg-gray-900 ">
+      <PageSEO
+        title="AI & Software Development Services in Coimbatore | CODENOVATECH"
         description="Explore CODENOVATECH's (Code Nova Tech) comprehensive AI and software development services in Coimbatore. We offer Generative AI, Predictive Analytics, Computer Vision, Natural Language Processing, Full-Stack Development, Mobile App Development, Cloud Solutions, and custom enterprise software solutions tailored to your business requirements. Our experienced team delivers cutting-edge technology solutions for startups and established businesses."
         keywords="AI services Coimbatore, Code Novatech, Codenova tech, software development services, generative AI solutions, predictive analytics, computer vision services, AI consulting, custom software development, AI integration, enterprise software solutions, ML model development, machine learning services, Python development, React applications, mobile app development, iOS development, Android development, web application development, full-stack development, cloud integration services, digital transformation solutions, IT consulting Coimbatore, business automation tools, AI product development, technology outsourcing Coimbatore, NLP services, data analytics solutions, AI algorithm development, chatbot development, software migration services, DevOps services, best AI company Tamil Nadu"
         canonicalUrl="https://codenovatech.in/services"
       />
-      
+
       {/* Additional SEO enhancements with Helmet */}
       <Helmet>
         {/* JSON-LD structured data for better rich snippets */}
         <script type="application/ld+json">
           {JSON.stringify(servicesData)}
         </script>
-        
+
         {/* Additional meta tags for better SEO */}
         <meta name="robots" content="index, follow" />
         <meta name="author" content="CODENOVATECH" />
         <meta name="geo.region" content="IN-TN" />
         <meta name="geo.placename" content="Coimbatore" />
-        <link rel="alternate" hrefLang="en" href="https://codenovatech.in/services" />
-        <link rel="alternate" hrefLang="x-default" href="https://codenovatech.in/services" />
+        <link
+          rel="alternate"
+          hrefLang="en"
+          href="https://codenovatech.in/services"
+        />
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href="https://codenovatech.in/services"
+        />
       </Helmet>
-      
+
       {/* Hidden SEO content for search engines - visible to crawlers but not obtrusive to users */}
       <div className="sr-only">
-        <h1>AI & Software Development Services by CODENOVATECH in Coimbatore</h1>
-        <p>Code Nova Tech (CODENOVATECH) offers a comprehensive range of AI and software development services in Coimbatore, Tamil Nadu. Our expert team specializes in artificial intelligence solutions, machine learning implementation, and custom software development.</p>
-        <p>Codenova tech provides cutting-edge technology services including generative AI, computer vision, natural language processing, predictive analytics, web development, mobile app development, and cloud solutions for businesses across industries.</p>
+        <h1>
+          AI & Software Development Services by CODENOVATECH in Coimbatore
+        </h1>
+        <p>
+          Code Nova Tech (CODENOVATECH) offers a comprehensive range of AI and
+          software development services in Coimbatore, Tamil Nadu. Our expert
+          team specializes in artificial intelligence solutions, machine
+          learning implementation, and custom software development.
+        </p>
+        <p>
+          Codenova tech provides cutting-edge technology services including
+          generative AI, computer vision, natural language processing,
+          predictive analytics, web development, mobile app development, and
+          cloud solutions for businesses across industries.
+        </p>
         <h2>Top AI Development Services in Coimbatore</h2>
-        <p>Our AI services include machine learning model development, deep learning implementation, computer vision solutions, natural language processing, predictive analytics, and AI integration with existing systems.</p>
-        <p>We also offer full-stack development, mobile app development for iOS and Android, web application development, cloud integration, and digital transformation consulting.</p>
+        <p>
+          Our AI services include machine learning model development, deep
+          learning implementation, computer vision solutions, natural language
+          processing, predictive analytics, and AI integration with existing
+          systems.
+        </p>
+        <p>
+          We also offer full-stack development, mobile app development for iOS
+          and Android, web application development, cloud integration, and
+          digital transformation consulting.
+        </p>
       </div>
-      
+
       {/* Hero Section with Animated Background */}
       <section id="services-hero">
         <Suspense fallback={<SectionLoader height="60vh" />}>
@@ -210,16 +239,23 @@ export default function Services() {
           {visibleSections.cta && <CallToAction />}
         </Suspense>
       </section>
-      
+
       {/* Additional SEO-rich content section with service details */}
-      <div className="container mx-auto mt-16 mb-8 px-4 py-8 bg-gray-800/30 rounded-xl">
-        <h2 className="text-2xl font-bold text-teal-500 mb-4">Our AI & Software Development Services</h2>
+      <div className="container mx-auto mt-16  px-4 py-8 bg-gray-800/30 rounded-xl">
+        <h2 className="text-2xl font-bold text-teal-500 mb-4">
+          Our AI & Software Development Services
+        </h2>
         <p className="text-gray-300 mb-6">
-          CODENOVATECH (also known as Code Nova Tech or Codenova tech) offers a comprehensive range of AI and software development services designed to help businesses leverage the latest technologies for growth and innovation.
+          CODENOVATECH (also known as Code Nova Tech or Codenova tech) offers a
+          comprehensive range of AI and software development services designed
+          to help businesses leverage the latest technologies for growth and
+          innovation.
         </p>
         <div className="grid md:grid-cols-2 gap-8 mt-6">
           <div>
-            <h3 className="text-xl font-semibold text-white mb-3">Artificial Intelligence Solutions</h3>
+            <h3 className="text-xl font-semibold text-white mb-3">
+              Artificial Intelligence Solutions
+            </h3>
             <ul className="list-disc pl-5 text-gray-300 space-y-2">
               <li>Machine Learning Model Development</li>
               <li>Deep Learning Implementation</li>
@@ -230,7 +266,9 @@ export default function Services() {
             </ul>
           </div>
           <div>
-            <h3 className="text-xl font-semibold text-white mb-3">Software Development</h3>
+            <h3 className="text-xl font-semibold text-white mb-3">
+              Software Development
+            </h3>
             <ul className="list-disc pl-5 text-gray-300 space-y-2">
               <li>Custom Software Development</li>
               <li>Web Application Development</li>
@@ -243,7 +281,8 @@ export default function Services() {
         </div>
         <div className="mt-8 text-center">
           <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} CODENOVATECH | All Rights Reserved | Coimbatore, Tamil Nadu, India
+            © {new Date().getFullYear()} CODENOVATECH | All Rights Reserved |
+            Coimbatore, Tamil Nadu, India
           </p>
         </div>
       </div>

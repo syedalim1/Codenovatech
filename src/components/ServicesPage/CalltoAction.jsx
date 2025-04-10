@@ -49,7 +49,7 @@ function CallToAction() {
   return (
     <section className="relative overflow-hidden  py-24">
       {/* Enhanced AI-themed animated background elements */}
-      <AIBackgroundEffects />
+     
       <div className="absolute inset-0 -z-10">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
