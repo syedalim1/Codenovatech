@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useMemo } from "react";
-import "../HeroSectionComponents/animations.css";
 
 const AIStatistics = ({ fadeIn, animate = true }) => {
   // Pre-compute statistics data to avoid recreating on each render

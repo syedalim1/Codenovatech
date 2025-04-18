@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useMemo, useCallback } from "react";
-import "../HeroSectionComponents/animations.css";
 import { animationStyles } from "./styles";
 
 // Add style tag with keyframes for when CSS import fails

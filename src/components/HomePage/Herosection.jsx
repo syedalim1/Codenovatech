@@ -12,8 +12,6 @@ import AITrendsBanner from "./HeroSectionComponents/AITrendsBanner";
 import BrainVisualization from "./HeroSectionComponents/BrainVisualization";
 import CTAButtons from "./HeroSectionComponents/CTAButtons";
 
-// Import animations CSS
-import "./HeroSectionComponents/animations.css";
 
 function HeroSection({ isVisible = true }) {
   // Animation variants - defined once, not recreated on each render
