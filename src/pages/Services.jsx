@@ -241,7 +241,7 @@ export default function Services() {
       </section>
 
       {/* Additional SEO-rich content section with service details */}
-      <div className="container mx-auto mt-16  px-4 py-8 bg-gray-800/30 rounded-xl">
+      <div className="container hidden mx-auto mt-16  px-4 py-8 bg-gray-800/30 rounded-xl">
         <h2 className="text-2xl font-bold text-teal-500 mb-4">
           Our AI & Software Development Services
         </h2>

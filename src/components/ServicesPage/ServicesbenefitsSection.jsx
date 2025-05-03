@@ -11,14 +11,14 @@ import { SiTensorflow, SiNvidia, SiOpenai } from "react-icons/si";
 
 // Pre-compute benefit data to avoid recreating on every render
 const benefitsData = [
-  {
-    icon: FaBrain,
-    title: "Neural Architectures",
-    description: "100+ AI models deployed with 99.7% prediction accuracy",
-    stat: "10x Efficiency Boost",
-    color: "from-purple-600 to-indigo-600",
-    pattern: "neural-pattern",
-  },
+  // {
+  //   icon: FaBrain,
+  //   title: "Neural Architectures",
+  //   description: "100+ AI models deployed with 99.7% prediction accuracy",
+  //   stat: "10x Efficiency Boost",
+  //   color: "from-purple-600 to-indigo-600",
+  //   pattern: "neural-pattern",
+  // },
   {
     icon: FaRobot,
     title: "AI Assistants",

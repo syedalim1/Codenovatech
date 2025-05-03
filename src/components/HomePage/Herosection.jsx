@@ -2,14 +2,12 @@ import { motion } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 
 // Import all components directly to ensure they load
-import LoadingAnimation from "./HeroSectionComponents/LoadingAnimation";
 import BackgroundEffects from "./HeroSectionComponents/BackgroundEffects";
 import MainHeading from "./HeroSectionComponents/MainHeading";
 import AIProductAnnouncement from "./HeroSectionComponents/AIProductAnnouncement";
 import AITechnologiesSection from "./HeroSectionComponents/AITechnologiesSection";
 import AIStatistics from "./HeroSectionComponents/AIStatistics";
 import AITrendsBanner from "./HeroSectionComponents/AITrendsBanner";
-import BrainVisualization from "./HeroSectionComponents/BrainVisualization";
 import CTAButtons from "./HeroSectionComponents/CTAButtons";
 
 
@@ -56,49 +54,13 @@ function HeroSection({ isVisible = true }) {
   }, []);
 
   // Set up intersection observers for animations only
-  useEffect(() => {
-    if (isLoading) return;
-
-    const observerOptions = {
-      root: null,
-      rootMargin: '50px', // Start animations slightly before they come into view
-      threshold: 0.1
-    };
-
-    const sectionObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        const sectionId = entry.target.dataset.section;
-        if (entry.isIntersecting && sectionId) {
-          setActiveAnimations(prev => ({ ...prev, [sectionId]: true }));
-          // Keep observing to stop animations when not in view
-        }
-      });
-    }, observerOptions);
-
-    // Start observing each section
-    Object.entries(sectionRefs).forEach(([key, ref]) => {
-      if (ref.current) {
-        sectionObserver.observe(ref.current);
-      }
-    });
-
-    return () => {
-      Object.values(sectionRefs).forEach(ref => {
-        if (ref.current) {
-          sectionObserver.unobserve(ref.current);
-        }
-      });
-    };
-  }, [isLoading]);
 
   return (
     <div>
       {/* Loading Animation Component */}
-      {isLoading && <LoadingAnimation />}
 
       <div className="relative isolate pt-24">
         {/* Background Effects Component */}
-        <BackgroundEffects />
 
         <div className="py-24 sm:py-32">
           <div className="container-custom">
@@ -131,10 +93,7 @@ function HeroSection({ isVisible = true }) {
                 <AITrendsBanner fadeIn={fadeIn} animate={activeAnimations.trends} />
               </div>
 
-              {/* 3D AI Brain Visualization Component */}
-              <div ref={sectionRefs.brain} data-section="brain">
-                <BrainVisualization scaleUp={scaleUp} animate={activeAnimations.brain} />
-              </div>
+            
 
               {/* Call-to-Action Buttons Component */}
               <div ref={sectionRefs.cta} data-section="cta">

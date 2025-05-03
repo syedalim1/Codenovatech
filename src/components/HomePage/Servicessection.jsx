@@ -382,8 +382,8 @@ function ServicesSection() {
         </motion.div>
 
         {/* Performance Metrics */}
-        <div className="mt-24 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-          <motion.div
+        <div className="mt-24 grid grid-cols-2 lg:grid-cols-2 gap-8 text-center">
+          {/* <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.7 }}
@@ -395,9 +395,9 @@ function ServicesSection() {
               100+
             </div>
             <div className="text-gray-300">AI Models Deployed</div>
-          </motion.div>
+          </motion.div> */}
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.8 }}
@@ -409,7 +409,7 @@ function ServicesSection() {
               99.7%
             </div>
             <div className="text-gray-300">Prediction Accuracy</div>
-          </motion.div>
+          </motion.div> */}
 
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}

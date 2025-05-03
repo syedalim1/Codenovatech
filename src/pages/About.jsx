@@ -148,7 +148,7 @@ export default function About() {
       </Suspense>
 
       {/* Additional SEO-rich content section with company information */}
-      <div className="container mx-auto mt-16  px-4 py-8 bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg  hover:shadow-teal-500/10 dark:bg-gray-800/30 rounded-xl">
+      <div className="container hidden mx-auto mt-16  px-4 py-8 bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg  hover:shadow-teal-500/10 dark:bg-gray-800/30 rounded-xl">
         <h2 className="text-2xl font-bold text-teal-600 dark:text-teal-500 mb-4">
           About CODENOVATECH - Our Journey
         </h2>

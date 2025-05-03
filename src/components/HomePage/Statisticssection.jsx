@@ -12,14 +12,14 @@ function StatisticsSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const statistics = [
-    {
-      id: 1,
-      name: "Projects Completed",
-      value: 100,
-      icon: FaProjectDiagram,
-      suffix: "+",
-      color: "#3E92CC",
-    },
+    // {
+    //   id: 1,
+    //   name: "Projects Completed",
+    //   value: 100,
+    //   icon: FaProjectDiagram,
+    //   suffix: "+",
+    //   color: "#3E92CC",
+    // },
     {
       id: 2,
       name: "Client Satisfaction",
@@ -29,22 +29,22 @@ function StatisticsSection() {
       color: "#6B46C1",
       decimals: 1,
     },
-    {
-      id: 3,
-      name: "Active Team Members",
-      value: 50,
-      icon: FaUser,
-      suffix: "+",
-      color: "#2DD4BF",
-    },
-    {
-      id: 4,
-      name: "Industry Awards",
-      value: 28,
-      icon: FaAward,
-      suffix: "+",
-      color: "#F59E0B",
-    },
+    // {
+    //   id: 3,
+    //   name: "Active Team Members",
+    //   value: 50,
+    //   icon: FaUser,
+    //   suffix: "+",
+    //   color: "#2DD4BF",
+    // },
+    // {
+    //   id: 4,
+    //   name: "Industry Awards",
+    //   value: 28,
+    //   icon: FaAward,
+    //   suffix: "+",
+    //   color: "#F59E0B",
+    // },
     {
       id: 5,
       name: "Support Availability",
@@ -53,15 +53,15 @@ function StatisticsSection() {
       suffix: "/7",
       color: "#EC4899",
     },
-    {
-      id: 6,
-      name: "Uptime Guarantee",
-      value: 99.99,
-      icon: FiActivity,
-      suffix: "%",
-      color: "#10B981",
-      decimals: 2,
-    },
+    // {
+    //   id: 6,
+    //   name: "Uptime Guarantee",
+    //   value: 99.99,
+    //   icon: FiActivity,
+    //   suffix: "%",
+    //   color: "#10B981",
+    //   decimals: 2,
+    // },
   ];
 
   return (

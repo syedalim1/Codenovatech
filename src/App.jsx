@@ -17,8 +17,8 @@ function App() {
     <HelmetProvider>
       <div className="">
         <Router>
-          <Background />
-          <SharedAiBackground />
+          {/* <Background /> */}
+          {/* <SharedAiBackground /> */}
           <div className="relative min-h-screen">
             <Navbar />
             <Suspense

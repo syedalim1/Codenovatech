@@ -73,12 +73,12 @@ function CallToAction() {
 
           {/* Enhanced trust badges and company metrics */}
           <div className="flex flex-wrap justify-center gap-6 mb-16">
-            <MetricBadge
+            {/* <MetricBadge
               icon={<FaShieldAlt />}
               value="100+"
               label="AI Models Deployed"
               color="from-cyan-500 to-blue-600"
-            />
+            /> */}
             <MetricBadge
               icon={<FaChartLine />}
               value="99.7%"
@@ -160,7 +160,7 @@ function CallToAction() {
             </div>
 
             {/* Enhanced product launch countdown */}
-            <motion.div
+            {/* <motion.div
               className="mb-16 bg-gradient-to-r from-gray-900 to-gray-800 rounded-xl p-8 max-w-3xl mx-auto border border-gray-700 shadow-lg"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -191,7 +191,7 @@ function CallToAction() {
                   color="from-cyan-600 to-teal-700"
                 />
               </div>
-            </motion.div>
+            </motion.div> */}
 
             {/* Enhanced animated CTA button */}
             <motion.button
@@ -267,133 +267,7 @@ function CallToAction() {
 }
 
 // Enhanced AI-themed animated background
-function AIBackgroundEffects() {
-  return (
-    <>
-      {/* Enhanced neural network visualization */}
-      <div className="absolute inset-0 opacity-20">
-        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient
-              id="grid-gradient"
-              x1="0%"
-              y1="0%"
-              x2="100%"
-              y2="100%"
-            >
-              <stop offset="0%" stopColor="rgba(59, 130, 246, 0.3)" />
-              <stop offset="50%" stopColor="rgba(139, 92, 246, 0.3)" />
-              <stop offset="100%" stopColor="rgba(59, 130, 246, 0.3)" />
-            </linearGradient>
-            <pattern
-              id="grid"
-              width="50"
-              height="50"
-              patternUnits="userSpaceOnUse"
-            >
-              <path
-                d="M 50 0 L 0 0 0 50"
-                fill="none"
-                stroke="url(#grid-gradient)"
-                strokeWidth="1"
-              />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
-      </div>
 
-      {/* Enhanced floating particles with different colors */}
-      {[...Array(30)].map((_, i) => {
-        const colors = [
-          "rgba(56, 189, 248, 0.6)", // cyan
-          "rgba(59, 130, 246, 0.6)", // blue
-          "rgba(139, 92, 246, 0.6)", // purple
-          "rgba(236, 72, 153, 0.6)", // pink
-          "rgba(16, 185, 129, 0.6)", // green
-        ];
-        const color = colors[i % colors.length];
-
-        return (
-          <motion.div
-            key={i}
-            className="absolute rounded-full"
-            style={{
-              width: Math.random() * 12 + 5,
-              height: Math.random() * 12 + 5,
-              backgroundColor: color,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              boxShadow: `0 0 8px ${color}`,
-            }}
-            animate={{
-              x: [0, Math.random() * 100 - 50],
-              y: [0, Math.random() * 100 - 50],
-              opacity: [0.2, 0.6, 0.2],
-            }}
-            transition={{
-              duration: Math.random() * 10 + 10,
-              repeat: Infinity,
-              repeatType: "reverse",
-            }}
-          />
-        );
-      })}
-
-      {/* Digital circuit lines */}
-      {[...Array(15)].map((_, i) => {
-        const startX = Math.random() * 100;
-        const startY = Math.random() * 100;
-        const width = Math.random() * 300 + 100;
-        const height = Math.random() * 2 + 1;
-        const colors = [
-          "rgba(56, 189, 248, 0.3)", // cyan
-          "rgba(139, 92, 246, 0.3)", // purple
-          "rgba(16, 185, 129, 0.3)", // green
-        ];
-        const color = colors[i % colors.length];
-
-        return (
-          <motion.div
-            key={`line-${i}`}
-            className="absolute rounded-full"
-            style={{
-              width,
-              height,
-              backgroundColor: color,
-              left: `${startX}%`,
-              top: `${startY}%`,
-              boxShadow: `0 0 5px ${color}`,
-            }}
-            animate={{
-              opacity: [0.1, 0.4, 0.1],
-            }}
-            transition={{
-              duration: Math.random() * 5 + 5,
-              repeat: Infinity,
-              repeatType: "reverse",
-            }}
-          />
-        );
-      })}
-
-      {/* Enhanced animated gradient overlay */}
-      <motion.div
-        className="absolute inset-0 opacity-30"
-        animate={{
-          background: [
-            "radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.5) 0%, rgba(0, 0, 0, 0) 70%)",
-            "radial-gradient(circle at 70% 60%, rgba(139, 92, 246, 0.5) 0%, rgba(0, 0, 0, 0) 70%)",
-            "radial-gradient(circle at 30% 70%, rgba(16, 185, 129, 0.5) 0%, rgba(0, 0, 0, 0) 70%)",
-            "radial-gradient(circle at 60% 30%, rgba(236, 72, 153, 0.5) 0%, rgba(0, 0, 0, 0) 70%)",
-            "radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.5) 0%, rgba(0, 0, 0, 0) 70%)",
-          ],
-        }}
-        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-      />
-    </>
-  );
-}
 
 // Enhanced reusable components
 function MetricBadge({ icon, value, label, color }) {
